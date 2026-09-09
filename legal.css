@@ -1,0 +1,95 @@
+/**
+ * 法定表示ページ専用スタイル（privacy.html / tokushoho.html）
+ *
+ * なぜ独立させたか:
+ *   これらのページは以前ルートの style.css を読んでいた。
+ *   その style.css は **旧LP（ルート index.html）専用** のもので、
+ *   広告の着地先である lp/omatome/ とは無関係である。
+ *   そのため「広告LPだけを配信対象にする」と法定表示ページが崩れ、
+ *   「ルート一式を配信する」と検証していない旧LPが広告ドメインで公開されてしまう、
+ *   という二者択一になっていた。どちらも本番事故になる。
+ *   → 法定表示ページが旧LPに依存しないよう、必要な規則だけをここへ切り出した。
+ *
+ * 配色は lp/omatome/style.css と揃えてある（広告LPから遷移したときの一貫性のため）。
+ * ここに広告LPの装飾は入れない。表示義務のページに必要な最小限だけを持つ。
+ */
+
+:root {
+  --navy:      #0f2c52;
+  --cyan:      #1a9fd4;
+  --base:      #ffffff;
+  --soft:      #f4f7fb;
+  --text:      #24303f;
+  --text-mute: #5d6b7d;
+  --border:    #d9e2ec;
+}
+
+body {
+  margin: 0;
+  background: var(--base);
+  color: var(--text);
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+}
+
+.simple-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.simple-page h1 {
+  font-size: 20px;
+  color: var(--navy);
+}
+
+.simple-page h2 {
+  font-size: 15px;
+  margin-top: 28px;
+  color: var(--navy);
+}
+
+.simple-page table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.simple-page th,
+.simple-page td {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.simple-page th {
+  background: var(--soft);
+  width: 30%;
+  white-space: nowrap;
+}
+
+/* 表が狭い画面で溢れないようにする（法定表示は必ず読めること） */
+@media (max-width: 480px) {
+  .simple-page th {
+    width: 38%;
+    white-space: normal;
+  }
+}
+
+/*
+ * 法定表示ページの唯一のナビゲーション導線。
+ * 旧LPから移してきた色（--cyan #1a9fd4）は白背景に対してコントラスト比が約3:1 しかなく、
+ * 13px の本文サイズでは WCAG AA（4.5:1）を満たさない。表示義務のページは
+ * 「読めること」が要件なので、濃い色にして下線を付ける。
+ */
+.back-link {
+  display: inline-block;
+  margin-top: 32px;
+  font-size: 13px;
+  color: var(--navy);
+  text-decoration: underline;
+}

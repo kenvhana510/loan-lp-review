@@ -73,7 +73,7 @@
 
   <!-- LC-04 — 参考LPはここに実績バッジと料金の断定を置いている。
        どちらも裏付けが無いため、pending 枠に置き換える（本番では枠ごと消える） -->
-  <section class="lc" id="lc-04" style="--ar:.3013">
+  <section class="lc" id="lc-04" style="--ar:.14">
     <div class="lc__body">
       
       <p class="lc__note">
@@ -103,7 +103,7 @@
 <div class="problem">
 
   <!-- LC-06 — 見出し -->
-  <section class="lc" id="lc-06" style="--ar:.6267">
+  <section class="lc lc--head" id="lc-06" style="--ar:.6267">
     <div class="lc__body">
       <p class="section-eyebrow">WORRY ABOUT</p>
       <h2 class="section-title">こんなご相談を<br class="sp-only">いただいています</h2>
@@ -279,7 +279,7 @@
 <div class="reasons">
 
   <!-- LC-17 — 見出し -->
-  <section class="lc" id="lc-17" style="--ar:.7533">
+  <section class="lc lc--head" id="lc-17" style="--ar:.7533">
     <div class="lc__body">
       <p class="section-eyebrow">REASON</p>
       <p class="reasons__kicker">住宅ローンを活用して、返済の見直しと住まいの取得をひとつにする仕組みです</p>
@@ -371,7 +371,7 @@
 <div class="case-gate">
 
   <!-- LC-24 — 見出し -->
-  <section class="lc" id="lc-24" style="--ar:.6013">
+  <section class="lc lc--head" id="lc-24" style="--ar:.6013">
     <div class="lc__body">
       <p class="section-eyebrow">CASE STUDY</p>
       <h2 class="section-title">ご相談事例を<br class="sp-only">ご覧いただけます</h2>
@@ -445,7 +445,7 @@
 <!-- ============ LC-33 / LC-34 : Message ============ -->
 <div class="message">
 
-  <section class="lc" id="lc-33" style="--ar:.3507">
+  <section class="lc lc--head" id="lc-33" style="--ar:.3507">
     <div class="lc__body">
       <p class="section-eyebrow">MESSAGE</p>
       <h2 class="section-title">住まいは、帰る場所です</h2>
@@ -497,7 +497,7 @@
         <details> は JS 無しでも開けるため、JS 無効の閲覧でも読める。 -->
 <div class="faq">
 
-  <section class="lc" id="lc-36" style="--ar:.4627">
+  <section class="lc lc--head" id="lc-36" style="--ar:.4627">
     <div class="lc__body">
       <p class="section-eyebrow">FAQ</p>
       <h2 class="section-title">よくあるご質問</h2>
@@ -553,30 +553,6 @@
   </section>
 </div>
 
-<!-- ============ LC-39 : CTA 7（クロージング） ============ -->
-<div class="final-cta">
-  <section class="lc lc--cta lc--cta-final" id="lc-39" style="--ar:.6707">
-    <img class="lc__bg" src="../../assets/lp/lc-cta-bg.webp" width="1400" height="933" alt="" loading="lazy" decoding="async">
-    <div class="lc__body">
-      <p class="cta__lead">
-        いまの支払いを整理して、<br>
-        資産になるマイホームへ。<br>
-        無料でご相談ください。
-      </p>
-      <ul class="final-cta__assurance">
-        <li>相談だけでもOK</li>
-        
-        
-      </ul>
-      <a class="cta-button cta-button--large" href="#review-notice" data-cta-type="line" data-cta-position="final" data-cta-id="line_final">
-        <span class="cta-button__icon" aria-hidden="true">LINE</span>
-        LINEで無料相談する
-      </a>
-      <p class="cta__note">すべての方がご利用いただけるわけではありません。</p>
-    </div>
-  </section>
-</div>
-
 <!-- ============ LC-40 : 事業体制（LEGACRAFT 固有） ============
      参考LPには無いが、Google の債務関連サービス確認のために必要。
      出典は docs/service-role-matrix.md の確認済みの役割分担のみ。
@@ -607,6 +583,30 @@
         商号・免許番号・連絡先は、下の運営者情報に記載しています。
         当窓口が行うのは、はじめのお聞き取りとお取次ぎまでです。
       </p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ LC-39 : CTA 7（クロージング） ============ -->
+<div class="final-cta">
+  <section class="lc lc--cta lc--cta-final" id="lc-39" style="--ar:.6707">
+    <img class="lc__bg" src="../../assets/lp/lc-cta-bg.webp" width="1400" height="933" alt="" loading="lazy" decoding="async">
+    <div class="lc__body">
+      <p class="cta__lead">
+        いまの支払いを整理して、<br>
+        資産になるマイホームへ。<br>
+        無料でご相談ください。
+      </p>
+      <ul class="final-cta__assurance">
+        <li>相談だけでもOK</li>
+        
+        
+      </ul>
+      <a class="cta-button cta-button--large" href="#review-notice" data-cta-type="line" data-cta-position="final" data-cta-id="line_final">
+        <span class="cta-button__icon" aria-hidden="true">LINE</span>
+        LINEで無料相談する
+      </a>
+      <p class="cta__note">すべての方がご利用いただけるわけではありません。</p>
     </div>
   </section>
 </div>

@@ -32,7 +32,7 @@
   --radius:     10px;
   --shadow:     0 4px 16px rgba(15, 44, 82, 0.10);
   --sticky-h:   72px;
-  --pillar-size: min(96px, calc((100vw - 56px) / 3));
+  --pillar-size: min(88px, calc((100vw - 64px) / 3));
 
   /* カラム幅の正本。参考LPの .container { max-width: 700px } と同じ */
   --col-max:    700px;
@@ -335,18 +335,18 @@ a { color: inherit; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  margin-bottom: 12px;
+  gap: 2px;
+  margin-bottom: 10px;
   font-size: 14px;
   font-weight: 700;
 }
 .concept__formula span {
-  padding: 5px 10px;
+  padding: 4px 12px;
   border-radius: 6px;
   background: rgba(255, 255, 255, .14);
   border: 1px solid rgba(255, 255, 255, .35);
 }
-.concept__formula em { font-style: normal; color: var(--cyan); font-size: 15px; }
+.concept__formula em { font-style: normal; color: var(--cyan); font-size: 13px; opacity: .85; }
 .concept__body { text-align: center; font-size: 16px; line-height: 1.8; }
 
 .badge-row { display: flex; gap: 10px; }
@@ -961,7 +961,38 @@ a { color: inherit; }
   .section-eyebrow { font-size: 13px; }
   .reasons__kicker { font-size: 14.5px; padding: 10px 18px; }
   .section-title .big { font-size: 42px; }
-  .lc__body { padding: 32px var(--pad); }
+  .lc__body { padding: 40px var(--pad); }
+  /* ⚠️ PC では --ar をそのまま最小高さにしない。
+     参考LPは同じ高さでも「画像」なので余白がデザインとして成立しているが、
+     こちらは HTML テキストなので、見出しだけのブロックが 439px の**真っ白な帯**になる
+     （実測: lc-06 は中身 110px に対して枠 439px）。
+     係数を掛けて、中身の少ないブロックだけを詰める。
+     中身が多いブロックは min-height を下回らないので影響を受けない。 */
+  /* ⚠️ PC では --ar をそのまま最小高さにしない。
+     参考LPは全ブロックが「画像」なので余白もデザインとして成立しているが、
+     こちらは HTML テキストなので、そのまま当てると**真っ白な帯**が大量に出る
+     （実測: PC の自然高さ 14,162px に対し、枠を当てると 20,101px。
+      差の 6,000px がほぼ白場だった）。
+     ただし**背景画像を敷くブロックでは、その高さが写真そのもの**なので詰めない。
+     ここだけ係数を分ける。 */
+  .lc { min-height: calc(var(--ar, 0) * var(--col) * 0.72); }
+  .lc--dark, .lc--photo, .lc--cta {
+    min-height: calc(var(--ar, 0) * var(--col) * 0.95);
+  }
+  /* 人物添え・メッセージは PC だと本文が短くなる（カラムが広く行数が減る）ため、
+     参考LPの比率をそのまま当てると上半分が白く空く。実測して係数を下げた。 */
+  .lc--offer, .lc--message {
+    min-height: calc(var(--ar, 0) * var(--col) * 0.58);
+  }
+  /* 見出しだけのブロックは内容で高さを決める
+     （中身 110px に対して枠 439px になり、PC で最も目立つ欠点だった） */
+  .lc--head { min-height: 0; }
+  .lc--head .lc__body { padding: 52px var(--pad) 44px; }
+  .check-list li { font-size: 15.5px; padding: 14px 16px 14px 46px; }
+  .reason-card h3 { font-size: 20px; }
+  .reason-card p, .mech-card p { font-size: 15.5px; }
+  .mech-card { padding: 22px 24px; }
+  .mech-card__title { font-size: 18px; }
   .cta__lead { font-size: 18px; }
   .cta-button { font-size: 19px; min-height: 66px; }
   .cta-button--large { min-height: 74px; font-size: 20px; }

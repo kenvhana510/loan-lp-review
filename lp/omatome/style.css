@@ -559,11 +559,16 @@ a { color: inherit; }
       左側は白い幕でパネルの下地を作る（参考LPの同ブロックと同じ見え方）。 */
 .lc--offer { justify-content: center; }
 .lc__aside {
+  /* ⚠️ ブロック全高に cover させない。ブロックが高い節（case-gate は
+     参考LP比で h/w=2.01）では拡大率が3倍になり、人物が不自然に引き伸ばされる。
+     高さに上限を置いて下端に寄せ、拡大率を 1.1〜1.2 倍に留める。 */
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 0;
   width: 100%;
-  height: 100%;
+  height: min(100%, calc(var(--col) * 0.72));
   object-fit: cover;
   object-position: 82% center;
 }
@@ -577,6 +582,15 @@ a { color: inherit; }
     rgba(255,255,255,.55) 68%, rgba(255,255,255,.12) 88%, rgba(255,255,255,0) 100%);
 }
 .lc--offer .lc__body { padding-bottom: 20px; }
+/* ⚠️ 人物添えブロックの本文は**中央に置かない**。実測で人物の顔に重なった。
+   パネルと同じく左側に寄せて、右の人物と干渉しないようにする。 */
+.lc--offer .lc__close {
+  position: relative;
+  z-index: 2;
+  width: 68%;
+  margin-top: 0;
+  text-align: left;
+}
 
 .offer-panel {
   position: relative;
@@ -706,7 +720,7 @@ a { color: inherit; }
 }
 .case-gate__lock-icon { font-size: 26px; display: block; margin-bottom: 4px; }
 .case-gate__lock p { font-size: 12.5px; color: var(--text-mute); }
-.case-gate__reason { position: relative; z-index: 2; width: 78%; margin-top: 14px; font-size: 13.5px; line-height: 1.85; }
+.case-gate__reason { position: relative; z-index: 2; width: 70%; margin-top: 14px; font-size: 13.5px; line-height: 1.85; }
 
 /* =========================================================
    LC-27 〜 LC-31 — Voice（本番では除去される）
@@ -953,7 +967,8 @@ a { color: inherit; }
   .cta-button--large { min-height: 74px; font-size: 20px; }
   .pillars li { font-size: 14px; }
   .offer-panel { width: 64%; }
-  .case-gate__panel, .case-gate__reason { width: 68%; }
+  .case-gate__panel, .case-gate__reason { width: 66%; }
+  .lc--offer .lc__close { width: 58%; }
   .concept__formula { flex-direction: row; flex-wrap: nowrap; gap: 8px; font-size: 15px; }
   .sp-only { display: none; }
 }

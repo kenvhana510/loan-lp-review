@@ -32,6 +32,7 @@
   --radius:     10px;
   --shadow:     0 4px 16px rgba(15, 44, 82, 0.10);
   --sticky-h:   72px;
+  --pillar-size: min(96px, calc((100vw - 56px) / 3));
 
   /* カラム幅の正本。参考LPの .container { max-width: 700px } と同じ */
   --col-max:    700px;
@@ -92,6 +93,17 @@ a { color: inherit; }
   padding: 24px var(--pad);
 }
 .lc__body--bottom { margin-top: auto; }
+/* 写真ブロックは「上端に文だけ・下端に丸だけ」に分ける。
+   ⚠️ まとめて下端に置くと、実測で家族の顔の高さに重なった。
+      顔が入るのは概ね中央 50〜80% なので、そこには何も置かない。 */
+.lc--photo .lc__body--split {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 18px;
+  padding-bottom: 0;
+}
+.lc--photo .lc__body--split .hero__lead { margin-bottom: auto; }
 
 /* 背景画像（ブロック全面を覆う） */
 .lc__bg {
@@ -109,15 +121,28 @@ a { color: inherit; }
 .lc--cream { background: var(--cream); }
 .lc--navy  { background: var(--navy); color: #fff; }
 .lc--dark  { background: var(--navy-deep); color: #fff; }
-.lc--photo { background: var(--navy-deep); }
+.lc--photo {
+  background: var(--navy-deep);
+  /* 丸バッジを下のブロックへはみ出させるため、この節だけ切り取らない */
+  overflow: visible;
+  z-index: 3;
+}
+/* はみ出した分を下のブロックが受け止める */
+.lc--photo + * .lc:first-child,
+.concept > .lc:first-child { padding-top: calc(var(--pillar-size) / 2); }
 
 /* 写真の上に文字を置くブロックは、必ず暗幕を敷く
    （verify-visibility.mjs はピクセルでコントラストを見るため、
-     ここを省くと「見えているのに読めない」状態が検出される） */
+     ここを省くと「見えているのに読めない」状態が検出される）
+
+   ⚠️ **画像側の opacity を下げて暗くしない。** 地色と二重に掛かるため、
+      実測で写真の寄与が 19% まで落ち、写真を入れても紺一色に見えていた。
+      画像は不透明のまま出し、**暗幕は ::after の1枚だけ**で作る。
+      濃さを変えたら必ず node tests/verify-visibility.mjs を回すこと。 */
 .lc--dark .lc__bg,
 .lc--photo .lc__bg,
 .lc--cta .lc__bg,
-.lc--message .lc__bg { opacity: .78; }
+.lc--message .lc__bg { opacity: 1; }
 .lc--dark::after,
 .lc--photo::after,
 .lc--cta::after,
@@ -126,7 +151,20 @@ a { color: inherit; }
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(11,35,64,.66) 0%, rgba(11,35,64,.52) 55%, rgba(11,35,64,.74) 100%);
+  background: linear-gradient(180deg, rgba(11,35,64,.72) 0%, rgba(11,35,64,.60) 55%, rgba(11,35,64,.78) 100%);
+}
+/* Hero は「左に空・右に住宅」の構図。見出しを置く左側だけ濃くして、
+   右の住宅が見えるようにする（画像マニフェストの TEXT_SAFE_AREA と対応） */
+.lc--dark::after {
+  background:
+    linear-gradient(100deg, rgba(11,35,64,.92) 0%, rgba(11,35,64,.80) 42%, rgba(11,35,64,.42) 78%, rgba(11,35,64,.34) 100%),
+    linear-gradient(180deg, rgba(11,35,64,.30) 0%, rgba(11,35,64,.12) 40%, rgba(11,35,64,.42) 100%);
+}
+/* 家族の写真は顔が主役。文字を置く帯だけ暗くして、顔の高さは明るく保つ */
+.lc--photo::after {
+  background: linear-gradient(180deg,
+    rgba(11,35,64,.82) 0%, rgba(11,35,64,.66) 18%, rgba(11,35,64,.24) 36%,
+    rgba(11,35,64,.08) 52%, rgba(11,35,64,.10) 78%, rgba(11,35,64,.34) 100%);
 }
 .lc--message::after {
   background: linear-gradient(180deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.92) 62%, rgba(255,255,255,.78) 100%);
@@ -220,7 +258,7 @@ a { color: inherit; }
   font-weight: 700;
 }
 .hero__title {
-  font-size: 30px;
+  font-size: 26px;
   line-height: 1.4;
   font-weight: 800;
   letter-spacing: 0.01em;
@@ -253,15 +291,20 @@ a { color: inherit; }
 .trust-badges__num { display: block; font-size: 9px; opacity: .85; word-break: break-all; }
 
 /* 3本柱バッジ（参考LPの丸バッジ3つと同じ位置） */
+/* ⚠️ **ブロックの内側に収めない。** 収めると丸が写真の顔の高さに来て、
+   実測で家族の顔を隠した。参考LPと同じく「FVの下端にかかる」位置にするため、
+   下のブロックへはみ出させる（.lc--photo だけ overflow を開ける）。 */
 .pillars {
   display: flex;
   gap: 8px;
   justify-content: center;
+  position: relative;
+  z-index: 3;
+  margin-bottom: calc(var(--pillar-size) / -2);
 }
 .pillars li {
   flex: 0 0 auto;
-  width: calc((var(--col) - var(--pad) * 2 - 16px) / 3);
-  max-width: 132px;
+  width: var(--pillar-size);
   aspect-ratio: 1 / 1;
   display: flex;
   flex-direction: column;
@@ -421,12 +464,13 @@ a { color: inherit; }
    LC-08 / LC-09 — Hope
    ========================================================= */
 .lc--illust-bottom { justify-content: flex-start; }
+/* ⚠️ 中央に小さく置かない。イラスト自身が地色を持っているため、
+   余白付きで置くと「貼り付けた四角」に見える。左右いっぱいに敷いて、
+   イラストの地色をそのままブロックの帯にする。 */
 .lc__illust {
   position: relative;
   z-index: 2;
-  width: 82%;
-  max-width: 420px;
-  margin: 0 auto;
+  width: 100%;
   margin-top: auto;
 }
 .hope__text {
@@ -509,23 +553,35 @@ a { color: inherit; }
 .band__text { text-align: center; font-size: 16px; line-height: 1.8; }
 .band__text strong { font-size: 18px; }
 
-/* オファー/人物添えブロック（右に人物・左にパネル） */
-.lc--offer { justify-content: flex-end; }
+/* オファー/人物添えブロック（右に人物・左にパネル）
+   ⚠️ 人物を小さく右下に置くと、実測でパネルに顔が隠れて切れた。
+      画像はブロック全面に敷き、**右端に人物が来るよう object-position で寄せる**。
+      左側は白い幕でパネルの下地を作る（参考LPの同ブロックと同じ見え方）。 */
+.lc--offer { justify-content: center; }
 .lc__aside {
   position: absolute;
-  right: 0;
-  bottom: 0;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 82% center;
+}
+.lc--offer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   z-index: 1;
-  width: 52%;
-  max-width: 320px;
-  opacity: .9;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,.95) 0%, rgba(255,255,255,.92) 44%,
+    rgba(255,255,255,.55) 68%, rgba(255,255,255,.12) 88%, rgba(255,255,255,0) 100%);
 }
 .lc--offer .lc__body { padding-bottom: 20px; }
 
 .offer-panel {
   position: relative;
   z-index: 2;
-  width: 84%;
+  width: 74%;
   padding: 16px;
   border: 2px solid var(--navy);
   border-radius: 10px;
@@ -617,6 +673,7 @@ a { color: inherit; }
 .case-gate__panel {
   position: relative;
   z-index: 2;
+  width: 78%;
   padding: 16px;
   border: 2px solid var(--navy);
   border-radius: 10px;
@@ -649,7 +706,7 @@ a { color: inherit; }
 }
 .case-gate__lock-icon { font-size: 26px; display: block; margin-bottom: 4px; }
 .case-gate__lock p { font-size: 12.5px; color: var(--text-mute); }
-.case-gate__reason { margin-top: 14px; font-size: 13.5px; line-height: 1.85; }
+.case-gate__reason { position: relative; z-index: 2; width: 78%; margin-top: 14px; font-size: 13.5px; line-height: 1.85; }
 
 /* =========================================================
    LC-27 〜 LC-31 — Voice（本番では除去される）
@@ -861,7 +918,7 @@ a { color: inherit; }
    ========================================================= */
 @media (min-width: 390px) {
   body { font-size: 15.5px; }
-  .hero__title { font-size: 32px; }
+  .hero__title { font-size: 28px; }
 }
 
 @media (max-width: 374px) {
@@ -876,7 +933,7 @@ a { color: inherit; }
 /* 参考LPは 700px 以上でカラム幅が固定される。
    ここから先はレイアウトを変えず、**カラムを中央に置くだけ**にする。 */
 @media (min-width: 750px) {
-  :root { --pad: 32px; }
+  :root { --pad: 32px; --pillar-size: 128px; }
   body { font-size: 16px; padding-bottom: 0; }
   #lc { box-shadow: 0 0 40px rgba(15, 44, 82, .10); }
   /* Sticky CTA は PC では出さない */
@@ -884,12 +941,19 @@ a { color: inherit; }
   /* ⚠️ ここを大きくしすぎない。「」の字形は左右の余白が広く、
      40px 近辺で行内の空白が可視性検査の許容（30px）を超える。実測 38px で 31px。 */
   .hero__title { font-size: 34px; }
-  .section-title { font-size: 27px; }
+  /* 見出しだけのブロックは参考LPと同じ高さを保つので、PC では字を大きくして
+     間延びして見えないようにする（高さを削ると縦のリズムが崩れる） */
+  .section-title { font-size: 30px; }
+  .section-eyebrow { font-size: 13px; }
+  .reasons__kicker { font-size: 14.5px; padding: 10px 18px; }
+  .section-title .big { font-size: 42px; }
   .lc__body { padding: 32px var(--pad); }
   .cta__lead { font-size: 18px; }
   .cta-button { font-size: 19px; min-height: 66px; }
   .cta-button--large { min-height: 74px; font-size: 20px; }
-  .pillars li { max-width: 150px; font-size: 14px; }
+  .pillars li { font-size: 14px; }
+  .offer-panel { width: 64%; }
+  .case-gate__panel, .case-gate__reason { width: 68%; }
   .concept__formula { flex-direction: row; flex-wrap: nowrap; gap: 8px; font-size: 15px; }
   .sp-only { display: none; }
 }

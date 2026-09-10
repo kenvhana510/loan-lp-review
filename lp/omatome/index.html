@@ -7,412 +7,613 @@
 <meta name="robots" content="noindex, nofollow"><!-- LP_READY_FOR_REVIEW のため検索避け。公開時に削除 -->
 <link rel="stylesheet" href="style.css">
 <script src="config.js"></script>
-<style>#review-banner{position:sticky;top:0;z-index:9999;background:#1f2a37;color:#fff;padding:12px 16px;font-size:14px;line-height:1.6;text-align:center}#review-banner a{color:#ffd479}#review-notice{max-width:720px;margin:48px auto;padding:24px;border:2px solid #1f2a37;border-radius:8px;background:#f7f9fc}#review-notice h2{margin:0 0 12px;font-size:18px}#review-notice p{margin:0 0 8px;font-size:14px;line-height:1.8;color:#333}</style>
+<style>#review-banner{position:sticky;top:0;z-index:9999;background:#8c1d1d;color:#fff;padding:12px 16px;font-size:13.5px;line-height:1.65;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.25)}#review-banner a{color:#ffd479}#review-notice{max-width:700px;margin:0 auto;padding:28px 20px 36px;border-top:4px solid #c0392b;background:#fdf1f0}#review-notice h2{position:relative;margin:0 0 14px;padding-left:38px;font-size:19px;line-height:1.5;color:#8c1d1d}#review-notice h2::before{content:"!";position:absolute;left:0;top:50%;width:28px;height:28px;margin-top:-14px;border-radius:50%;background:#c0392b;color:#fff;font-size:18px;line-height:28px;text-align:center;font-weight:700}#review-notice p{margin:0 0 10px;font-size:14px;line-height:1.9;color:#3a2222}@media (min-width:750px){#review-notice{padding:36px 32px 44px}#review-notice h2{font-size:22px}}</style>
 </head>
 <body>
 <div id="review-banner" role="status"><strong>広告掲載前の確認中です。</strong> 現在このページは掲載内容の確認のために公開しており、<a href="#review-notice">ご相談の受付を停止しています</a>。</div>
 
-<!-- ===== SECTION 01 — First View ===== -->
+<!--
+  縦1カラムのブロック積み上げ構成。
+  各ブロックの id="lc-NN" と style="--ar:..." は docs/ 配下の参考LP対応表 の
+  REF-NN に1対1で対応する。--ar は参考LPの実測アスペクト比（h/w）で、
+  ブロックの最小高さを決める＝**縦のリズムを一致させる**ためにある。
+  幅の正本は --col（最大 700px）。
+-->
+<div id="lc">
+
+<!-- ============ LC-01 / LC-02 : First View ============ -->
 <header class="hero">
-  <div class="hero__inner">
-    
 
-    <h1 class="hero__title">
-      「まだ先」と思っていた<br>
-      <span class="accent">マイホーム</span>を、<br>
-      現実の計画にする。
-    </h1>
+  <!-- LC-01 — キャッチ。参考LPは画像に焼き込んでいるが、こちらは HTML テキストで出す -->
+  <section class="lc lc--dark lc--hero-top" id="lc-01" style="--ar:.5011">
+    <img class="lc__bg" src="../../assets/lp/lc-01-hero.webp" width="1400" height="700" alt="" fetchpriority="high" decoding="async">
+    <div class="lc__body">
+      
+      <h1 class="hero__title">
+        「まだ先」と思っていた<br>
+        <span class="accent">マイホーム</span>を、<br>
+        現実の計画にする。
+      </h1>
+      <!-- 信用訴求枠: 数字・事実は claims-register.md で PENDING のため本番非表示 -->
+      
+    </div>
+  </section>
 
-    <p class="hero__lead">
-      毎月の返済の見直しと、これからの資金の準備。<br>
-      そして、資産になる住まいの取得。<br>
-      <strong>住宅ローンを活用して、ひとつの計画として考えます。</strong>
-    </p>
-
-    <!-- 信用訴求枠: 数字・事実は claims-register.md で PENDING のため本番非表示 -->
-    
-
-    <ul class="hero__keywords">
-      <li>住宅ローン</li><li>支払い整理</li><li>返済見直し</li>
-      <li>資金準備</li><li>マイホーム</li><li>資産形成</li>
-    </ul>
-  </div>
+  <!-- LC-02 — 家族と住まいのビジュアル＋3本柱バッジ（参考LPの3バッジ位置に合わせる） -->
+  <section class="lc lc--photo" id="lc-02" style="--ar:.676">
+    <img class="lc__bg" src="../../assets/lp/lc-02-family-home.webp" width="1400" height="946" alt="住まいと暮らしのイメージ" fetchpriority="high" decoding="async">
+    <div class="lc__body lc__body--bottom">
+      <p class="hero__lead">
+        毎月の返済の見直しと、これからの資金の準備。<br>
+        そして、資産になる住まいの取得。
+      </p>
+      <ul class="pillars">
+        <li><span class="pillars__n" aria-hidden="true">01</span>支払いの<br>見直し</li>
+        <li><span class="pillars__n" aria-hidden="true">02</span>資金の<br>準備</li>
+        <li><span class="pillars__n" aria-hidden="true">03</span>住まいの<br>取得</li>
+      </ul>
+    </div>
+  </section>
 </header>
 
-<!-- ===== SECTION 02 — Concept ===== -->
-<section class="concept">
-  <div class="inner">
-    <p class="section-eyebrow">CONCEPT</p>
-    <div class="concept__formula">
-      <span>返済の見直し</span>
-      <em>×</em>
-      <span>資金の準備</span>
-      <em>×</em>
-      <span>資産になる住まい</span>
-    </div>
-    <p class="concept__body">
-      これらを別々の問題として考えるのではなく、<br>
-      <strong>住宅ローンを活用して、ひとつの計画として考える。</strong>
-    </p>
-  </div>
-</section>
+<!-- ============ LC-03 / LC-04 : Concept ============ -->
+<div class="concept">
 
-<!-- ===== SECTION 03 — First CTA ===== -->
-<section class="cta-band">
-  <div class="inner">
-    <p class="cta-band__text">
+  <!-- LC-03 — コンセプトの式（参考LPの同位置と同じ役割） -->
+  <section class="lc lc--navy" id="lc-03" style="--ar:.3667">
+    <div class="lc__body">
+      <div class="concept__formula">
+        <span>返済の見直し</span><em>×</em><span>資金の準備</span><em>×</em><span>資産になる住まい</span>
+      </div>
+      <p class="concept__body">
+        <strong>住宅ローンを活用して、ひとつの計画として考えます。</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- LC-04 — 参考LPはここに実績バッジと料金の断定を置いている。
+       どちらも裏付けが無いため、pending 枠に置き換える（本番では枠ごと消える） -->
+  <section class="lc" id="lc-04" style="--ar:.3013">
+    <div class="lc__body">
+      
+      <p class="lc__note">
+        確認の取れた事項のみを掲載しています。
+      </p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ LC-05 : CTA 1 ============ -->
+<section class="lc lc--cta" id="lc-05" style="--ar:.6667">
+  <img class="lc__bg" src="../../assets/lp/lc-cta-bg.webp" width="1400" height="933" alt="" loading="lazy" decoding="async">
+  <div class="lc__body">
+    <p class="cta__lead">
       今の支払いを整理しながら、<br>
-      資産になるマイホームについて無料でご相談いただけます。
+      資産になるマイホームについて<br class="sp-only">無料でご相談いただけます。
     </p>
     <a class="cta-button" href="#review-notice" data-cta-type="line" data-cta-position="fv" data-cta-id="line_fv">
       <span class="cta-button__icon" aria-hidden="true">LINE</span>
       まずはLINEで無料相談
     </a>
-    <p class="cta-band__note">相談だけでもかまいません</p>
+    <p class="cta__note">相談だけでもかまいません</p>
   </div>
 </section>
 
-<!-- ===== SECTION 04 — Problem Awareness ===== -->
-<section class="problem">
-  <div class="inner">
-    <p class="section-eyebrow">WORRY</p>
-    <h2 class="section-title">こんなご相談をいただいています</h2>
-    <ul class="problem__list">
-      <li>毎月の返済を、いちど整理したい</li>
-      <li>家計にもう少し余裕をつくりたい</li>
-      <li>家賃を払い続けるより、家を持ちたい</li>
-      <li>住まいの取得に向けて、資金計画を相談したい</li>
-      <li>複数の支払いを、住宅ローンと一緒に検討したい</li>
-      <li>教育費や生活費まで含めて、将来設計を考えたい</li>
-      <li>子どもの成長に合わせて、住環境を整えたい</li>
-    </ul>
-    <p class="problem__close">
-      ひとつでも当てはまるなら、<br>整理できる余地があるかもしれません。
-    </p>
-  </div>
-</section>
+<!-- ============ LC-06 / LC-07 : Problem ============ -->
+<div class="problem">
 
-<!-- ===== SECTION 05 — Hope / Choice ===== -->
-<section class="hope">
-  <div class="inner">
-    <p class="hope__text">
-      住まいを<br class="sp-only">あきらめたくない方にも、<br>
-      <strong class="accent">選択肢があります。</strong>
-    </p>
-    <p class="hope__sub">
-      「今は無理だ」と思っていた条件が、
-      計画の立て方によって変わる場合があります。
-    </p>
-  </div>
-</section>
+  <!-- LC-06 — 見出し -->
+  <section class="lc" id="lc-06" style="--ar:.6267">
+    <div class="lc__body">
+      <p class="section-eyebrow">WORRY ABOUT</p>
+      <h2 class="section-title">こんなご相談を<br class="sp-only">いただいています</h2>
+    </div>
+  </section>
 
-<!-- ===== SECTION 06 — Mini Case Story ===== -->
-<section class="story">
-  <div class="inner">
-    <p class="section-eyebrow">STORY</p>
-    <h2 class="section-title">ご相談イメージ</h2>
-    <p class="story__disclaimer">
-      ※ご相談の流れをイメージしていただくための例です。実在の個人の事例ではありません。
-    </p>
+  <!-- LC-07 — チェックリスト7項目（参考LPも7項目） -->
+  <section class="lc" id="lc-07" style="--ar:1.396">
+    <div class="lc__body">
+      <ul class="check-list">
+        <li>毎月の返済を、いちど整理したい</li>
+        <li>家計にもう少し余裕をつくりたい</li>
+        <li>家賃を払い続けるより、家を持ちたい</li>
+        <li>住まいの取得に向けて、資金計画を相談したい</li>
+        <li>複数の支払いを、住宅ローンと一緒に検討したい</li>
+        <li>教育費や生活費まで含めて、将来設計を考えたい</li>
+        <li>子どもの成長に合わせて、住環境を整えたい</li>
+      </ul>
+      <p class="lc__close">
+        ひとつでも当てはまるなら、<br>整理できる余地があるかもしれません。
+      </p>
+    </div>
+  </section>
+</div>
 
-    <ol class="story__steps">
-      <li>
-        <span class="story__step-label">はじまり</span>
-        <p>「マイホームはまだ先」と思っていた</p>
-      </li>
-      <li>
-        <span class="story__step-label">LINEで相談</span>
-        <p>今の支払い状況と、住まいの希望を伝える</p>
-      </li>
-      <li>
-        <span class="story__step-label">支払いの見直し</span>
-        <p>毎月の支払いの内訳を、ひとつずつ整理する</p>
-      </li>
-      <li>
-        <span class="story__step-label">資金の準備</span>
-        <p>取得に向けて、必要な資金の見通しを立てる</p>
-      </li>
-      <li>
-        <span class="story__step-label">住まいの取得</span>
-        <p>条件に合う住まいの取得を検討する</p>
-      </li>
-      <li class="story__steps-goal">
-        <span class="story__step-label">計画が形になる</span>
-        <p>「まだ先」だった住まいの計画が、具体的な形になる</p>
-      </li>
-    </ol>
-  </div>
-</section>
+<!-- ============ LC-08 / LC-09 : Hope ============ -->
+<div class="hope">
 
-<!-- ===== SECTION 06(b) — CTA ===== -->
-<section class="cta-band cta-band--soft">
-  <div class="inner">
-    <p class="cta-band__text">
+  <!-- LC-08 — 「選択肢があります」＋イラスト -->
+  <section class="lc lc--soft lc--illust-bottom" id="lc-08" style="--ar:.9773">
+    <div class="lc__body">
+      <p class="hope__text">
+        住まいを<br class="sp-only">あきらめたくない方にも、<br>
+        <strong class="accent">選択肢があります。</strong>
+      </p>
+    </div>
+    <img class="lc__illust" src="../../assets/lp/lc-08-choice.webp" width="1200" height="1000" alt="ご相談のイメージ" loading="lazy" decoding="async">
+  </section>
+
+  <!-- LC-09 — 濃紺の帯 -->
+  <section class="lc lc--navy" id="lc-09" style="--ar:.34">
+    <div class="lc__body">
+      <p class="hope__sub">
+        「今は無理だ」と思っていた条件が、<br>
+        計画の立て方によって変わる場合があります。
+      </p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ LC-10 / LC-11 / LC-12 : Story ============ -->
+<div class="story">
+
+  <!-- LC-10 — ご相談からの一例（前半） -->
+  <section class="lc" id="lc-10" style="--ar:.8933">
+    <div class="lc__body">
+      <p class="section-eyebrow">STORY</p>
+      <h2 class="section-title">ご相談イメージ</h2>
+      <p class="story__disclaimer">
+        ※ご相談の流れをイメージしていただくための例です。実在の個人の事例ではありません。
+      </p>
+      <figure class="story__figure">
+        <img src="../../assets/lp/lc-10-story-before.webp" width="1000" height="1000" alt="スマートフォンで相談を検討している様子のイラスト" loading="lazy" decoding="async">
+      </figure>
+      <ol class="story__steps">
+        <li><span class="story__step-label">はじまり</span><p>「マイホームはまだ先」と思っていた</p></li>
+        <li><span class="story__step-label">LINEで相談</span><p>今の支払い状況と、住まいの希望を伝える</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- LC-11 — ご相談からの一例（後半） -->
+  <section class="lc lc--soft" id="lc-11" style="--ar:.8533">
+    <div class="lc__body">
+      <figure class="story__figure">
+        <img src="../../assets/lp/lc-11-story-after.webp" width="1000" height="1000" alt="住まいの計画が形になった様子のイラスト" loading="lazy" decoding="async">
+      </figure>
+      <ol class="story__steps" start="3">
+        <li><span class="story__step-label">支払いの見直し</span><p>毎月の支払いの内訳を、ひとつずつ整理する</p></li>
+        <li><span class="story__step-label">資金の準備</span><p>取得に向けて、必要な資金の見通しを立てる</p></li>
+        <li><span class="story__step-label">住まいの取得</span><p>条件に合う住まいの取得を検討する</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- LC-12 — 3タグ＋ゴール -->
+  <section class="lc" id="lc-12" style="--ar:.304">
+    <div class="lc__body">
+      <ul class="tag-row">
+        <li>支払いの見直し</li><li>資金の準備</li><li>住まいの取得</li>
+      </ul>
+      <p class="story__goal">を進め、住まいの計画がかたちになりました。</p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ LC-13 / LC-14 / LC-15 : Mechanism ============ -->
+<div class="mechanism">
+
+  <!-- LC-13 — 住宅ローンを活用してできること 01-03 -->
+  <section class="lc lc--cream" id="lc-13" style="--ar:1.5267">
+    <div class="lc__body">
+      <p class="section-eyebrow">MECHANISM</p>
+      <h2 class="section-title">住宅ローンを<br class="sp-only">活用してできること</h2>
+      <figure class="mech__figure">
+        <img src="../../assets/lp/lc-13-mechanism.webp" width="1000" height="1000" alt="住まいの計画をご案内するイメージのイラスト" loading="lazy" decoding="async">
+      </figure>
+      <div class="mech-card">
+        <span class="mech-card__num">01</span>
+        <h3 class="mech-card__title">家計全体を見直せる可能性</h3>
+        <p>いま別々になっている複数の支払いを整理することで、家計全体を見直せる<strong>可能性があります</strong>。どこまで整理できるかは、お客様ごとの状況によります。</p>
+      </div>
+      <div class="mech-card">
+        <span class="mech-card__num">02</span>
+        <h3 class="mech-card__title">収入だけで判断しない取得計画</h3>
+        <p>現在の収入だけでなく、将来の計画や物件の価値も含めて住宅取得の計画を<strong>検討できる場合があります</strong>。</p>
+      </div>
+      <div class="mech-card">
+        <span class="mech-card__num">03</span>
+        <h3 class="mech-card__title">資金状況に合わせたプラン設計</h3>
+        <p>頭金・希望借入額・返済期間など、個々の資金状況に合わせて取得プランを設計します。<strong>状況に応じて</strong>、無理のない範囲をご一緒に確認します。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LC-14 — 濃紺の締め帯 -->
+  <section class="lc lc--navy" id="lc-14" style="--ar:.4627">
+    <div class="lc__body">
+      <p class="band__text">
+        複数のお支払いも住まいの計画も<br>
+        <strong>住宅ローンを活用して<br class="sp-only">ひとつの仕組みで検討できます</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- LC-15 — 参考LPはここに料金と費用の断定、実績バッジを置いている。
+       いずれも転記できないため、相談で確認できることの説明に置き換える -->
+  <section class="lc lc--offer" id="lc-15" style="--ar:1.0347">
+    <img class="lc__aside" src="../../assets/lp/lc-15-offer.webp" width="1200" height="800" alt="ご相談を承る担当者のイメージ" loading="lazy" decoding="async">
+    <div class="lc__body">
+      <div class="offer-panel">
+        <p class="offer-panel__head">ご相談で確認できること</p>
+        <ul class="offer-panel__list">
+          <li>いまのお支払いの状況の整理</li>
+          <li>住まいの取得に向けた資金の見通し</li>
+          <li>ご一緒に検討できる範囲のご案内</li>
+        </ul>
+        <p class="offer-panel__note">
+          ご相談の結果を保証するものではありません。
+          ご利用の可否や条件は、お客様ごとの状況および金融機関の判断によります。
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ LC-16 : CTA 2 ============ -->
+<section class="lc lc--cta" id="lc-16" style="--ar:.708">
+  <img class="lc__bg" src="../../assets/lp/lc-cta-bg.webp" width="1400" height="933" alt="" loading="lazy" decoding="async">
+  <div class="lc__body">
+    <p class="cta__lead">
       あなたの場合はどうなるか、<br>個別にご案内します。
     </p>
     <a class="cta-button" href="#review-notice" data-cta-type="line" data-cta-position="problem" data-cta-id="line_problem">
       <span class="cta-button__icon" aria-hidden="true">LINE</span>
       LINEで無料相談する
     </a>
+    <p class="cta__note">相談だけでもかまいません</p>
   </div>
 </section>
 
-<!-- ===== SECTION 07 — Mechanism Explanation ===== -->
-<section class="mechanism">
-  <div class="inner">
-    <p class="section-eyebrow">MECHANISM</p>
-    <h2 class="section-title">住宅ローンを活用してできること</h2>
+<!-- ============ LC-17 〜 LC-22 : Reasons ============ -->
+<div class="reasons">
 
-    <div class="mech-card">
-      <span class="mech-card__num">01</span>
-      <h3 class="mech-card__title">家計全体を見直せる可能性</h3>
-      <p>
-        いま別々になっている複数の支払いを整理することで、
-        家計全体を見直せる<strong>可能性があります</strong>。
-        どこまで整理できるかは、お客様ごとの状況によります。
-      </p>
+  <!-- LC-17 — 見出し -->
+  <section class="lc" id="lc-17" style="--ar:.7533">
+    <div class="lc__body">
+      <p class="section-eyebrow">REASON</p>
+      <p class="reasons__kicker">住宅ローンを活用して、返済の見直しと住まいの取得をひとつにする仕組みです</p>
+      <h2 class="section-title">選ばれる<span class="big">4</span>つの理由</h2>
     </div>
+  </section>
 
-    <div class="mech-card">
-      <span class="mech-card__num">02</span>
-      <h3 class="mech-card__title">収入だけで判断しない取得計画</h3>
-      <p>
-        現在の収入だけでなく、将来の計画や物件の価値も含めて
-        住宅取得の計画を<strong>検討できる場合があります</strong>。
-      </p>
-    </div>
-
-    <div class="mech-card">
-      <span class="mech-card__num">03</span>
-      <h3 class="mech-card__title">資金状況に合わせたプラン設計</h3>
-      <p>
-        頭金・希望借入額・返済期間など、
-        個々の資金状況に合わせて取得プランを設計します。
-        <strong>状況に応じて</strong>、無理のない範囲をご一緒に確認します。
-      </p>
-    </div>
-
-    <p class="disclaimer-box">
-      ご相談の結果を保証するものではありません。
-      ご利用の可否や条件は、お客様ごとの状況および金融機関の判断によります。
-    </p>
-  </div>
-</section>
-
-<!-- ===== SECTION 08 — CTA ===== -->
-<section class="cta-band">
-  <div class="inner">
-    <p class="cta-band__text">
-      ご自身の状況で何ができるかは、<br>お聞きしてみないと分かりません。
-    </p>
-    <a class="cta-button" href="#review-notice" data-cta-type="line" data-cta-position="mechanism" data-cta-id="line_mechanism">
-      <span class="cta-button__icon" aria-hidden="true">LINE</span>
-      LINEで無料相談する
-    </a>
-    <p class="cta-band__note">相談だけでもかまいません</p>
-  </div>
-</section>
-
-<!-- ===== SECTION 09 — 4 Reasons ===== -->
-<section class="reasons">
-  <div class="inner">
-    <p class="section-eyebrow">REASON</p>
-    <h2 class="section-title">選ばれる4つの理由</h2>
-
-    <div class="reason-card">
-      <span class="reason-card__num">REASON 01</span>
+  <!-- LC-18 — 理由01 -->
+  <section class="lc" id="lc-18" style="--ar:1.3307">
+    <div class="lc__body reason-card">
+      <span class="reason-card__num" aria-hidden="true">理由<b>01</b></span>
       <h3>返済・資金・住まいを、ひとつの仕組みで考える</h3>
-      <p>
-        返済の見直し、資金の準備、住まいの取得。
-        本来つながっているこの3つを、切り離さずにひとつの計画として考えます。
-      </p>
+      <figure class="reason-card__media">
+        <img src="../../assets/lp/lc-18-reason01.webp" width="1200" height="720" alt="住まいの資料と家の模型が並んだ机" loading="lazy" decoding="async">
+      </figure>
+      <p>返済の見直し、資金の準備、住まいの取得。本来つながっているこの3つを、切り離さずにひとつの計画として考えます。</p>
     </div>
+  </section>
 
-    <div class="reason-card">
-      <span class="reason-card__num">REASON 02</span>
+  <!-- LC-19 — 理由02 -->
+  <section class="lc lc--soft" id="lc-19" style="--ar:1.7187">
+    <div class="lc__body reason-card">
+      <span class="reason-card__num" aria-hidden="true">理由<b>02</b></span>
       <h3>取得したあとも続く、長期のサポート</h3>
-      <p>
-        住まいの取得は終わりではなく始まりです。
-        取得後の暮らしと家計まで見据えてご相談を承ります。
-      </p>
+      <figure class="reason-card__media">
+        <img src="../../assets/lp/lc-19-reason02.webp" width="1200" height="720" alt="ダイニングで担当者と相談している様子" loading="lazy" decoding="async">
+      </figure>
+      <p>住まいの取得は終わりではなく始まりです。取得後の暮らしと家計まで見据えてご相談を承ります。</p>
+      <ul class="check-list check-list--compact">
+        <li>取得後の暮らしと家計まで見据えたご相談</li>
+        <li>ご希望に合わせて、進め方をご一緒に確認</li>
+      </ul>
     </div>
+  </section>
 
-    <div class="reason-card">
-      <span class="reason-card__num">REASON 03</span>
+  <!-- LC-20 — 理由03。参考LPは「経験と実績に裏打ちされた対応力」だが、裏付けが無いため置換 -->
+  <section class="lc" id="lc-20" style="--ar:1.4893">
+    <div class="lc__body reason-card">
+      <span class="reason-card__num" aria-hidden="true">理由<b>03</b></span>
       <h3>一人ひとりの状況に合わせたご案内</h3>
+      <figure class="reason-card__media">
+        <img src="../../assets/lp/lc-20-reason03.webp" width="1200" height="720" alt="間取り図を指しながら説明している手元" loading="lazy" decoding="async">
+      </figure>
       
-      <p>
-        ご状況を丁寧にお聞きしたうえで、
-        適切なご案内先へおつなぎします。
-      </p>
+      <p>ご状況を丁寧にお聞きしたうえで、適切なご案内先へおつなぎします。</p>
     </div>
+  </section>
 
-    <div class="reason-card">
-      <span class="reason-card__num">REASON 04</span>
+  <!-- LC-21 — 理由04 -->
+  <section class="lc lc--soft" id="lc-21" style="--ar:1.6333">
+    <div class="lc__body reason-card">
+      <span class="reason-card__num" aria-hidden="true">理由<b>04</b></span>
       <h3>住宅ローンと一緒に検討できる各種の支払い</h3>
-      <p>
-        いま別々にお支払いのものについても、
-        住宅ローンと一緒に<strong>検討できる場合があります</strong>。
-        対象になるかどうかは、個別にご確認ください。
+      <figure class="reason-card__media">
+        <img src="../../assets/lp/lc-21-reason04.webp" width="1200" height="720" alt="木製の家の模型が並んだ様子" loading="lazy" decoding="async">
+      </figure>
+      <p>いま別々にお支払いのものについても、住宅ローンと一緒に<strong>検討できる場合があります</strong>。対象になるかどうかは、個別にご確認ください。</p>
+    </div>
+  </section>
+
+  <!-- LC-22 — 締め＋担当者 -->
+  <section class="lc lc--offer" id="lc-22" style="--ar:.756">
+    <img class="lc__aside" src="../../assets/lp/lc-22-closing.webp" width="1200" height="800" alt="ご相談を承る担当者のイメージ" loading="lazy" decoding="async">
+    <div class="lc__body">
+      <p class="lc__close">
+        あてはまるか分からない、<br class="sp-only">という状態でも大丈夫です。<br>
+        <strong>まずはお気軽にご相談ください。</strong>
       </p>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
-<!-- ===== SECTION 10 — CTA ===== -->
-<section class="cta-band cta-band--soft">
-  <div class="inner">
-    <p class="cta-band__text">
-      あてはまるか分からない、という状態でも大丈夫です。
+<!-- ============ LC-23 : CTA 3 ============ -->
+<section class="lc lc--cta" id="lc-23" style="--ar:.6707">
+  <img class="lc__bg" src="../../assets/lp/lc-cta-bg.webp" width="1400" height="933" alt="" loading="lazy" decoding="async">
+  <div class="lc__body">
+    <p class="cta__lead">
+      ご自身の状況で何ができるかは、<br>お聞きしてみないと分かりません。
     </p>
     <a class="cta-button" href="#review-notice" data-cta-type="line" data-cta-position="reason" data-cta-id="line_reason">
       <span class="cta-button__icon" aria-hidden="true">LINE</span>
       LINEで無料相談する
     </a>
+    <p class="cta__note">相談だけでもかまいません</p>
   </div>
 </section>
 
-<!-- ===== SECTION 11 — Case Study Gating（Lead Magnet） ===== -->
-<section class="case-gate">
-  <div class="inner">
-    <p class="section-eyebrow">CASE</p>
-    <h2 class="section-title">ご相談事例をご覧いただけます</h2>
+<!-- ============ LC-24 / LC-25 : Case Study Gating ============ -->
+<div class="case-gate">
 
-    <div class="case-gate__panel">
-      <ul class="case-gate__teaser">
-        <li>複数のお支払いがある状態からのご相談</li>
-        <li>雇用形態が気になっている方のご相談</li>
-        <li>頭金をあまり用意できていない場合のご相談</li>
-        <li>過去の返済状況が気になっている方のご相談</li>
-      </ul>
-      <div class="case-gate__lock" aria-hidden="true">
-        <span class="case-gate__lock-icon">🔒</span>
-        <p>くわしい内容はLINEにてご案内しています</p>
-      </div>
+  <!-- LC-24 — 見出し -->
+  <section class="lc" id="lc-24" style="--ar:.6013">
+    <div class="lc__body">
+      <p class="section-eyebrow">CASE STUDY</p>
+      <h2 class="section-title">ご相談事例を<br class="sp-only">ご覧いただけます</h2>
+      <p class="lc__note">ご相談事例はLINE登録後にご案内しています</p>
     </div>
+  </section>
 
-    <p class="case-gate__reason">
-      個別の事情に踏み込んだ内容のため、
-      公開ページではなくLINEでご案内しています。<br>
-      <strong>ご自身に近いケースを確認したうえで</strong>、ご相談いただけます。
+  <!-- LC-25 — ゲーティングパネル -->
+  <section class="lc lc--offer" id="lc-25" style="--ar:2.0107">
+    <img class="lc__aside" src="../../assets/lp/lc-25-case.webp" width="1200" height="800" alt="ご案内する担当者のイメージ" loading="lazy" decoding="async">
+    <div class="lc__body">
+      <div class="case-gate__panel">
+        <p class="case-gate__badge">LINEでご案内中</p>
+        <ul class="case-gate__teaser">
+          <li>複数のお支払いがある状態からのご相談</li>
+          <li>雇用形態が気になっている方のご相談</li>
+          <li>頭金をあまり用意できていない場合のご相談</li>
+          <li>過去の返済状況が気になっている方のご相談</li>
+        </ul>
+        <div class="case-gate__lock" aria-hidden="true">
+          <span class="case-gate__lock-icon">🔒</span>
+          <p>くわしい内容はLINEにてご案内しています</p>
+        </div>
+      </div>
+      <p class="case-gate__reason">
+        個別の事情に踏み込んだ内容のため、公開ページではなくLINEでご案内しています。<br>
+        <strong>ご自身に近いケースを確認したうえで</strong>、ご相談いただけます。
+      </p>
+      <p class="lc__note">※ 掲載する事例は、実在確認が取れたもののみです。</p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ LC-26 : CTA 4 ============ -->
+<section class="lc lc--cta" id="lc-26" style="--ar:.6707">
+  <img class="lc__bg" src="../../assets/lp/lc-cta-bg.webp" width="1400" height="933" alt="" loading="lazy" decoding="async">
+  <div class="lc__body">
+    <p class="cta__lead">
+      あてはまるか分からない、<br class="sp-only">という状態でも大丈夫です。
     </p>
-
     <a class="cta-button cta-button--gold" href="#review-notice" data-cta-type="line" data-cta-position="case-study" data-cta-id="line_case_study">
       <span class="cta-button__icon" aria-hidden="true">LINE</span>
       LINEで相談事例を見る
     </a>
-    <p class="cta-band__note">※ 掲載する事例は、実在確認が取れたもののみです。</p>
+    <p class="cta__note">相談だけでもかまいません</p>
   </div>
 </section>
 
-<!-- ===== SECTION 12 — Voice ===== -->
+<!-- ============ LC-27 〜 LC-31 : Voice ============
+     参考LPはここに7件の体験談を載せているが、**実在確認が取れるまで本番表示しない**。
+     節ごと claim gate の pending 印を付けてあるので production では消える。
+     ⚠️ コメント内に印の属性そのものを書かないこと（静的検査が本物と区別できない）。
+     架空の声を作らないこと（docs/claims-register.md §D） -->
 
 
-<!-- ===== SECTION 13 — Message ===== -->
-<section class="message">
-  <div class="inner">
-    <p class="section-eyebrow">MESSAGE</p>
-    <h2 class="section-title">住まいは、帰る場所です</h2>
-
-    <p class="message__body">
-      家は、資産である前に、家族が帰る場所です。<br>
-      だからこそ、無理のある計画で手に入れるものではないと考えています。
+<!-- ============ LC-32 : CTA 5 ============ -->
+<section class="lc lc--cta" id="lc-32" style="--ar:.6707">
+  <img class="lc__bg" src="../../assets/lp/lc-cta-bg.webp" width="1400" height="933" alt="" loading="lazy" decoding="async">
+  <div class="lc__body">
+    <p class="cta__lead">
+      いまの状況を教えていただく<br class="sp-only">ところから始まります。
     </p>
-    <p class="message__body">
-      いまの支払いを整理すること。<br>
-      これからの資金を準備すること。<br>
-      そのうえで、住まいを取得すること。<br>
-      この順番を、一人ひとりの状況に合わせて設計します。
-    </p>
-
-    <p class="disclaimer-box disclaimer-box--strong">
-      <strong>すべての方がご利用いただけるわけではありません。</strong><br>
-      ご状況によっては、ご案内できない場合や、
-      別の方法をご提案する場合があります。
-      まずは現状をお聞かせください。
-    </p>
-  </div>
-</section>
-
-<!-- ===== SECTION 14 — FAQ ===== -->
-<section class="faq">
-  <div class="inner">
-    <p class="section-eyebrow">FAQ</p>
-    <h2 class="section-title">よくあるご質問</h2>
-
-    <details data-faq-id="faq_multiple_payments">
-      <summary>複数の支払いについても相談できますか？</summary>
-      <p>ご相談いただけます。どこまで一緒に検討できるかはお客様ごとの状況によりますので、無料相談で個別にご確認ください。</p>
-    </details>
-
-    <details data-faq-id="faq_income">
-      <summary>収入の条件はありますか？</summary>
-      <p>一律の基準をこちらで設けてはいません。ご収入だけでなく、雇用形態・勤続年数・ご希望の返済期間など複数の要素をあわせて確認します。</p>
-    </details>
-
-    <details data-faq-id="faq_other_payments">
-      <summary>住宅ローン以外の支払いについても相談できますか？</summary>
-      <p>ご相談いただけます。対象になるかどうかは個別の確認が必要です。</p>
-    </details>
-
-    <details data-faq-id="faq_difference">
-      <summary>一般的な住宅ローンの相談と何が違いますか？</summary>
-      <p>物件そのものだけでなく、いまのお支払いの状況と今後の資金計画をあわせて確認したうえで、住まいの取得を考える点が異なります。</p>
-    </details>
-
-    <details data-faq-id="faq_area">
-      <summary>対応地域はどこまでですか？</summary>
-      
-      <p>ご相談の際に、対応可能かどうかをご確認ください。</p>
-    </details>
-
-    <details data-faq-id="faq_privacy">
-      <summary>家族に知られずに相談できますか？</summary>
-      <p>LINEでのご相談のため、通知設定などはご自身で調整いただけます。ご相談内容をこちらから第三者にお伝えすることはありません（ご案内先への情報提供は、ご本人の同意をいただいた場合に限ります）。</p>
-    </details>
-
-    <details data-faq-id="faq_cost">
-      <summary>相談に費用はかかりますか？</summary>
-      
-      <p>費用が発生する場合は、事前に必ずご案内します。</p>
-    </details>
-
-    <details data-faq-id="faq_consult_only">
-      <summary>相談だけでもよいですか？</summary>
-      <p>もちろんです。お話をうかがったうえで、いまは動かないという判断でもかまいません。</p>
-    </details>
-  </div>
-</section>
-
-<!-- ===== SECTION 15 — Final CTA ===== -->
-<section class="final-cta">
-  <div class="inner">
-    <h2 class="final-cta__title">まずはLINEで無料相談</h2>
-    <p class="final-cta__lead">
-      いまの状況を教えていただくところから始まります。<br>
-      整理できることがあるかどうか、一緒に確認しましょう。
-    </p>
-
-    <ul class="final-cta__assurance">
-      <li>相談だけでもOK</li>
-      
-      
-    </ul>
-
-    <a class="cta-button cta-button--large" href="#review-notice" data-cta-type="line" data-cta-position="final" data-cta-id="line_final">
+    <a class="cta-button" href="#review-notice" data-cta-type="line" data-cta-position="voice" data-cta-id="line_voice">
       <span class="cta-button__icon" aria-hidden="true">LINE</span>
       LINEで無料相談する
     </a>
-
-    <p class="final-cta__note">
-      すべての方がご利用いただけるわけではありません。
-    </p>
+    <p class="cta__note">相談だけでもかまいません</p>
   </div>
 </section>
 
-<!-- ===== SECTION 16 — Footer ===== -->
-<footer class="site-footer">
-  <div class="inner">
+<!-- ============ LC-33 / LC-34 : Message ============ -->
+<div class="message">
+
+  <section class="lc" id="lc-33" style="--ar:.3507">
+    <div class="lc__body">
+      <p class="section-eyebrow">MESSAGE</p>
+      <h2 class="section-title">住まいは、帰る場所です</h2>
+    </div>
+  </section>
+
+  <section class="lc lc--message" id="lc-34" style="--ar:1.9947">
+    <img class="lc__bg lc__bg--bottom" src="../../assets/lp/lc-34-message.webp" width="1400" height="700" alt="" loading="lazy" decoding="async">
+    <div class="lc__body">
+      <p class="message__body">
+        家は、資産である前に、家族が帰る場所です。<br>
+        だからこそ、無理のある計画で手に入れるものではないと考えています。
+      </p>
+      <p class="message__body">
+        いまの支払いを整理すること。<br>
+        これからの資金を準備すること。<br>
+        そのうえで、住まいを取得すること。<br>
+        この順番を、一人ひとりの状況に合わせて設計します。
+      </p>
+      <p class="disclaimer-box disclaimer-box--strong">
+        <strong>すべての方がご利用いただけるわけではありません。</strong><br>
+        ご状況によっては、ご案内できない場合や、別の方法をご提案する場合があります。
+        まずは現状をお聞かせください。
+      </p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ LC-35 : CTA 6 ============ -->
+<section class="lc lc--cta" id="lc-35" style="--ar:.6707">
+  <img class="lc__bg" src="../../assets/lp/lc-cta-bg.webp" width="1400" height="933" alt="" loading="lazy" decoding="async">
+  <div class="lc__body">
+    <p class="cta__lead">
+      整理できることがあるかどうか、<br>一緒に確認しましょう。
+    </p>
+    <a class="cta-button" href="#review-notice" data-cta-type="line" data-cta-position="message" data-cta-id="line_message">
+      <span class="cta-button__icon" aria-hidden="true">LINE</span>
+      LINEで無料相談する
+    </a>
+    <p class="cta__note">相談だけでもかまいません</p>
+  </div>
+</section>
+
+<!-- ============ LC-36 / LC-37 / LC-38 : FAQ ============
+     参考LPは全問が開いた状態で画像化されている。こちらは **閉じた状態**で出す。
+     ⚠️ open を既定にすると faq_open が二度と発火しない（開く操作が存在しなくなるため、
+        tests/runtime-probe.html の「FAQ展開で faq_open が発火する」が落ちる）。
+        回答本文は HTML ソースに常に存在するので、クローラと Google の担当者には届く。
+        <details> は JS 無しでも開けるため、JS 無効の閲覧でも読める。 -->
+<div class="faq">
+
+  <section class="lc" id="lc-36" style="--ar:.4627">
+    <div class="lc__body">
+      <p class="section-eyebrow">FAQ</p>
+      <h2 class="section-title">よくあるご質問</h2>
+    </div>
+  </section>
+
+  <section class="lc" id="lc-37">
+    <div class="lc__body">
+      <details data-faq-id="faq_multiple_payments">
+        <summary>複数の支払いについても相談できますか？</summary>
+        <p>ご相談いただけます。どこまで一緒に検討できるかはお客様ごとの状況によりますので、無料相談で個別にご確認ください。</p>
+      </details>
+      <details data-faq-id="faq_income">
+        <summary>収入の条件はありますか？</summary>
+        <p>一律の基準をこちらで設けてはいません。ご収入だけでなく、雇用形態・勤続年数・ご希望の返済期間など複数の要素をあわせて確認します。</p>
+      </details>
+      <details data-faq-id="faq_other_payments">
+        <summary>住宅ローン以外の支払いについても相談できますか？</summary>
+        <p>ご相談いただけます。対象になるかどうかは個別の確認が必要です。</p>
+      </details>
+      <details data-faq-id="faq_difference">
+        <summary>一般的な住宅ローンの相談と何が違いますか？</summary>
+        <p>物件そのものだけでなく、いまのお支払いの状況と今後の資金計画をあわせて確認したうえで、住まいの取得を考える点が異なります。</p>
+      </details>
+      <details data-faq-id="faq_who">
+        <summary>相談したあと、どこが対応してくれるのですか？</summary>
+        <p>はじめのお聞き取りは当窓口が行い、そのあとの具体的なご説明・ご提案・不動産のお取引は、宅地建物取引業の免許を持つご案内先が担当します。商号と免許番号はページ下部の運営者情報に記載しています。</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="lc" id="lc-38">
+    <div class="lc__body">
+      <details data-faq-id="faq_area">
+        <summary>対応地域はどこまでですか？</summary>
+        
+        <p>ご相談の際に、対応可能かどうかをご確認ください。</p>
+      </details>
+      <details data-faq-id="faq_privacy">
+        <summary>家族に知られずに相談できますか？</summary>
+        <p>LINEでのご相談のため、通知設定などはご自身で調整いただけます。ご相談内容をこちらから第三者にお伝えすることはありません（ご案内先への情報提供は、ご本人の同意をいただいた場合に限ります）。</p>
+      </details>
+      <details data-faq-id="faq_cost">
+        <summary>相談に費用はかかりますか？</summary>
+        
+        <p>費用が発生する場合は、事前に必ずご案内します。</p>
+      </details>
+      <details data-faq-id="faq_consult_only">
+        <summary>相談だけでもよいですか？</summary>
+        <p>もちろんです。お話をうかがったうえで、いまは動かないという判断でもかまいません。</p>
+      </details>
+    </div>
+  </section>
+</div>
+
+<!-- ============ LC-39 : CTA 7（クロージング） ============ -->
+<div class="final-cta">
+  <section class="lc lc--cta lc--cta-final" id="lc-39" style="--ar:.6707">
+    <img class="lc__bg" src="../../assets/lp/lc-cta-bg.webp" width="1400" height="933" alt="" loading="lazy" decoding="async">
+    <div class="lc__body">
+      <p class="cta__lead">
+        いまの支払いを整理して、<br>
+        資産になるマイホームへ。<br>
+        無料でご相談ください。
+      </p>
+      <ul class="final-cta__assurance">
+        <li>相談だけでもOK</li>
+        
+        
+      </ul>
+      <a class="cta-button cta-button--large" href="#review-notice" data-cta-type="line" data-cta-position="final" data-cta-id="line_final">
+        <span class="cta-button__icon" aria-hidden="true">LINE</span>
+        LINEで無料相談する
+      </a>
+      <p class="cta__note">すべての方がご利用いただけるわけではありません。</p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ LC-40 : 事業体制（LEGACRAFT 固有） ============
+     参考LPには無いが、Google の債務関連サービス確認のために必要。
+     出典は docs/service-role-matrix.md の確認済みの役割分担のみ。
+     ⚠️ 役務提供者の商号はここに直書きしない（運営者情報の描画先に一本化する） -->
+<div class="structure">
+  <section class="lc lc--soft" id="lc-40">
+    <div class="lc__body">
+      <p class="section-eyebrow">STRUCTURE</p>
+      <h2 class="section-title">ご相談から取得までの体制</h2>
+      <ol class="structure__flow">
+        <li class="structure__node">
+          <span class="structure__badge">STEP 1</span>
+          <h3>当窓口（本ページの広告主）</h3>
+          <p>ご相談の受付と、はじめのお聞き取りを行います。</p>
+        </li>
+        <li class="structure__node">
+          <span class="structure__badge">STEP 2</span>
+          <h3>ご案内先へのお取次ぎ</h3>
+          <p>ご本人の同意をいただいたうえで、ご状況をお伝えします。</p>
+        </li>
+        <li class="structure__node">
+          <span class="structure__badge">STEP 3</span>
+          <h3>宅地建物取引業者（役務提供者）</h3>
+          <p>具体的なご説明・ご提案と、不動産のお取引を担当します。</p>
+        </li>
+      </ol>
+      <p class="lc__note">
+        商号・免許番号・連絡先は、下の運営者情報に記載しています。
+        当窓口が行うのは、はじめのお聞き取りとお取次ぎまでです。
+      </p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ LC-41 : Footer ============ -->
+<footer class="site-footer" id="operator-information">
+  <div class="lc__body">
     <nav class="site-footer__nav">
       <a href="../../privacy.html" data-legal-link="privacy">プライバシーポリシー</a>
       <a href="../../tokushoho.html" data-legal-link="law">特定商取引法に基づく表示</a>
@@ -434,6 +635,8 @@
     <p class="site-footer__copyright" data-entity-status="confirmed" data-entity-slot="copyright">© 2026 本間 謙太郎</p>
   </div>
 </footer>
+
+</div><!-- /#lc -->
 
 <!-- ===== Sticky CTA（モバイルのみ・feature flag） ===== -->
 <div class="sticky-cta" data-sticky-cta="">

@@ -98,15 +98,6 @@
          width="1200" height="867" alt=""
          loading="lazy" decoding="async">
   </section>
-  <div class="lp-cta" style="background:#c8c9cc">
-    <a class="line-cta" href="#review-notice"
-       data-cta-type="line" data-cta-position="img12"
-       data-cta-id="numbered_03">
-      <span class="line-cta__icon" aria-hidden="true">LINE</span>
-      LINEで無料相談をはじめる
-      <span class="line-cta__chev" aria-hidden="true">&gt;</span>
-    </a>
-  </div>
   <section class="lp-section" data-seq="13">
     <img src="../assets/lp/final-numbered/web/13.webp"
          width="1200" height="789" alt=""
@@ -114,7 +105,7 @@
   <div class="lp-cta lp-cta--overlay" style="--cta-top:72%">
     <a class="line-cta" href="#review-notice"
        data-cta-type="line" data-cta-position="img13"
-       data-cta-id="numbered_04">
+       data-cta-id="numbered_03">
       <span class="line-cta__icon" aria-hidden="true">LINE</span>
       LINEで無料相談をはじめる
       <span class="line-cta__chev" aria-hidden="true">&gt;</span>
@@ -131,15 +122,6 @@
          width="1200" height="913" alt=""
          loading="lazy" decoding="async">
   </section>
-  <div class="lp-cta" style="background:#b7bbbe">
-    <a class="line-cta" href="#review-notice"
-       data-cta-type="line" data-cta-position="img15"
-       data-cta-id="numbered_05">
-      <span class="line-cta__icon" aria-hidden="true">LINE</span>
-      LINEで無料相談をはじめる
-      <span class="line-cta__chev" aria-hidden="true">&gt;</span>
-    </a>
-  </div>
   <section class="lp-section" data-seq="16">
     <img src="../assets/lp/final-numbered/web/16.webp"
          width="1200" height="789" alt=""
@@ -147,7 +129,7 @@
   <div class="lp-cta lp-cta--overlay" style="--cta-top:72%">
     <a class="line-cta" href="#review-notice"
        data-cta-type="line" data-cta-position="img16"
-       data-cta-id="numbered_06">
+       data-cta-id="numbered_04">
       <span class="line-cta__icon" aria-hidden="true">LINE</span>
       LINEで無料相談をはじめる
       <span class="line-cta__chev" aria-hidden="true">&gt;</span>
@@ -174,15 +156,6 @@
          width="1143" height="1376" alt=""
          loading="lazy" decoding="async">
   </section>
-  <div class="lp-cta" style="background:#c2c3c5">
-    <a class="line-cta" href="#review-notice"
-       data-cta-type="line" data-cta-position="img20"
-       data-cta-id="numbered_07">
-      <span class="line-cta__icon" aria-hidden="true">LINE</span>
-      LINEで無料相談をはじめる
-      <span class="line-cta__chev" aria-hidden="true">&gt;</span>
-    </a>
-  </div>
   <section class="lp-section" data-seq="21">
     <img src="../assets/lp/final-numbered/web/21.webp"
          width="1200" height="789" alt=""
@@ -190,7 +163,7 @@
   <div class="lp-cta lp-cta--overlay" style="--cta-top:72%">
     <a class="line-cta" href="#review-notice"
        data-cta-type="line" data-cta-position="img21"
-       data-cta-id="numbered_08">
+       data-cta-id="numbered_05">
       <span class="line-cta__icon" aria-hidden="true">LINE</span>
       LINEで無料相談をはじめる
       <span class="line-cta__chev" aria-hidden="true">&gt;</span>
@@ -209,7 +182,7 @@
   <div class="lp-cta lp-cta--overlay" style="--cta-top:72%">
     <a class="line-cta" href="#review-notice"
        data-cta-type="line" data-cta-position="img23"
-       data-cta-id="numbered_09">
+       data-cta-id="numbered_06">
       <span class="line-cta__icon" aria-hidden="true">LINE</span>
       LINEで無料相談をはじめる
       <span class="line-cta__chev" aria-hidden="true">&gt;</span>
@@ -238,7 +211,7 @@
   <div class="lp-cta lp-cta--overlay" style="--cta-top:72%">
     <a class="line-cta" href="#review-notice"
        data-cta-type="line" data-cta-position="img27"
-       data-cta-id="numbered_10">
+       data-cta-id="numbered_07">
       <span class="line-cta__icon" aria-hidden="true">LINE</span>
       LINEで無料相談をはじめる
       <span class="line-cta__chev" aria-hidden="true">&gt;</span>
@@ -263,32 +236,6 @@
   <p>掲載している内容および運営者情報は、広告を掲載する際に予定しているものと同じです。</p>
 </section>
 
-<!-- モバイル用の追従CTA。Hero を通過してから出す（JS 無効でも本文は読める） -->
-<div class="sticky-cta" id="sticky-cta" hidden>
-  <a class="line-cta line-cta--sticky" href="#review-notice"
-     data-cta-type="line" data-cta-position="sticky" data-cta-id="numbered_sticky">
-    <span class="line-cta__icon" aria-hidden="true">LINE</span>
-    LINEで無料相談をはじめる
-    <span class="line-cta__chev" aria-hidden="true">&gt;</span>
-  </a>
-</div>
-
-<script>
-/* 追従CTA の出し入れだけ。計測も遷移もしない。 */
-(function () {
-  var el = document.getElementById("sticky-cta");
-  var first = document.querySelector(".lp-section");
-  var stop = document.getElementById("review-notice");
-  if (!el || !first) return;
-  function update() {
-    var passedHero = window.scrollY > first.offsetHeight * 0.85;
-    var atEnd = stop.getBoundingClientRect().top < window.innerHeight;
-    el.hidden = !passedHero || atEnd;
-  }
-  window.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update, { passive: true });
-  update();
-})();
-</script>
+<!-- 追従（sticky / fixed）CTA は置かない（2026-09-11 人間指示）。CTA は画像の上に重ねたものだけ。 -->
 </body>
 </html>

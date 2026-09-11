@@ -120,22 +120,7 @@ body {
   50%      { transform: translateY(-5px) scale(1.015); }
 }
 
-/* ---------- 追従CTA（モバイル） ---------- */
-.sticky-cta {
-  position: fixed;
-  left: 50%;
-  bottom: 12px;
-  z-index: 9998;
-  width: calc(100% - 32px);
-  max-width: 520px;
-  transform: translateX(-50%);
-  text-align: center;
-}
-.sticky-cta .line-cta {
-  width: 100%;
-  min-height: 58px;
-  font-size: 16px;
-}
+/* 追従CTA（position:fixed）は 2026-09-11 に撤去。画面に追従する LINE ボタンは置かない。 */
 [hidden] { display: none !important; }
 
 /* ---------- 受付停止の告知 ---------- */
@@ -246,7 +231,6 @@ body {
   /* 参考LPと同じく、PC でも横に広げない。中央の1カラムのまま */
   .image-lp { box-shadow: 0 0 40px rgba(15, 44, 82, .10); }
   .line-cta { font-size: 18px; min-height: 68px; }
-  .sticky-cta { display: none; }   /* PC では追従CTAを出さない */
   #review-notice { padding: 36px 32px 44px; }
   #review-notice h2 { font-size: 22px; }
 }

@@ -59,6 +59,21 @@ body {
    二重に痩せてラベルが2行に折れる（実測: 390px で折れた）。 */
 .lp-cta .line-cta { width: 100%; }
 
+/* ---------- 画像の上に重ねる CTA（2026-09-11） ----------
+   「＼ 無料相談はこちら ／」の直下の余白へ重ねる。上端位置は画像ごとに
+   --cta-top（画像高さに対する %。scripts/build-numbered-lp.mjs の CTA_OVERLAY_TOP）で決める。
+   ⚠️ 帯型と違い背景・上下余白を持たない。画像の高さも変えない（次の画像との隙間を作らない）。 */
+.lp-cta--overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--cta-top, 72%);
+  padding: 0 20px;
+  background: none;
+  pointer-events: none;          /* 画像の余白部分のタップを奪わない。ボタンだけ押せる */
+}
+.lp-cta--overlay .line-cta { pointer-events: auto; }
+
 /* ---------- LINE ボタン ---------- */
 .line-cta {
   display: inline-flex;
@@ -218,9 +233,12 @@ body {
 }
 
 /* ---------- ブレークポイント ---------- */
-@media (max-width: 374px) {
+/* ⚠️ 389px 以下では 17px のラベルが2行に折れる（実測: 375px で高さ 72px になり、
+   重ねた CTA が画像の下端を 2〜3px はみ出した）。折り返さない大きさに落とす。 */
+@media (max-width: 389px) {
   .line-cta { font-size: 15px; min-height: 58px; }
   .lp-cta { padding: 16px 14px 20px; }
+  .lp-cta--overlay { padding: 0 14px; }
   #review-banner { font-size: 12.5px; }
 }
 

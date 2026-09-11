@@ -119,3 +119,17 @@ body {
   text-align: center;
   color: var(--text-mute);
 }
+
+/* 参照LP準拠の「お問い合わせ窓口」カード（privacy.html 第14条。2026-09-11） */
+.contact-card {
+  margin: 14px 0 0;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--soft);
+  font-size: 14px;
+  line-height: 1.8;
+}
+.contact-card p { margin: 2px 0; }
+.contact-card__title { font-weight: 700; color: var(--navy); margin-bottom: 6px !important; }
+.contact-card__name { font-weight: 700; }

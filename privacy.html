@@ -101,23 +101,25 @@
 
   <h2>第14条（お問い合わせ）</h2>
   <p>本ポリシーに関するご意見、ご質問、苦情の申し出その他お客様情報の取り扱いに関するお問い合わせは、下記の相談窓口までお願い致します。</p>
-  <table>
-    <tr><th>事業者名</th><td>本間 謙太郎</td></tr>
-    <tr><th>代表者</th><td>本間 謙太郎</td></tr>
-    <tr><th>所在地</th><td>愛知県高浜市神明町8-2-4</td></tr>
-    <tr><th>電話番号</th><td>090-1565-5891</td></tr>
-    <tr><th>メールアドレス</th><td>info@legacraft.jp</td></tr>
-    <tr><th>受付時間</th><td>17:00〜20:00</td></tr>
-  </table>
+  <!-- 2026-09-11 人間指示: 参照LP と同じ「お問い合わせ窓口」カード。
+       名称・住所 = config.OPERATOR の PROVIDER_NAME / ADDRESS、電話・メール = ADVERTISER_PHONE / ADVERTISER_EMAIL。
+       ⚠️ 参照LP固有の連絡先（config の PHONE / EMAIL）は書かない。 -->
+  <div class="contact-card" data-role="contact-card">
+    <p class="contact-card__title">お問い合わせ窓口</p>
+    <p class="contact-card__name">株式会社中央住地</p>
+    <p>〒275-0014<br>千葉県習志野市大久保4-12-25</p>
+    <p>電話: 090-1565-5891</p>
+    <p>メール: info@legacraft.jp</p>
+  </div>
 
   <!-- ⚠️ 色を薄くしないこと。#9aa5b1 は白地でコントラスト 2.50:1 しかなく、
        ピクセル計測（tests/verify-visibility.mjs）が判読不能として落とす。
        法定表示ページの文字は 3:1 以上を保つ。 -->
-  <p class="legal-date">2026年9月9日制定／2026年9月11日改定</p>
+  <p class="legal-date">2026年4月2日制定</p>
 
   <a class="back-link" href="lp/numbered/index.html">相談ページに戻る</a>
 
-  <p class="legal-copyright">Copyright(C) 2026 株式会社中央住地 All rights reserved.</p>
+  <p class="legal-copyright">&copy; 2026 株式会社中央住地 All Rights Reserved.</p>
 </main>
 </body>
 </html>

@@ -90,6 +90,13 @@ body {
   font-weight: 800;
   letter-spacing: .06em;
 }
+.line-cta__chev {
+  flex: 0 0 auto;
+  margin-left: 2px;
+  font-size: 15px;
+  font-weight: 800;
+  opacity: .85;
+}
 .line-cta:hover { transform: translateY(-3px); animation-play-state: paused; }
 .line-cta:active { transform: scale(.97); animation-play-state: paused; }
 

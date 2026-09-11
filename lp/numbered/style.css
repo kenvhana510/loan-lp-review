@@ -79,45 +79,55 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   width: calc(100% - 40px);
   max-width: 520px;
   min-height: 64px;
-  padding: 12px 20px;
-  border-radius: 14px;
-  background: linear-gradient(180deg, #06C755 0%, #05a848 100%);
+  padding: 12px 18px;
+  border-radius: 8px;                 /* 角丸長方形（2026-09-11 PHASE 78-1。pill にしない） */
+  background: #06C755;                /* LINE グリーン。フラット（gradient なし） */
   color: #fff;
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.3;
   letter-spacing: .02em;
   text-decoration: none;
-  box-shadow: 0 6px 18px rgba(6, 199, 85, .38), 0 2px 6px rgba(0, 0, 0, .18);
-  animation: lineFloat 2.4s ease-in-out infinite;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .18);
+  animation: lineShake 1.4s ease-in-out infinite;   /* 左右にだけ軽く揺れる（縦移動なし） */
   will-change: transform;
 }
+/* 白い吹き出し型の LINE アイコン（CSS だけ。外部依存・画像なし） */
 .line-cta__icon {
   flex: 0 0 auto;
+  position: relative;
+  display: inline-block;
   padding: 4px 9px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, .22);
-  font-size: 11px;
+  border-radius: 7px;
+  background: #fff;
+  color: #06C755;
+  font-size: 13px;
   font-weight: 800;
-  letter-spacing: .06em;
+  line-height: 1.2;
+  letter-spacing: .04em;
 }
-.line-cta__chev {
-  flex: 0 0 auto;
-  margin-left: 2px;
-  font-size: 15px;
-  font-weight: 800;
-  opacity: .85;
+.line-cta__icon::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  bottom: -5px;
+  border-style: solid;
+  border-width: 6px 5px 0 0;
+  border-color: #fff transparent transparent transparent;
 }
-.line-cta:hover { transform: translateY(-3px); animation-play-state: paused; }
+.line-cta:hover { background: #05b64d; animation-play-state: paused; }
 .line-cta:active { transform: scale(.97); animation-play-state: paused; }
 
-@keyframes lineFloat {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50%      { transform: translateY(-5px) scale(1.015); }
+/* 左右 ±8px（戻りは -5px）。縦移動・回転・点滅・大きな拡縮はしない */
+@keyframes lineShake {
+  0%, 100% { transform: translateX(0); }
+  25%      { transform: translateX(-8px); }
+  50%      { transform: translateX(8px); }
+  75%      { transform: translateX(-5px); }
 }
 
 /* 追従CTA（position:fixed）は 2026-09-11 に撤去。画面に追従する LINE ボタンは置かない。 */
@@ -221,7 +231,7 @@ body {
 /* ⚠️ 389px 以下では 17px のラベルが2行に折れる（実測: 375px で高さ 72px になり、
    重ねた CTA が画像の下端を 2〜3px はみ出した）。折り返さない大きさに落とす。 */
 @media (max-width: 389px) {
-  .line-cta { font-size: 15px; min-height: 58px; }
+  .line-cta { font-size: 17px; min-height: 58px; padding: 10px 14px; gap: 10px; }
   .lp-cta { padding: 16px 14px 20px; }
   .lp-cta--overlay { padding: 0 14px; }
   #review-banner { font-size: 12.5px; }
@@ -230,7 +240,7 @@ body {
 @media (min-width: 750px) {
   /* 参考LPと同じく、PC でも横に広げない。中央の1カラムのまま */
   .image-lp { box-shadow: 0 0 40px rgba(15, 44, 82, .10); }
-  .line-cta { font-size: 18px; min-height: 68px; }
+  .line-cta { font-size: 20px; min-height: 68px; }
   #review-notice { padding: 36px 32px 44px; }
   #review-notice h2 { font-size: 22px; }
 }

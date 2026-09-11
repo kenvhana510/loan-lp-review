@@ -15,7 +15,7 @@ window.LP_CONFIG = {
   //
   // ⚠️ 実IDの投入は Google Ads Gate PASS 後。ここが REPLACE_ME の間は CTA が遷移しない。
   //    webhook が active=true のため、先に実IDを入れると Gate 前に実ユーザーが到達しうる。
-  LINE_FRIEND_URL: "",
+  LINE_FRIEND_URL: "https://lin.ee/wIjLMkF",
 
   // LINE_ENTRY_MODE（PHASE 6.0）
   //   "oa_message"  … トーク画面を開いて本文を下書きする。
@@ -94,9 +94,9 @@ if (window.location.search.indexOf("claims=production") !== -1) {
   window.LP_CONFIG.ENTITY_MODE = "production";
 }
 
-/* ---- レビュー公開ビルド（Google ポリシー確認用） ----
- * 相談受付を停止した状態で公開している。
- * LINE と GA は空にしてあるため、遷移も計測も行われない。
+/* ---- レビュー公開ビルド（Google 広告開始前） ----
+ * LINE 友だち追加URLは人間承認値（2026-09-11 PHASE 78）。LINE_BASIC_ID と GA は空（未投入・計測なし）。
+ * 旧LP（このページ）は公開終了し、/lp/ への中継 stub になっている。
  * このブロックは dist-review/ にしか存在しない（ソースの config.js は無変更）。
  */
 window.LP_CONFIG.REVIEW_MODE = true;

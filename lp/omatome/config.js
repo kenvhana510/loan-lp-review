@@ -28,6 +28,17 @@ window.LP_CONFIG = {
   // ---- 計測 ----
   GA_MEASUREMENT_ID: "",
 
+  // ---- Google 広告 コンバージョン計測（2026-09-14 人間指示） ----
+  //   番号付き画像LP（scripts/build-numbered-lp.mjs）の <head> に Google タグとして焼き込む。
+  //   コンバージョン「LINE相談ボタンクリック」は LINE CTA のクリック時**だけ**送る（ページ表示では送らない）。
+  //   ラベルは Google が発行した Event snippet の値をそのまま使う（人間の指示文にあった
+  //   "EF8fCMTLqrPccEI2W190D"(21字) は転記ミス。ラベルは 20 字で、snippet の値が正）。
+  //   ⚠️ 広告の配信開始・課金開始はこの設定では起きない（タグの設置と計測だけ）。
+  GOOGLE_ADS: {
+    CONVERSION_ID: "AW-1001769741",
+    LINE_CTA_CLICK_LABEL: "EF8fCMTLqPccEI2W190D",
+  },
+
   // ---- 運営者情報（F-6 必須開示 / docs/operator-information-intake.md） ----
   //
   // ⚠️ **推測で埋めない。** 受領した実値だけを入れる。
@@ -95,7 +106,8 @@ if (window.location.search.indexOf("claims=production") !== -1) {
 }
 
 /* ---- レビュー公開ビルド（Google 広告開始前） ----
- * LINE 友だち追加URLは人間承認値（2026-09-11 PHASE 78）。LINE_BASIC_ID と GA は空（未投入・計測なし）。
+ * LINE 友だち追加URLは人間承認値（2026-09-11 PHASE 78）。LINE_BASIC_ID と GA4 は空（未投入）。
+ * Google 広告 conversion タグ（GOOGLE_ADS）は 2026-09-14 人間指示で LP 本体に設置（LINE CTA クリック時のみ送信）。
  * 旧LP（このページ）は公開終了し、/lp/ への中継 stub になっている。
  * このブロックは dist-review/ にしか存在しない（ソースの config.js は無変更）。
  */

@@ -7,6 +7,14 @@
 <meta name="description" content="毎月の返済の見直しと、資産になるマイホームの取得。住宅ローンを活用して、ひとつの資金計画として考えます。">
 <meta name="robots" content="noindex, nofollow"><!-- 広告掲載前の確認用。検索結果には出さない -->
 <link rel="stylesheet" href="style.css">
+<!-- Google tag (gtag.js) — Google 広告 コンバージョン計測。ページ表示では conversion を送らない -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1001769741"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-1001769741');
+</script>
 </head>
 <body>
 
@@ -221,5 +229,70 @@
 
 
 <!-- 追従（sticky / fixed）CTA は置かない（2026-09-11 人間指示）。CTA は画像の上に重ねたものだけ。 -->
+<!-- Event snippet for LINE相談ボタンクリック conversion page（Google 推奨の callback 方式）
+     LINE CTA（a.line-cta[data-cta-type="line"]）のクリック時だけ送る。ページ表示では送らない。 -->
+<script>
+(function () {
+  var SEND_TO = 'AW-1001769741/EF8fCMTLqPccEI2W190D';
+  var FALLBACK_MS = 2000; // gtag.js が読めない・応答しない環境でも、この時間で必ず LINE へ遷移する
+
+  // Google の Event snippet と同じ形。違いは 2 点だけ:
+  //   (1) callback とフォールバックの両方が呼ばれても遷移は 1 回（navigated ガード）
+  //   (2) gtag.js が読めない環境（広告ブロッカー等）では event_callback が永久に呼ばれないので、
+  //       自前のタイマーで必ず遷移する（計測のために LINE 導線を壊さない）
+  function gtag_report_conversion(url) {
+    var navigated = false;
+    var callback = function () {
+      state = 'done';
+      if (typeof(url) != 'undefined' && !navigated) {
+        navigated = true;
+        window.location = url;
+      }
+    };
+    var timer = setTimeout(callback, FALLBACK_MS + 500);
+    gtag('event', 'conversion', {
+      'send_to': SEND_TO,
+      'event_callback': function () { clearTimeout(timer); callback(); },
+      'event_timeout': FALLBACK_MS
+    });
+    return false;
+  }
+  window.gtag_report_conversion = gtag_report_conversion;
+
+  // 二重発火防止: 1 回のページ滞在で conversion は最初のクリック 1 回だけ。
+  //   idle → pending（送信中。連打しても何もしない。callback が遷移する）→ done（送信済み。以後は遷移だけ）
+  var state = 'idle';
+
+  function isLineHref(href) {
+    return /^https:\/\/(lin\.ee|line\.me)\//.test(href || '');
+  }
+
+  function onCtaClick(ev) {
+    var a = ev.currentTarget;
+    var url = a.getAttribute('href');
+    if (!isLineHref(url)) return; // LINE 導線が未投入（review モード）なら何もしない
+
+    // 修飾キー付き（新しいタブで開く等）はブラウザの既定動作に任せ、計測だけ送る
+    if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey || ev.button !== 0) {
+      if (state === 'idle') { state = 'done'; gtag('event', 'conversion', { 'send_to': SEND_TO }); }
+      return;
+    }
+
+    ev.preventDefault();
+    if (state === 'pending') return;                            // 連打: 送信中は何もしない（callback が遷移する）
+    if (state === 'done') { window.location = url; return; }    // 2 回目以降は遷移のみ（conversion は送らない）
+    state = 'pending';
+    if (typeof window.gtag !== 'function') { state = 'done'; window.location = url; return; }
+    gtag_report_conversion(url);
+  }
+
+  var ctas = document.querySelectorAll('a.line-cta[data-cta-type="line"]');
+  for (var i = 0; i < ctas.length; i++) {
+    if (ctas[i].getAttribute('data-ads-conversion') === 'bound') continue; // 同じ要素に二重に束ねない
+    ctas[i].setAttribute('data-ads-conversion', 'bound');
+    ctas[i].addEventListener('click', onCtaClick);
+  }
+})();
+</script>
 </body>
 </html>

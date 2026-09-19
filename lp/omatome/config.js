@@ -31,12 +31,15 @@ window.LP_CONFIG = {
   // ---- Google 広告 コンバージョン計測（2026-09-14 人間指示） ----
   //   番号付き画像LP（scripts/build-numbered-lp.mjs）の <head> に Google タグとして焼き込む。
   //   コンバージョン「LINE相談ボタンクリック」は LINE CTA のクリック時**だけ**送る（ページ表示では送らない）。
-  //   ラベルは Google が発行した Event snippet の値をそのまま使う（人間の指示文にあった
-  //   "EF8fCMTLqrPccEI2W190D"(21字) は転記ミス。ラベルは 20 字で、snippet の値が正）。
+  //   ラベルは Google が発行した Event snippet の値をそのまま使う。
+  //   2026-09-19: 新アカウントへ移行し、旧アカウントの ID とラベルは廃止した。
+  //   ID とラベルは**必ず同じアカウントの組**にする（ID だけ替えると send_to が
+  //   存在しないラベルを指し、conversion が無言で失われる）。旧値は本ファイルに残さない
+  //   （配信対象のため、廃止した ID が公開物に文字列として残らないようにする）。
   //   ⚠️ 広告の配信開始・課金開始はこの設定では起きない（タグの設置と計測だけ）。
   GOOGLE_ADS: {
-    CONVERSION_ID: "AW-1001769741",
-    LINE_CTA_CLICK_LABEL: "EF8fCMTLqPccEI2W190D",
+    CONVERSION_ID: "AW-18458618505",
+    LINE_CTA_CLICK_LABEL: "Yi50CJ3hpv0cEInV4OFE",
   },
 
   // ---- 運営者情報（F-6 必須開示 / docs/operator-information-intake.md） ----

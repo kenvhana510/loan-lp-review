@@ -57,7 +57,7 @@ window.LP_CONFIG = {
     ADVERTISER_NAME: "本間 謙太郎",       // 広告主（2026-09-03 人間確定）
     ADVERTISER_ADDRESS: "愛知県高浜市神明町8-2-4",    // 広告主の所在地（2026-09-09 人間確定）
     ADVERTISER_PHONE: "090-1565-5891",    // 広告主の電話番号（2026-09-09 人間確定。表記は 2026-09-11 人間指示のハイフン区切り）
-    ADVERTISER_EMAIL: "info@legacraft.jp",       // 広告主のメールアドレス（2026-09-11 人間指示で .com → .jp に訂正）
+    ADVERTISER_EMAIL: "info@restartlife.jp",     // 広告主のメールアドレス（2026-09-19 人間指示で legacraft.jp → restartlife.jp に変更）
     // ⚠️ 受付時間は**広告主のもの**である。顧客が最初に連絡するのは広告主だから。
     //    役務提供者の受付時間は本LPに表示しないので、受け取る必要が無い。
     BUSINESS_HOURS: "17:00〜20:00",        // 広告主の受付時間（2026-09-09 人間確定）

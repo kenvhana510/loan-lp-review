@@ -1,14 +1,11 @@
 {
-  "generatedAt": "2026-09-28T08:00:50.122Z",
-  "from": "2026-09-28",
+  "generatedAt": "2026-09-28T21:26:48.648Z",
+  "from": "2026-09-29",
   "to": "2026-10-18",
   "days": {
-    "2026-09-28": {
+    "2026-09-29": {
       "publishes": [
-        "column/omatome-jutaku-loan-products",
-        "column/hensai-futanritsu-keisan",
-        "column/car-loan-jutaku-loan",
-        "column/shogakukin-jutaku-loan"
+        "column/revo-bunkatsu-jutaku-loan"
       ],
       "files": [
         "assets/lp/final-numbered/web/01.webp",
@@ -53,23 +50,57 @@
         "assets/lp/lc-25-case.webp",
         "assets/lp/lc-34-message.webp",
         "assets/lp/lc-cta-bg.webp",
+        "assets/site/column-40dai-50dai.webp",
+        "assets/site/column-atamakin-nashi.webp",
+        "assets/site/column-atamakin-zero.webp",
+        "assets/site/column-bukken-kakaku.webp",
         "assets/site/column-car.webp",
         "assets/site/column-fufu-shunyu.webp",
         "assets/site/column-futanritsu-5.webp",
         "assets/site/column-futanritsu.webp",
         "assets/site/column-hensai-okure.webp",
         "assets/site/column-hensai.webp",
+        "assets/site/column-hitorioya.webp",
+        "assets/site/column-ikukyu.webp",
+        "assets/site/column-keiyaku-haken.webp",
+        "assets/site/column-kojin-jigyo.webp",
+        "assets/site/column-kojo-taisho.webp",
         "assets/site/column-kounyu-karikae.webp",
         "assets/site/column-nenshu-meyasu.webp",
         "assets/site/column-omatome.webp",
         "assets/site/column-products.webp",
         "assets/site/column-revo-bunkatsu.webp",
         "assets/site/column-shogakukin.webp",
+        "assets/site/column-shohiyo.webp",
+        "assets/site/column-shorui.webp",
+        "assets/site/column-temoto-shikin.webp",
+        "assets/site/column-tenshoku.webp",
         "assets/site/column-unused-cardloan.webp",
+        "assets/site/column-yachin-vs-loan.webp",
         "assets/site/company.webp",
         "assets/site/flow.webp",
-        "assets/site/home-hero.webp",
         "assets/site/logo.webp",
+        "assets/site/lp-badges.webp",
+        "assets/site/lp-benefit.webp",
+        "assets/site/lp-choice.webp",
+        "assets/site/lp-consultbg.webp",
+        "assets/site/lp-ctabg.webp",
+        "assets/site/lp-ctamid.webp",
+        "assets/site/lp-empathy.webp",
+        "assets/site/lp-hero.webp",
+        "assets/site/lp-message.webp",
+        "assets/site/lp-messagebg.webp",
+        "assets/site/lp-profile.webp",
+        "assets/site/lp-reason.webp",
+        "assets/site/lp-reason01.webp",
+        "assets/site/lp-reason02.webp",
+        "assets/site/lp-reason03.webp",
+        "assets/site/lp-reason04.webp",
+        "assets/site/lp-solution.webp",
+        "assets/site/lp-story.webp",
+        "assets/site/lp-target.webp",
+        "assets/site/lp-voice-a.webp",
+        "assets/site/lp-voice-b.webp",
         "assets/site/mechanism.webp",
         "assets/site/og.webp",
         "assets/site/service-cardloan.webp",
@@ -81,6 +112,7 @@
         "column/kounyu-to-karikae/index.html",
         "column/omatome-jutaku-loan-products/index.html",
         "column/omatome-jutaku-loan/index.html",
+        "column/revo-bunkatsu-jutaku-loan/index.html",
         "column/shogakukin-jutaku-loan/index.html",
         "company/index.html",
         "faq/index.html",
@@ -104,17 +136,6 @@
         "tracking/tracking.js"
       ]
     },
-    "2026-09-29": {
-      "publishes": [
-        "column/revo-bunkatsu-jutaku-loan"
-      ],
-      "files": [
-        "column/index.html",
-        "column/revo-bunkatsu-jutaku-loan/index.html",
-        "index.html",
-        "sitemap.xml"
-      ]
-    },
     "2026-09-30": {
       "publishes": [
         "column/unused-cardloan-seiri"
@@ -122,7 +143,6 @@
       "files": [
         "column/index.html",
         "column/unused-cardloan-seiri/index.html",
-        "index.html",
         "sitemap.xml"
       ]
     },
@@ -133,7 +153,6 @@
       "files": [
         "column/index.html",
         "column/nenshu-betsu-meyasu/index.html",
-        "index.html",
         "sitemap.xml"
       ]
     },
@@ -144,7 +163,6 @@
       "files": [
         "column/fufu-shunyu-awaseru/index.html",
         "column/index.html",
-        "index.html",
         "sitemap.xml"
       ]
     },
@@ -155,7 +173,6 @@
       "files": [
         "column/futanritsu-chosei-5/index.html",
         "column/index.html",
-        "index.html",
         "sitemap.xml"
       ]
     },
@@ -166,7 +183,6 @@
       "files": [
         "column/hensai-okure-kiroku/index.html",
         "column/index.html",
-        "index.html",
         "sitemap.xml"
       ]
     },
@@ -177,7 +193,6 @@
       "files": [
         "column/atamakin-nashi-shikin-keikaku/index.html",
         "column/index.html",
-        "index.html",
         "sitemap.xml"
       ]
     },
@@ -188,7 +203,6 @@
       "files": [
         "column/index.html",
         "column/shohiyo-uchiwake/index.html",
-        "index.html",
         "sitemap.xml"
       ]
     },
@@ -199,7 +213,6 @@
       "files": [
         "column/index.html",
         "column/yachin-vs-jutaku-loan/index.html",
-        "index.html",
         "sitemap.xml"
       ]
     },
@@ -210,7 +223,6 @@
       "files": [
         "column/atamakin-zero-soushiharai/index.html",
         "column/index.html",
-        "index.html",
         "sitemap.xml"
       ]
     },
@@ -221,7 +233,6 @@
       "files": [
         "column/index.html",
         "column/temoto-shikin-tsukaimichi/index.html",
-        "index.html",
         "sitemap.xml"
       ]
     },
@@ -232,7 +243,6 @@
       "files": [
         "column/index.html",
         "column/jutaku-loan-kojo-taisho/index.html",
-        "index.html",
         "sitemap.xml"
       ]
     },
@@ -243,7 +253,6 @@
       "files": [
         "column/bukken-kakaku-kimekata/index.html",
         "column/index.html",
-        "index.html",
         "sitemap.xml"
       ]
     },
@@ -254,7 +263,6 @@
       "files": [
         "column/index.html",
         "column/tenshoku-chokugo-jutaku-loan/index.html",
-        "index.html",
         "sitemap.xml"
       ]
     },
@@ -265,7 +273,6 @@
       "files": [
         "column/index.html",
         "column/keiyaku-haken-jutaku-loan/index.html",
-        "index.html",
         "sitemap.xml"
       ]
     },
@@ -276,7 +283,6 @@
       "files": [
         "column/index.html",
         "column/kojin-jigyonushi-jutaku-loan/index.html",
-        "index.html",
         "sitemap.xml"
       ]
     },
@@ -287,7 +293,6 @@
       "files": [
         "column/ikukyu-tanjikan-shunyu/index.html",
         "column/index.html",
-        "index.html",
         "sitemap.xml"
       ]
     },
@@ -298,7 +303,6 @@
       "files": [
         "column/40dai-50dai-jutaku-loan/index.html",
         "column/index.html",
-        "index.html",
         "sitemap.xml"
       ]
     },
@@ -309,7 +313,6 @@
       "files": [
         "column/hitorioya-tanshin-kounyu/index.html",
         "column/index.html",
-        "index.html",
         "sitemap.xml"
       ]
     },
@@ -320,7 +323,6 @@
       "files": [
         "column/index.html",
         "column/shorui-checklist/index.html",
-        "index.html",
         "sitemap.xml"
       ]
     }

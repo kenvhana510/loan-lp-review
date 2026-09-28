@@ -1,0 +1,256 @@
+@charset "UTF-8";
+
+/* =========================================================
+   番号付き画像LP
+   ・画像を縦に隙間なく積む（VISIBLE_IMAGE_GAP = 0）
+   ・LINE ボタンだけ HTML/CSS（画像で作らない）
+   ・モバイルは viewport 幅いっぱい／PC は最大 700px センター
+   ========================================================= */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #eef2f6;
+  color: #23303f;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+* { box-sizing: border-box; }
+
+/* ---------- 画像の縦積み ----------
+   ⚠️ line-height を 0 にしないと、img が inline 扱いのときに
+      行のディセンダ分の隙間（数px の白線）が画像の下に出る。 */
+.image-lp {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 700px;
+  background: #fff;
+}
+.lp-section {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  font-size: 0;
+}
+.lp-section img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /* 引き伸ばしも切り取りもしない。原寸比のまま幅に合わせる */
+  object-fit: fill;
+}
+
+/* ---------- CTA 帯 ----------
+   背景色は直前の画像の下端色をビルド時に inline style で入れる。
+   そうしないとここが「画像の隙間」に見える。 */
+.lp-cta {
+  margin: 0;
+  padding: 18px 20px 22px;
+  line-height: 0;
+  text-align: center;
+}
+/* ⚠️ 帯が既に左右 20px の余白を持っている。ボタン側でも余白を引くと
+   二重に痩せてラベルが2行に折れる（実測: 390px で折れた）。 */
+.lp-cta .line-cta { width: 100%; }
+
+/* ---------- 画像の上に重ねる CTA（2026-09-11） ----------
+   「＼ 無料相談はこちら ／」の直下の余白へ重ねる。上端位置は画像ごとに
+   --cta-top（画像高さに対する %。scripts/build-numbered-lp.mjs の CTA_OVERLAY_TOP）で決める。
+   ⚠️ 帯型と違い背景・上下余白を持たない。画像の高さも変えない（次の画像との隙間を作らない）。 */
+.lp-cta--overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--cta-top, 72%);
+  padding: 0 20px;
+  background: none;
+  pointer-events: none;          /* 画像の余白部分のタップを奪わない。ボタンだけ押せる */
+}
+.lp-cta--overlay .line-cta { pointer-events: auto; }
+
+/* ---------- LINE ボタン ---------- */
+.line-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: calc(100% - 40px);
+  max-width: 520px;
+  min-height: 64px;
+  padding: 12px 18px;
+  border-radius: 8px;                 /* 角丸長方形（2026-09-11 PHASE 78-1。pill にしない） */
+  background: #06C755;                /* LINE グリーン。フラット（gradient なし） */
+  color: #fff;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: .02em;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .18);
+  animation: lineShake 1.4s ease-in-out infinite;   /* 左右にだけ軽く揺れる（縦移動なし） */
+  will-change: transform;
+}
+/* 白い吹き出し型の LINE アイコン（CSS だけ。外部依存・画像なし） */
+.line-cta__icon {
+  flex: 0 0 auto;
+  position: relative;
+  display: inline-block;
+  padding: 4px 9px;
+  border-radius: 7px;
+  background: #fff;
+  color: #06C755;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: .04em;
+}
+.line-cta__icon::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  bottom: -5px;
+  border-style: solid;
+  border-width: 6px 5px 0 0;
+  border-color: #fff transparent transparent transparent;
+}
+.line-cta:hover { background: #05b64d; animation-play-state: paused; }
+.line-cta:active { transform: scale(.97); animation-play-state: paused; }
+
+/* 左右 ±8px（戻りは -5px）。縦移動・回転・点滅・大きな拡縮はしない */
+@keyframes lineShake {
+  0%, 100% { transform: translateX(0); }
+  25%      { transform: translateX(-8px); }
+  50%      { transform: translateX(8px); }
+  75%      { transform: translateX(-5px); }
+}
+
+/* 追従CTA（position:fixed）は 2026-09-11 に撤去。画面に追従する LINE ボタンは置かない。 */
+[hidden] { display: none !important; }
+
+/* ---------- 受付停止の告知 ---------- */
+#review-banner {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: #8c1d1d;
+  color: #fff;
+  padding: 12px 16px;
+  font-size: 13.5px;
+  line-height: 1.65;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .25);
+}
+#review-banner a { color: #ffd479; }
+
+#review-notice {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 28px 20px 96px;
+  border-top: 4px solid #c0392b;
+  background: #fdf1f0;
+}
+#review-notice h2 {
+  position: relative;
+  margin: 0 0 14px;
+  padding-left: 38px;
+  font-size: 19px;
+  line-height: 1.5;
+  color: #8c1d1d;
+}
+#review-notice h2::before {
+  content: "!";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  margin-top: -14px;
+  border-radius: 50%;
+  background: #c0392b;
+  color: #fff;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  font-weight: 700;
+}
+#review-notice p { margin: 0 0 10px; font-size: 14px; line-height: 1.9; color: #3a2222; }
+
+/* ---------- 運営者情報 / 法定表示 ----------
+   ⚠️ 画像に置き換えて消さない。JS 無効でも読めるよう静的 HTML で持つ。 */
+.site-footer {
+  background: #0b2340;
+  color: rgba(255, 255, 255, .92);
+}
+.site-footer__inner {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 28px 20px 32px;
+}
+.site-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.site-footer__nav a { color: inherit; font-size: 13px; text-decoration: underline; }
+
+.entity-confirmed {
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .06);
+  font-size: 12.5px;
+  line-height: 1.8;
+}
+.entity-confirmed__label { margin: 0 0 8px; font-size: 13px; font-weight: 700; color: #fff; }
+.entity-confirmed dl { display: grid; grid-template-columns: 1fr; gap: 2px; margin: 0; }
+.entity-confirmed dt { margin-top: 6px; font-size: 11.5px; font-weight: 700; color: rgba(255, 255, 255, .75); }
+.entity-confirmed dd { margin: 0; font-size: 13px; color: #fff; word-break: break-all; }
+
+.site-footer__disclaimer {
+  margin: 16px 0 0;
+  font-size: 11.5px;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, .78);
+}
+.site-footer__copyright {
+  margin: 14px 0 0;
+  font-size: 11.5px;
+  text-align: center;
+  color: rgba(255, 255, 255, .7);
+}
+
+/* ---------- ブレークポイント ---------- */
+/* ⚠️ 389px 以下では 17px のラベルが2行に折れる（実測: 375px で高さ 72px になり、
+   重ねた CTA が画像の下端を 2〜3px はみ出した）。折り返さない大きさに落とす。 */
+@media (max-width: 389px) {
+  .line-cta { font-size: 17px; min-height: 58px; padding: 10px 14px; gap: 10px; }
+  .lp-cta { padding: 16px 14px 20px; }
+  .lp-cta--overlay { padding: 0 14px; }
+  #review-banner { font-size: 12.5px; }
+}
+
+@media (min-width: 750px) {
+  /* 参考LPと同じく、PC でも横に広げない。中央の1カラムのまま */
+  .image-lp { box-shadow: 0 0 40px rgba(15, 44, 82, .10); }
+  .line-cta { font-size: 20px; min-height: 68px; }
+  #review-notice { padding: 36px 32px 44px; }
+  #review-notice h2 { font-size: 22px; }
+}
+
+@media (min-width: 1024px) {
+  body { background: #e9eef4; }
+  .image-lp { box-shadow: 0 0 60px rgba(15, 44, 82, .14); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line-cta { animation: none; }
+  .line-cta:hover, .line-cta:active { transform: none; }
+}

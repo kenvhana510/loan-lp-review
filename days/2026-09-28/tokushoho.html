@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>特定商取引に基づく表記 | 住宅ローン相談窓口</title>
+<link rel="stylesheet" href="legal.css">
+</head>
+<body>
+<main class="simple-page">
+  <h1>特定商取引に基づく表記</h1>
+  <!--
+    2026-09-28（人間決定）: 法定表示は**単一主体**（運営者 = 広告主 = 相談窓口）。
+      屋号                                   = config.TRADE_NAME
+      運営者名 / 所在地 / 電話番号 / メールアドレス = config.OPERATOR の ADVERTISER_*
+    受付時間は表示しない（人間指示）。役務提供者（資金計画・住まいのご案内を行う宅地建物取引業者）の
+    社名・代表者・所在地・免許番号・連絡先はこのページに書かない（config の PROVIDER_* 等は LINE 側の取次ぎ先として保持）。
+    ⚠️ scripts/verify-production-values.mjs の LEGAL_DISPLAY = SINGLE_OPERATOR がこの形（表 1 つ）を前提に検査する。
+  -->
+  <table>
+    <tr><th>屋号</th><td>restartlife</td></tr>
+    <tr><th>運営者名</th><td>本間 謙太郎</td></tr>
+    <tr><th>所在地</th><td>愛知県高浜市神明町8-2-4</td></tr>
+    <tr><th>電話番号</th><td>090-1565-5891</td></tr>
+    <tr><th>メールアドレス</th><td>info@restartlife.jp</td></tr>
+    <tr><th>提供サービス</th><td>住宅ローンを活用した住まいの計画に関する無料相談の受付と、宅地建物取引業の免許を受けた事業者へのお取次ぎ</td></tr>
+    <tr><th>相談料</th><td>無料</td></tr>
+    <tr><th>対応エリア</th><td>ご相談は全国（物件のご案内・手続きの対応範囲はエリアにより異なります）</td></tr>
+    <tr><th>サービスの提供条件</th><td>現在返済が遅れているお借入れがある場合など、ご利用いただけないケースがあります。詳細は無料相談時にご確認ください。</td></tr>
+    <tr><th>個人情報について</th><td>当窓口はお客様のプライバシーを第一に考え運営しております。お客様の個人情報は、厳正な管理の下で安全に蓄積・保管しております。当該個人情報は、お客様の同意を得た場合、法律によって要求された場合、あるいは当窓口の権利や財産を保護する必要が生じた場合を除き、第三者に提供する事はありません。</td></tr>
+  </table>
+
+  <a class="back-link" href="lp/numbered/index.html">相談ページに戻る</a>
+
+  <p class="legal-copyright">Copyright (C) 2026 restartlife All Rights Reserved.</p>
+</main>
+</body>
+</html>

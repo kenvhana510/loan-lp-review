@@ -461,3 +461,4 @@ table.cmp th { background: var(--soft); color: var(--navy); white-space: nowrap;
 /* LINE ボタン: 390px 幅で 2 行に折れないよう LP 内だけ少し小さく */
 .lph .line-cta { font-size: 18px; gap: 10px; }
 @media (min-width: 720px) { .lph .line-cta { font-size: 21px; } }
+.lph-profile__text p + p { margin-top: 12px; }

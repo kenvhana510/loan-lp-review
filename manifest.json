@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T21:26:48.648Z",
+  "generatedAt": "2026-09-28T22:53:34.102Z",
   "from": "2026-09-29",
   "to": "2026-10-18",
   "days": {
@@ -8,6 +8,7 @@
         "column/revo-bunkatsu-jutaku-loan"
       ],
       "files": [
+        "404.html",
         "assets/lp/final-numbered/web/01.webp",
         "assets/lp/final-numbered/web/02.webp",
         "assets/lp/final-numbered/web/03.webp",

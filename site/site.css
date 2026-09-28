@@ -222,6 +222,13 @@ table.cmp th { background: var(--soft); color: var(--navy); white-space: nowrap;
 .sticky-cta .line-cta { margin: 0 auto; min-height: 52px; font-size: 16px; }
 @media (min-width: 720px) { .sticky-cta .line-cta { max-width: 420px; } }
 
+/* サイト画像 */
+.hero__img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius); margin-top: 20px; }
+.section__img { width: 100%; height: auto; border-radius: var(--radius); margin-top: 18px; }
+.section__img--illust { background: var(--base); border: 1px solid var(--border); }
+.post-thumb { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; margin-bottom: 10px; }
+.article__img { width: 100%; height: auto; border-radius: var(--radius); margin: 16px 0 4px; }
+
 /* 関連リンク */
 .related { margin-top: 16px; display: grid; gap: 8px; }
 .related a { display: block; padding: 12px 14px; background: var(--base); border: 1px solid var(--border); border-radius: 8px; text-decoration: none; font-size: 14.5px; }

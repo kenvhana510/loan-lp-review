@@ -202,7 +202,7 @@ table.cmp th { background: var(--soft); color: var(--navy); white-space: nowrap;
   width: 100%; max-width: 480px; min-height: 60px; margin-top: 16px;
   padding: 12px 18px; border-radius: 8px;
   background: var(--line-green); color: #fff; text-decoration: none;
-  font-size: 18px; font-weight: 700; line-height: 1.3; letter-spacing: .02em;
+  font-size: 21px; font-weight: 700; line-height: 1.3; letter-spacing: .02em;
   box-shadow: 0 4px 12px rgba(0,0,0,.18);
 }
 .line-cta:hover { background: var(--line-green-d); }
@@ -221,7 +221,7 @@ table.cmp th { background: var(--soft); color: var(--navy); white-space: nowrap;
   transform: translateY(110%); transition: transform .25s ease;
 }
 .sticky-cta.is-visible { transform: translateY(0); }
-.sticky-cta .line-cta { margin: 0 auto; min-height: 52px; font-size: 16px; }
+.sticky-cta .line-cta { margin: 0 auto; min-height: 54px; font-size: 19px; }
 @media (min-width: 720px) { .sticky-cta .line-cta { max-width: 420px; } }
 
 /* サイト画像 */

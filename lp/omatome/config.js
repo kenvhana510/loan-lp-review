@@ -40,6 +40,11 @@ window.LP_CONFIG = {
   GOOGLE_ADS: {
     CONVERSION_ID: "AW-18458618505",
     LINE_CTA_CLICK_LABEL: "Yi50CJ3hpv0cEInV4OFE",
+    // 2026-09-28 人間決定: restartlife.jp 専用の GA4 プロパティ（556155085 / ストリーム 15856261278）。
+    //   Google タグ（gtag.js）と同じ <head> で gtag('config', GA4_ID) を送る。LINE CTA クリックは
+    //   イベント line_cta_click として送る（キーイベント）。上の GA_MEASUREMENT_ID（旧LP の tracking.js 用）
+    //   とは別のキーであり、Gate の「GA_MEASUREMENT_ID 未投入」判定には触れない。
+    GA4_ID: "G-49D1Z94ELS",
   },
 
   // ---- 運営者情報（F-6 必須開示 / docs/operator-information-intake.md） ----

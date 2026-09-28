@@ -60,6 +60,9 @@ window.LP_CONFIG = {
   //       法定表示ページには**両方を併記する**。値を混ぜないこと。
   //         広告主       = ユーザー本人（Gate #1 案A）
   //         役務提供者   = 株式会社中央住地（宅建業免許はこちらのもの）
+  // 屋号（2026-09-28 人間決定）。法定表示・運営者情報・Copyright の名義。屋号の正本はここだけ
+  TRADE_NAME: "restartlife",
+
   OPERATOR: {
     // ---- 広告主（ADVERTISER_ENTITY / Gate #1 = USER_SELF） ----
     ADVERTISER_NAME: "本間 謙太郎",       // 広告主（2026-09-03 人間確定）

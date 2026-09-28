@@ -24,13 +24,24 @@
   // 1 回のページ滞在で conversion は最初のクリック 1 回だけ
   var state = "idle";
 
-  function reportAndGo(url) {
+  // GA4 用のイベント（Google タグに接続された GA4 プロパティへ転送される）。キーイベント "line_cta_click"
+  function reportGa4(a) {
+    try {
+      window.gtag("event", "line_cta_click", {
+        cta_position: a.getAttribute("data-cta-position") || "",
+        page_path: window.location.pathname
+      });
+    } catch (e) { /* 計測失敗で導線を止めない */ }
+  }
+
+  function reportAndGo(url, a) {
     var navigated = false;
     var go = function () {
       state = "done";
       if (!navigated) { navigated = true; window.location = url; }
     };
     var timer = setTimeout(go, FALLBACK_MS + 500);
+    reportGa4(a);
     window.gtag("event", "conversion", {
       send_to: SEND_TO,
       event_callback: function () { clearTimeout(timer); go(); },
@@ -45,14 +56,14 @@
     if (!SEND_TO || typeof window.gtag !== "function") return; // 計測なし。既定の遷移に任せる
 
     if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey || ev.button !== 0) {
-      if (state === "idle") { state = "done"; window.gtag("event", "conversion", { send_to: SEND_TO }); }
+      if (state === "idle") { state = "done"; reportGa4(a); window.gtag("event", "conversion", { send_to: SEND_TO }); }
       return;
     }
     ev.preventDefault();
     if (state === "pending") return;
     if (state === "done") { window.location = url; return; }
     state = "pending";
-    reportAndGo(url);
+    reportAndGo(url, a);
   }
 
   var ctas = document.querySelectorAll('a.line-cta[data-cta-type="line"]');

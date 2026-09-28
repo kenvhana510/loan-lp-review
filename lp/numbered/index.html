@@ -272,9 +272,14 @@
     var url = a.getAttribute('href');
     if (!isLineHref(url)) return; // LINE 導線が未投入（review モード）なら何もしない
 
+    // GA4 用のイベント（2026-09-28）。Google タグに接続された GA4 プロパティへ転送され、キーイベントになる
+    var ga4 = function () {
+      try { gtag('event', 'line_cta_click', { 'cta_position': a.getAttribute('data-cta-position') || '', 'page_path': window.location.pathname }); } catch (e) {}
+    };
+
     // 修飾キー付き（新しいタブで開く等）はブラウザの既定動作に任せ、計測だけ送る
     if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey || ev.button !== 0) {
-      if (state === 'idle') { state = 'done'; gtag('event', 'conversion', { 'send_to': SEND_TO }); }
+      if (state === 'idle') { state = 'done'; ga4(); gtag('event', 'conversion', { 'send_to': SEND_TO }); }
       return;
     }
 
@@ -283,6 +288,7 @@
     if (state === 'done') { window.location = url; return; }    // 2 回目以降は遷移のみ（conversion は送らない）
     state = 'pending';
     if (typeof window.gtag !== 'function') { state = 'done'; window.location = url; return; }
+    ga4();
     gtag_report_conversion(url);
   }
 

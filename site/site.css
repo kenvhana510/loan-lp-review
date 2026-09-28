@@ -61,9 +61,8 @@ ul, ol { padding: 0; list-style: none; }
    ブランド側を縮められるようにし、ボタン側は縮めない */
 /* 2026-09-28: ヘッダーはロゴ画像（assets/site/logo.webp）だけ。右上の LINE ボタンは人間指示で撤去 */
 .brand { display: block; flex: 0 0 auto; line-height: 0; }
-.brand__logo { height: 32px; width: auto; max-width: 55vw; display: block; }
+.brand__logo { height: 64px; width: auto; max-width: 60vw; display: block; }
 .site-header__inner { padding-top: 6px; padding-bottom: 6px; }
-@media (min-width: 720px) { .brand__logo { height: 38px; } }
 .site-nav { flex: 0 0 auto; }
 .brand__tag  { display: none; font-size: 11px; color: var(--text-mute); }
 /* ナビは幅に余裕があるときだけ（折り返すと 3 行になり読めない） */

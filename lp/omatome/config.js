@@ -59,7 +59,7 @@ window.LP_CONFIG = {
   //       広告主（ADVERTISER_*）と役務提供者（それ以外）は**別の主体**であり、
   //       法定表示ページには**両方を併記する**。値を混ぜないこと。
   //         広告主       = ユーザー本人（Gate #1 案A）
-  //         役務提供者   = 株式会社中央住地（宅建業免許はこちらのもの）
+  //         役務提供者   = LINE 取次ぎ先の宅建業者（免許はこちらのもの。2026-09-28 人間決定: 配信物では値を空にする）
   // 屋号（2026-09-28 人間決定）。法定表示・運営者情報・Copyright の名義。屋号の正本はここだけ
   TRADE_NAME: "restartlife",
 
@@ -71,21 +71,20 @@ window.LP_CONFIG = {
     ADVERTISER_EMAIL: "info@restartlife.jp",     // 広告主のメールアドレス（2026-09-19 人間指示で legacraft.jp → restartlife.jp に変更）
     // ⚠️ 受付時間は**広告主のもの**である。顧客が最初に連絡するのは広告主だから。
     //    役務提供者の受付時間は本LPに表示しないので、受け取る必要が無い。
-    BUSINESS_HOURS: "17:00〜20:00",        // 広告主の受付時間（2026-09-09 人間確定）
+    BUSINESS_HOURS: "",        // 広告主の受付時間（2026-09-09 人間確定）
 
     // ---- 役務提供者（SERVICE_PROVIDER_ENTITY） ----
-    //      出典: 先輩LP https://ykry52.com/revivelife/law.html（2026-09-03 取得）
-    PROVIDER_NAME: "株式会社中央住地",
-    REPRESENTATIVE: "鈴木 元治",
-    ADDRESS: "〒275-0014 千葉県習志野市大久保4-12-25",
-    PHONE: "090-9227-3379",
-    EMAIL: "kbking1204@gmail.com",
+    PROVIDER_NAME: "",
+    REPRESENTATIVE: "",
+    ADDRESS: "",
+    PHONE: "",
+    EMAIL: "",
     // ⚠️ この免許番号は千葉県・東京都の公的DBで照会できなかった記録がある
     //    （docs/operator-information-intake.md §2-8 / docs/compliance-gate.md）。
     //    有効であること自体は人間確認済み。番号の掲載は 2026-09-03 に人間が
     //    「先輩LP通りに投入する」と決定。**照会できなかった事実は未解消のまま残る。**
-    LICENSE_NUMBER: "千葉県知事免許（7）第12448号",
-    LICENSE_AUTHORITY: "千葉県知事",
+    LICENSE_NUMBER: "",
+    LICENSE_AUTHORITY: "",
   },
 
   // ---- 表示ゲート ----

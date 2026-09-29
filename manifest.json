@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T04:46:48.853Z",
+  "generatedAt": "2026-09-29T05:20:17.519Z",
   "from": "2026-09-29",
   "to": "2026-11-08",
   "days": {
@@ -57,6 +57,7 @@
         "assets/site/column-atamakin-zero.webp",
         "assets/site/column-bukken-kakaku.webp",
         "assets/site/column-car.webp",
+        "assets/site/column-fufu-katahou.webp",
         "assets/site/column-fufu-shunyu.webp",
         "assets/site/column-fukusu-moshikomi.webp",
         "assets/site/column-fukusu-seiri.webp",
@@ -71,6 +72,8 @@
         "assets/site/column-kansai-go.webp",
         "assets/site/column-keitai-zeikin.webp",
         "assets/site/column-keiyaku-haken.webp",
+        "assets/site/column-kiroku-kaiji.webp",
+        "assets/site/column-kiroku-kieru-junbi.webp",
         "assets/site/column-kiroku-shurui.webp",
         "assets/site/column-kojin-jigyo.webp",
         "assets/site/column-kojo-taisho.webp",
@@ -89,6 +92,7 @@
         "assets/site/column-shohisha-matomeru.webp",
         "assets/site/column-shohiyo.webp",
         "assets/site/column-shorui.webp",
+        "assets/site/column-tanki-kurikaeshi.webp",
         "assets/site/column-temoto-shikin.webp",
         "assets/site/column-tenshoku.webp",
         "assets/site/column-toranai-checklist.webp",

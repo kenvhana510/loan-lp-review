@@ -18,8 +18,33 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"><!-- 画像LP（/lp/）の書体に合わせる（2026-09-28 人間指示） -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" onload="this.onload=null;this.rel='stylesheet'"><!-- 2026-09-29 Lighthouse 対応: フォント CSS を描画ブロックにしない（読込後に適用。display=swap で本文は先に出る） -->
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap"></noscript>
+<link rel="preload" as="image" href="assets/site/lp-hero.avif" type="image/avif" fetchpriority="high">
 <link rel="stylesheet" href="site/site.css">
+<style>
+html.rl-logo-intro .brand__logo{transform-origin:left center;-webkit-mask-image:linear-gradient(90deg,#000 0,#000 40%,transparent 60%,transparent 100%);mask-image:linear-gradient(90deg,#000 0,#000 40%,transparent 60%,transparent 100%);-webkit-mask-size:250% 100%;mask-size:250% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;animation:rl-logo-wipe 1.05s cubic-bezier(.65,0,.35,1) .08s both,rl-logo-fade .6s cubic-bezier(.25,.46,.45,.94) both,rl-logo-blur .9s cubic-bezier(.25,.46,.45,.94) both,rl-logo-settle 1.3s cubic-bezier(.22,1,.36,1) both;animation-play-state:paused;will-change:transform,opacity,filter}
+html.rl-logo-quick .brand__logo{animation:rl-logo-fade .32s ease-out both;animation-play-state:paused}
+html.rl-logo-go .brand__logo{animation-play-state:running}
+@keyframes rl-logo-wipe{from{-webkit-mask-position:100% 0;mask-position:100% 0}to{-webkit-mask-position:0 0;mask-position:0 0}}
+@keyframes rl-logo-fade{from{opacity:0}to{opacity:1}}
+@keyframes rl-logo-blur{from{filter:blur(3px)}to{filter:blur(0)}}
+@keyframes rl-logo-settle{0%{transform:translateY(-5px) scale(.97)}72%{transform:translateY(0) scale(1.004)}100%{transform:none}}
+.brand{transform-origin:left center;transition:transform .35s cubic-bezier(.25,.46,.45,.94)}
+html.rl-compact .brand{transform:scale(.94)}
+@media (prefers-reduced-motion:reduce){.brand{transition:none}}
+</style>
+<script>(function(d,w){var h=d.documentElement,rm=false;try{rm=w.matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){}
+if(!rm){var seen=false;try{seen=w.sessionStorage.getItem("rl-logo")==="1";w.sessionStorage.setItem("rl-logo","1")}catch(e){}
+var c=seen?"rl-logo-quick":"rl-logo-intro",go=false;h.classList.add(c);
+var end=function(){h.classList.remove(c);h.classList.remove("rl-logo-go")};
+var start=function(){if(go)return;go=true;h.classList.add("rl-logo-go");setTimeout(end,seen?500:1600)};
+setTimeout(function(){if(!go)end()},3000);
+var hit=function(e){var t=e.target;if(t&&t.classList&&t.classList.contains("brand__logo"))start()};
+d.addEventListener("load",hit,true);d.addEventListener("error",hit,true);
+d.addEventListener("DOMContentLoaded",function(){var i=d.querySelector(".brand__logo");if(!i||i.complete)start()})}
+var on=false,q=false,f=function(){q=false;var y=w.pageYOffset||0;if(!on&&y>40){on=true;h.classList.add("rl-compact")}else if(on&&y<10){on=false;h.classList.remove("rl-compact")}};
+w.addEventListener("scroll",function(){if(!q){q=true;w.requestAnimationFrame(f)}},{passive:true});d.addEventListener("DOMContentLoaded",f)})(document,window)</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18458618505"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -52,7 +77,7 @@
 
 <!-- 1. キャッチコピー（2026-09-29 人間指示: 「夢のオーダーメイドの／マイホームを／現実の住まいの計画に。」参考画像の文字サイズ比に合わせる。広告見出しとの整合は要確認） -->
 <section class="lph-hero">
-  <img class="lph-hero__img" src="assets/site/lp-hero.webp" width="1200" height="1500" alt="青空の下の新しい住宅街と、家の前に立つ家族" fetchpriority="high" decoding="async">
+  <picture><source type="image/avif" srcset="assets/site/lp-hero.avif"><img class="lph-hero__img" src="assets/site/lp-hero.webp" width="1200" height="1500" alt="青空の下の新しい住宅街と、家の前に立つ家族" fetchpriority="high" decoding="async"></picture>
   <div class="lph-hero__top">
     <span class="lph-chip">住宅ローンを活用した住まいの計画の相談窓口</span>
     <h1 class="lph-hero__title"><span class="lph-hero__t1">夢のオーダーメイドの</span><span class="lph-hero__t2">マイホーム<small>を</small></span><span class="lph-hero__t3">現実の住まいの計画に。</span></h1>
@@ -129,16 +154,6 @@
 </section>
 
 
-<section class="lph-consult">
-  <img class="lph-consult__bg" src="assets/site/lp-consultbg.webp" width="1200" height="800" alt="" loading="lazy" decoding="async">
-  <div class="lph-consult__inner">
-    <p class="lph-consult__text">いまの支払いを整理しながら、<br>資産になるマイホームへ。<br>お一人おひとりに合った計画を、<br>無料でご提案します。</p>
-    <p class="lph-consult__head">無料相談はこちら</p>
-    <a class="line-cta" href="https://lin.ee/wIjLMkF" data-cta-type="line" data-cta-position="consult-3" data-cta-id="consult-3">
-      <span class="line-cta__icon" aria-hidden="true">LINE</span>LINEで無料相談する</a>
-  </div>
-</section>
-
 <!-- 4. ベネフィット -->
 <section class="lph-section">
   <div class="wrap">
@@ -157,16 +172,6 @@
   </div>
 </section>
 
-
-<section class="lph-consult">
-  <img class="lph-consult__bg" src="assets/site/lp-consultbg.webp" width="1200" height="800" alt="" loading="lazy" decoding="async">
-  <div class="lph-consult__inner">
-    <p class="lph-consult__text">いまの支払いを整理しながら、<br>資産になるマイホームへ。<br>お一人おひとりに合った計画を、<br>無料でご提案します。</p>
-    <p class="lph-consult__head">無料相談はこちら</p>
-    <a class="line-cta" href="https://lin.ee/wIjLMkF" data-cta-type="line" data-cta-position="consult-4" data-cta-id="consult-4">
-      <span class="line-cta__icon" aria-hidden="true">LINE</span>LINEで無料相談する</a>
-  </div>
-</section>
 
 <!-- 5. こんな人におすすめ -->
 <section class="lph-section lph-section--soft">
@@ -220,16 +225,6 @@
 </section>
 
 
-<section class="lph-consult">
-  <img class="lph-consult__bg" src="assets/site/lp-consultbg.webp" width="1200" height="800" alt="" loading="lazy" decoding="async">
-  <div class="lph-consult__inner">
-    <p class="lph-consult__text">いまの支払いを整理しながら、<br>資産になるマイホームへ。<br>お一人おひとりに合った計画を、<br>無料でご提案します。</p>
-    <p class="lph-consult__head">無料相談はこちら</p>
-    <a class="line-cta" href="https://lin.ee/wIjLMkF" data-cta-type="line" data-cta-position="consult-6" data-cta-id="consult-6">
-      <span class="line-cta__icon" aria-hidden="true">LINE</span>LINEで無料相談する</a>
-  </div>
-</section>
-
 <!-- 7. メッセージ -->
 <section class="lph-section lph-message">
   <img class="lph-message__bg" src="assets/site/lp-messagebg.webp" width="1200" height="600" alt="夕暮れの住宅街" loading="lazy" decoding="async">
@@ -245,16 +240,6 @@
   </div>
 </section>
 
-
-<section class="lph-consult">
-  <img class="lph-consult__bg" src="assets/site/lp-consultbg.webp" width="1200" height="800" alt="" loading="lazy" decoding="async">
-  <div class="lph-consult__inner">
-    <p class="lph-consult__text">いまの支払いを整理しながら、<br>資産になるマイホームへ。<br>お一人おひとりに合った計画を、<br>無料でご提案します。</p>
-    <p class="lph-consult__head">無料相談はこちら</p>
-    <a class="line-cta" href="https://lin.ee/wIjLMkF" data-cta-type="line" data-cta-position="consult-7" data-cta-id="consult-7">
-      <span class="line-cta__icon" aria-hidden="true">LINE</span>LINEで無料相談する</a>
-  </div>
-</section>
 
 <!-- 8. お客様の声（実在確認済みの声が無いため「ご相談イメージ」として典型例を提示。claims-register §E 2026-09-28 人間決定） -->
 <section class="lph-section lph-section--soft">
@@ -315,16 +300,6 @@
 </section>
 
 
-<section class="lph-consult">
-  <img class="lph-consult__bg" src="assets/site/lp-consultbg.webp" width="1200" height="800" alt="" loading="lazy" decoding="async">
-  <div class="lph-consult__inner">
-    <p class="lph-consult__text">いまの支払いを整理しながら、<br>資産になるマイホームへ。<br>お一人おひとりに合った計画を、<br>無料でご提案します。</p>
-    <p class="lph-consult__head">無料相談はこちら</p>
-    <a class="line-cta" href="https://lin.ee/wIjLMkF" data-cta-type="line" data-cta-position="consult-9" data-cta-id="consult-9">
-      <span class="line-cta__icon" aria-hidden="true">LINE</span>LINEで無料相談する</a>
-  </div>
-</section>
-
 <!-- 10. 商品・サービス説明 -->
 <section class="lph-section lph-section--cream">
   <div class="wrap">
@@ -366,16 +341,6 @@
 </section>
 
 
-<section class="lph-consult">
-  <img class="lph-consult__bg" src="assets/site/lp-consultbg.webp" width="1200" height="800" alt="" loading="lazy" decoding="async">
-  <div class="lph-consult__inner">
-    <p class="lph-consult__text">いまの支払いを整理しながら、<br>資産になるマイホームへ。<br>お一人おひとりに合った計画を、<br>無料でご提案します。</p>
-    <p class="lph-consult__head">無料相談はこちら</p>
-    <a class="line-cta" href="https://lin.ee/wIjLMkF" data-cta-type="line" data-cta-position="consult-11" data-cta-id="consult-11">
-      <span class="line-cta__icon" aria-hidden="true">LINE</span>LINEで無料相談する</a>
-  </div>
-</section>
-
 <!-- 12. 金額 -->
 <section class="lph-section lph-section--cream">
   <div class="wrap">
@@ -388,16 +353,6 @@
   </div>
 </section>
 
-
-<section class="lph-consult">
-  <img class="lph-consult__bg" src="assets/site/lp-consultbg.webp" width="1200" height="800" alt="" loading="lazy" decoding="async">
-  <div class="lph-consult__inner">
-    <p class="lph-consult__text">いまの支払いを整理しながら、<br>資産になるマイホームへ。<br>お一人おひとりに合った計画を、<br>無料でご提案します。</p>
-    <p class="lph-consult__head">無料相談はこちら</p>
-    <a class="line-cta" href="https://lin.ee/wIjLMkF" data-cta-type="line" data-cta-position="consult-12" data-cta-id="consult-12">
-      <span class="line-cta__icon" aria-hidden="true">LINE</span>LINEで無料相談する</a>
-  </div>
-</section>
 
 <!-- 13. よくある質問（抜粋。全 26 問は /faq/） -->
 <section class="lph-section">
@@ -435,16 +390,6 @@
 </section>
 
 
-<section class="lph-consult">
-  <img class="lph-consult__bg" src="assets/site/lp-consultbg.webp" width="1200" height="800" alt="" loading="lazy" decoding="async">
-  <div class="lph-consult__inner">
-    <p class="lph-consult__text">いまの支払いを整理しながら、<br>資産になるマイホームへ。<br>お一人おひとりに合った計画を、<br>無料でご提案します。</p>
-    <p class="lph-consult__head">無料相談はこちら</p>
-    <a class="line-cta" href="https://lin.ee/wIjLMkF" data-cta-type="line" data-cta-position="consult-14" data-cta-id="consult-14">
-      <span class="line-cta__icon" aria-hidden="true">LINE</span>LINEで無料相談する</a>
-  </div>
-</section>
-
 <!-- 15. 支払い方法 -->
 <section class="lph-section">
   <div class="wrap">
@@ -454,16 +399,6 @@
   </div>
 </section>
 
-
-<section class="lph-consult">
-  <img class="lph-consult__bg" src="assets/site/lp-consultbg.webp" width="1200" height="800" alt="" loading="lazy" decoding="async">
-  <div class="lph-consult__inner">
-    <p class="lph-consult__text">いまの支払いを整理しながら、<br>資産になるマイホームへ。<br>お一人おひとりに合った計画を、<br>無料でご提案します。</p>
-    <p class="lph-consult__head">無料相談はこちら</p>
-    <a class="line-cta" href="https://lin.ee/wIjLMkF" data-cta-type="line" data-cta-position="consult-15" data-cta-id="consult-15">
-      <span class="line-cta__icon" aria-hidden="true">LINE</span>LINEで無料相談する</a>
-  </div>
-</section>
 
 <!-- 16. 想い・ストーリー -->
 <section class="lph-section lph-section--navy">
@@ -527,6 +462,9 @@
     <p class="site-footer__copyright">Copyright(C) 2026 restartlife All rights reserved.</p>
   </div>
 </footer>
+<script src="site/gsap.min.js"></script>
+<script src="site/ScrollTrigger.min.js"></script>
+<script src="site/animations.js"></script>
 <script src="site/site.js" defer></script>
 </body>
 </html>

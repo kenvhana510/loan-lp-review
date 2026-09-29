@@ -18,8 +18,33 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"><!-- 画像LP（/lp/）の書体に合わせる（2026-09-28 人間指示） -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" onload="this.onload=null;this.rel='stylesheet'"><!-- 2026-09-29 Lighthouse 対応: フォント CSS を描画ブロックにしない（読込後に適用。display=swap で本文は先に出る） -->
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap"></noscript>
+
 <link rel="stylesheet" href="../../site/site.css">
+<style>
+html.rl-logo-intro .brand__logo{transform-origin:left center;-webkit-mask-image:linear-gradient(90deg,#000 0,#000 40%,transparent 60%,transparent 100%);mask-image:linear-gradient(90deg,#000 0,#000 40%,transparent 60%,transparent 100%);-webkit-mask-size:250% 100%;mask-size:250% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;animation:rl-logo-wipe 1.05s cubic-bezier(.65,0,.35,1) .08s both,rl-logo-fade .6s cubic-bezier(.25,.46,.45,.94) both,rl-logo-blur .9s cubic-bezier(.25,.46,.45,.94) both,rl-logo-settle 1.3s cubic-bezier(.22,1,.36,1) both;animation-play-state:paused;will-change:transform,opacity,filter}
+html.rl-logo-quick .brand__logo{animation:rl-logo-fade .32s ease-out both;animation-play-state:paused}
+html.rl-logo-go .brand__logo{animation-play-state:running}
+@keyframes rl-logo-wipe{from{-webkit-mask-position:100% 0;mask-position:100% 0}to{-webkit-mask-position:0 0;mask-position:0 0}}
+@keyframes rl-logo-fade{from{opacity:0}to{opacity:1}}
+@keyframes rl-logo-blur{from{filter:blur(3px)}to{filter:blur(0)}}
+@keyframes rl-logo-settle{0%{transform:translateY(-5px) scale(.97)}72%{transform:translateY(0) scale(1.004)}100%{transform:none}}
+.brand{transform-origin:left center;transition:transform .35s cubic-bezier(.25,.46,.45,.94)}
+html.rl-compact .brand{transform:scale(.94)}
+@media (prefers-reduced-motion:reduce){.brand{transition:none}}
+</style>
+<script>(function(d,w){var h=d.documentElement,rm=false;try{rm=w.matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){}
+if(!rm){var seen=false;try{seen=w.sessionStorage.getItem("rl-logo")==="1";w.sessionStorage.setItem("rl-logo","1")}catch(e){}
+var c=seen?"rl-logo-quick":"rl-logo-intro",go=false;h.classList.add(c);
+var end=function(){h.classList.remove(c);h.classList.remove("rl-logo-go")};
+var start=function(){if(go)return;go=true;h.classList.add("rl-logo-go");setTimeout(end,seen?500:1600)};
+setTimeout(function(){if(!go)end()},3000);
+var hit=function(e){var t=e.target;if(t&&t.classList&&t.classList.contains("brand__logo"))start()};
+d.addEventListener("load",hit,true);d.addEventListener("error",hit,true);
+d.addEventListener("DOMContentLoaded",function(){var i=d.querySelector(".brand__logo");if(!i||i.complete)start()})}
+var on=false,q=false,f=function(){q=false;var y=w.pageYOffset||0;if(!on&&y>40){on=true;h.classList.add("rl-compact")}else if(on&&y<10){on=false;h.classList.remove("rl-compact")}};
+w.addEventListener("scroll",function(){if(!q){q=true;w.requestAnimationFrame(f)}},{passive:true});d.addEventListener("DOMContentLoaded",f)})(document,window)</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18458618505"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

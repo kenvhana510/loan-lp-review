@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T05:20:17.519Z",
+  "generatedAt": "2026-09-29T13:24:46.989Z",
   "from": "2026-09-29",
   "to": "2026-11-08",
   "days": {
@@ -109,6 +109,7 @@
         "assets/site/lp-ctabg.webp",
         "assets/site/lp-ctamid.webp",
         "assets/site/lp-empathy.webp",
+        "assets/site/lp-hero.avif",
         "assets/site/lp-hero.webp",
         "assets/site/lp-message.webp",
         "assets/site/lp-messagebg.webp",
@@ -150,6 +151,9 @@
         "robots.txt",
         "service/cardloan/index.html",
         "service/kariire/index.html",
+        "site/ScrollTrigger.min.js",
+        "site/animations.js",
+        "site/gsap.min.js",
         "site/site.css",
         "site/site.js",
         "sitemap.xml",

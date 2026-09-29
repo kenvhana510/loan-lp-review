@@ -337,9 +337,15 @@ table.cmp th { background: var(--soft); color: var(--navy); white-space: nowrap;
 }
 /* 紺の帯（ヒーロー直下） */
 .lph-band { background: linear-gradient(180deg, #123a66 0%, #0b2340 100%); color: #fff; text-align: center; padding: 24px 0 0; }
-.lph-band__pills { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; }
-.lph-band__pills span { background: var(--lph-orange); color: #fff; font-weight: 800; font-size: 15px; padding: 6px 12px; border-radius: 4px; }
-.lph-band__pills i { font-style: normal; font-weight: 800; font-size: 16px; }
+/* 2026-09-29 人間指示: 3 つの札を横一列（390px でも折り返さない） */
+.lph-band__pills { display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; gap: 4px; white-space: nowrap; }
+.lph-band__pills span { background: var(--lph-orange); color: #fff; font-weight: 800; font-size: 13.5px; padding: 6px 8px; border-radius: 4px; }
+.lph-band__pills i { font-style: normal; font-weight: 800; font-size: 14px; }
+@media (min-width: 720px) {
+  .lph-band__pills { gap: 8px; }
+  .lph-band__pills span { font-size: 17px; padding: 7px 14px; }
+  .lph-band__pills i { font-size: 18px; }
+}
 .lph-band__lead { margin-top: 14px; font-size: 19px; font-weight: 700; line-height: 1.5; }
 .lph-band__lead strong { font-size: 26px; font-weight: 900; }
 .lph-band__sub { margin-top: 8px; font-size: 13px; color: rgba(255,255,255,.85); }

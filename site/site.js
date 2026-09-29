@@ -32,6 +32,10 @@
         page_path: window.location.pathname
       });
     } catch (e) { /* 計測失敗で導線を止めない */ }
+    // Meta ピクセル（ベースコードがあるページだけ）。標準イベント Lead を LINE CTA クリック時だけ送る
+    try {
+      if (typeof window.fbq === "function") window.fbq("track", "Lead", { content_name: "line_cta_click" });
+    } catch (e) { /* 同上 */ }
   }
 
   function reportAndGo(url, a) {

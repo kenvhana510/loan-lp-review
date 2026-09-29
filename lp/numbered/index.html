@@ -276,6 +276,8 @@
     // GA4 用のイベント（2026-09-28）。Google タグに接続された GA4 プロパティへ転送され、キーイベントになる
     var ga4 = function () {
       try { gtag('event', 'line_cta_click', { 'cta_position': a.getAttribute('data-cta-position') || '', 'page_path': window.location.pathname }); } catch (e) {}
+      // Meta ピクセル（ベースコードがあるときだけ）。標準イベント Lead をクリック時だけ送る
+      try { if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { 'content_name': 'line_cta_click' }); } catch (e) {}
     };
 
     // 修飾キー付き（新しいタブで開く等）はブラウザの既定動作に任せ、計測だけ送る

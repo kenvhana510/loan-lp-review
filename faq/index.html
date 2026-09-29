@@ -23,26 +23,55 @@
 
 <link rel="stylesheet" href="../site/site.css">
 <style>
-html.rl-logo-intro .brand__logo{transform-origin:left center;-webkit-mask-image:linear-gradient(90deg,#000 0,#000 40%,transparent 60%,transparent 100%);mask-image:linear-gradient(90deg,#000 0,#000 40%,transparent 60%,transparent 100%);-webkit-mask-size:250% 100%;mask-size:250% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;animation:rl-logo-wipe 1.05s cubic-bezier(.65,0,.35,1) .08s both,rl-logo-fade .6s cubic-bezier(.25,.46,.45,.94) both,rl-logo-blur .9s cubic-bezier(.25,.46,.45,.94) both,rl-logo-settle 1.3s cubic-bezier(.22,1,.36,1) both;animation-play-state:paused;will-change:transform,opacity,filter}
-html.rl-logo-quick .brand__logo{animation:rl-logo-fade .32s ease-out both;animation-play-state:paused}
-html.rl-logo-go .brand__logo{animation-play-state:running}
-@keyframes rl-logo-wipe{from{-webkit-mask-position:100% 0;mask-position:100% 0}to{-webkit-mask-position:0 0;mask-position:0 0}}
-@keyframes rl-logo-fade{from{opacity:0}to{opacity:1}}
-@keyframes rl-logo-blur{from{filter:blur(3px)}to{filter:blur(0)}}
-@keyframes rl-logo-settle{0%{transform:translateY(-5px) scale(.97)}72%{transform:translateY(0) scale(1.004)}100%{transform:none}}
-.brand{transform-origin:left center;transition:transform .35s cubic-bezier(.25,.46,.45,.94)}
+.brand{position:relative;transform-origin:left center;transition:transform .35s cubic-bezier(.25,.46,.45,.94)}
 html.rl-compact .brand{transform:scale(.94)}
+.rl-parts{position:absolute;inset:0;pointer-events:none}
+.rl-parts img{position:absolute;display:block;height:auto;opacity:0;will-change:transform,opacity}
+html.rl-logo-intro .brand__logo{opacity:0}
+html.rl-logo-intro.rl-logo-done .brand__logo{opacity:1;transition:opacity .3s ease-out}
+html.rl-logo-done .rl-parts{opacity:0;transition:opacity .3s ease-out}
+.rl-p-house{left:1.567%;top:3.967%;width:26.533%;-webkit-mask-image:linear-gradient(68deg,#000 48%,transparent 52%);mask-image:linear-gradient(68deg,#000 48%,transparent 52%);-webkit-mask-size:300% 300%;mask-size:300% 300%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.rl-p-restart{left:17.833%;top:34.432%;width:52.917%}
+.rl-p-life{left:71.917%;top:34.167%;width:22.083%}
+.rl-p-leaf{left:91.058%;top:23.038%;width:7.633%;transform-origin:15% 90%}
+.rl-p-curve{left:6.590%;top:66.365%;width:86.243%;-webkit-mask-image:linear-gradient(90deg,#000 47%,transparent 53%);mask-image:linear-gradient(90deg,#000 47%,transparent 53%);-webkit-mask-size:250% 100%;mask-size:250% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.rl-p-tagline{left:20.583%;top:85.488%;width:66.583%}
+html.rl-logo-go .rl-p-house{animation:rl-draw .8s cubic-bezier(.25,.46,.45,.94) 0s both}
+html.rl-logo-go .rl-p-restart{animation:rl-text-blur .6s cubic-bezier(.25,.46,.45,.94) .25s both}
+html.rl-logo-go .rl-p-life{animation:rl-text .55s cubic-bezier(.25,.46,.45,.94) .45s both}
+html.rl-logo-go .rl-p-leaf{animation:rl-leaf .5s cubic-bezier(.34,1.4,.64,1) .65s both}
+html.rl-logo-go .rl-p-curve{animation:rl-wipe .85s cubic-bezier(.45,0,.55,1) .75s both}
+html.rl-logo-go .rl-p-tagline{animation:rl-text-sm .6s cubic-bezier(.25,.46,.45,.94) 1.15s both}
+@keyframes rl-draw{from{opacity:1;-webkit-mask-position:100% 0;mask-position:100% 0}to{opacity:1;-webkit-mask-position:0 100%;mask-position:0 100%}}
+@keyframes rl-wipe{from{opacity:1;-webkit-mask-position:100% 0;mask-position:100% 0}to{opacity:1;-webkit-mask-position:0 0;mask-position:0 0}}
+@keyframes rl-text-blur{from{opacity:0;transform:translateY(30%);filter:blur(3px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes rl-text{from{opacity:0;transform:translateY(30%)}to{opacity:1;transform:none}}
+@keyframes rl-text-sm{from{opacity:0;transform:translateY(40%)}to{opacity:1;transform:none}}
+@keyframes rl-leaf{from{opacity:0;transform:scale(.7) rotate(-4deg)}to{opacity:1;transform:none}}
+html.rl-logo-quick .brand__logo{animation:rl-fade .32s ease-out both;animation-play-state:paused}
+html.rl-logo-quick.rl-logo-go .brand__logo{animation-play-state:running}
+@keyframes rl-fade{from{opacity:0}to{opacity:1}}
 @media (prefers-reduced-motion:reduce){.brand{transition:none}}
 </style>
 <script>(function(d,w){var h=d.documentElement,rm=false;try{rm=w.matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){}
 if(!rm){var seen=false;try{seen=w.sessionStorage.getItem("rl-logo")==="1";w.sessionStorage.setItem("rl-logo","1")}catch(e){}
-var c=seen?"rl-logo-quick":"rl-logo-intro",go=false;h.classList.add(c);
-var end=function(){h.classList.remove(c);h.classList.remove("rl-logo-go")};
-var start=function(){if(go)return;go=true;h.classList.add("rl-logo-go");setTimeout(end,seen?500:1600)};
-setTimeout(function(){if(!go)end()},3000);
+var go=false,done=false,ov=null;
+var end=function(){if(done)return;done=true;h.classList.remove("rl-logo-intro");h.classList.remove("rl-logo-quick");h.classList.remove("rl-logo-go");h.classList.remove("rl-logo-done");if(ov&&ov.parentNode)ov.parentNode.removeChild(ov)};
+var finish=function(){if(done)return;h.classList.add("rl-logo-done");setTimeout(end,340)};
+var start=function(){if(go||done)return;go=true;h.classList.add("rl-logo-go");setTimeout(seen?end:finish,seen?400:1850)};
+var fail=setTimeout(function(){if(!go)end()},2600);
+if(seen){h.classList.add("rl-logo-quick");
 var hit=function(e){var t=e.target;if(t&&t.classList&&t.classList.contains("brand__logo"))start()};
 d.addEventListener("load",hit,true);d.addEventListener("error",hit,true);
-d.addEventListener("DOMContentLoaded",function(){var i=d.querySelector(".brand__logo");if(!i||i.complete)start()})}
+d.addEventListener("DOMContentLoaded",function(){var i=d.querySelector(".brand__logo");if(!i||i.complete)start()})
+}else{h.classList.add("rl-logo-intro");
+var tick=function(){if(done)return;var b=d.querySelector(".brand"),tp=b&&b.querySelector("template.rl-parts-tpl");var frag=tp&&tp.content;var ims=frag?frag.querySelectorAll("img"):[];
+if(ims.length<6){if(!b||!tp||d.readyState==="loading"){setTimeout(tick,16);return}end();return}
+ov=d.createElement("span");ov.className="rl-parts";ov.setAttribute("aria-hidden","true");ov.appendChild(d.importNode(frag,true));ims=ov.querySelectorAll("img");
+var n=0,ok=true,one=function(){if(++n<ims.length)return;clearTimeout(fail);if(ok)start();else end()};
+for(var k=0;k<ims.length;k++){(function(im){var ld=function(){if(!im.naturalWidth){ok=false;one();return}(im.decode?im.decode():Promise.resolve()).then(one,one)};
+im.onload=ld;im.onerror=function(){ok=false;one()};if(im.complete)ld()})(ims[k])}
+b.appendChild(ov)};tick()}}
 var on=false,q=false,f=function(){q=false;var y=w.pageYOffset||0;if(!on&&y>40){on=true;h.classList.add("rl-compact")}else if(on&&y<10){on=false;h.classList.remove("rl-compact")}};
 w.addEventListener("scroll",function(){if(!q){q=true;w.requestAnimationFrame(f)}},{passive:true});d.addEventListener("DOMContentLoaded",f)})(document,window)</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18458618505"></script>
@@ -61,7 +90,7 @@ w.addEventListener("scroll",function(){if(!q){q=true;w.requestAnimationFrame(f)}
 <!-- ⚠️ このファイルは scripts/build-site.mjs の生成物である。手で編集しない。本文の正本は site/pages/。 -->
 <header class="site-header">
   <div class="site-header__inner">
-    <a class="brand" href="../"><img class="brand__logo" src="../assets/site/logo.webp" alt="住宅ローン相談窓口 restartlife" width="1200" height="479" decoding="async"></a>
+    <a class="brand" href="../"><img class="brand__logo" src="../assets/site/logo.webp" alt="住宅ローン相談窓口 restartlife" width="1200" height="479" decoding="async"><template class="rl-parts-tpl"><img class="rl-p rl-p-curve" src="../assets/site/logo-curve.webp" alt="" decoding="async" width="517" height="45"><img class="rl-p rl-p-house" src="../assets/site/logo-house.webp" alt="" decoding="async" width="159" height="180"><img class="rl-p rl-p-restart" src="../assets/site/logo-restart.webp" alt="" decoding="async" width="318" height="76"><img class="rl-p rl-p-life" src="../assets/site/logo-life.webp" alt="" decoding="async" width="132" height="76"><img class="rl-p rl-p-leaf" src="../assets/site/logo-leaf.webp" alt="" decoding="async" width="46" height="43"><img class="rl-p rl-p-tagline" src="../assets/site/logo-tagline.webp" alt="" decoding="async" width="400" height="27"></template></a>
       <nav class="site-nav" aria-label="サイト内">
         <a href="../service/kariire/">借入があっても住宅購入</a>
         <a href="../service/cardloan/">カードローンがある方</a>

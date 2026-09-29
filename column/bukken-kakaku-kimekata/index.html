@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>物件価格の決め方。借入可能額と返せる額の違い、逆算の手順｜コラム</title>
+<meta name="description" content="「いくらまで借りられるか」と「いくらなら返せるか」は別の数字です。返せる額から物件価格の上限を逆算する 4 つの手順と、既存のお借入れがある場合の考え方を整理します。">
+<meta name="robots" content="index, follow">
+<meta name="google-site-verification" content="ZkXZGklnJLYVLAcr4kTjXUxK-qsl-ue8xseky8Gm0wc"><!-- Search Console 所有権確認（2026-09-28）。削除すると確認が外れる -->
+<link rel="canonical" href="https://restartlife.jp/column/bukken-kakaku-kimekata/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="物件価格の決め方。借入可能額と返せる額の違い、逆算の手順｜コラム">
+<meta property="og:description" content="「いくらまで借りられるか」と「いくらなら返せるか」は別の数字です。返せる額から物件価格の上限を逆算する 4 つの手順と、既存のお借入れがある場合の考え方を整理します。">
+<meta property="og:url" content="https://restartlife.jp/column/bukken-kakaku-kimekata/">
+<meta property="og:site_name" content="住宅ローン相談窓口 restartlife">
+<meta property="og:image" content="https://restartlife.jp/assets/site/og.webp">
+<link rel="image_src" href="../../assets/site/og.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" onload="this.onload=null;this.rel='stylesheet'"><!-- 2026-09-29 Lighthouse 対応: フォント CSS を描画ブロックにしない（読込後に適用。display=swap で本文は先に出る） -->
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap"></noscript>
+
+<link rel="stylesheet" href="../../site/site.css">
+<style>
+.brand{position:relative;transform-origin:left center;transition:transform .35s cubic-bezier(.25,.46,.45,.94)}
+html.rl-compact .brand{transform:scale(.94)}
+.rl-parts{position:absolute;inset:0;pointer-events:none}
+.rl-parts img{position:absolute;display:block;height:auto;opacity:0;will-change:transform,opacity}
+html.rl-logo-intro .brand__logo{opacity:0}
+html.rl-logo-intro.rl-logo-done .brand__logo{opacity:1;transition:opacity .3s ease-out}
+html.rl-logo-done .rl-parts{opacity:0;transition:opacity .3s ease-out}
+.rl-p-house{left:1.567%;top:3.967%;width:26.533%;-webkit-mask-image:linear-gradient(68deg,#000 48%,transparent 52%);mask-image:linear-gradient(68deg,#000 48%,transparent 52%);-webkit-mask-size:300% 300%;mask-size:300% 300%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.rl-p-restart{left:17.833%;top:34.432%;width:52.917%}
+.rl-p-life{left:71.917%;top:34.167%;width:22.083%}
+.rl-p-leaf{left:91.058%;top:23.038%;width:7.633%;transform-origin:15% 90%}
+.rl-p-curve{left:6.590%;top:66.365%;width:86.243%;-webkit-mask-image:linear-gradient(90deg,#000 47%,transparent 53%);mask-image:linear-gradient(90deg,#000 47%,transparent 53%);-webkit-mask-size:250% 100%;mask-size:250% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.rl-p-tagline{left:20.583%;top:85.488%;width:66.583%}
+html.rl-logo-go .rl-p-house{animation:rl-draw .8s cubic-bezier(.25,.46,.45,.94) 0s both}
+html.rl-logo-go .rl-p-restart{animation:rl-text-blur .6s cubic-bezier(.25,.46,.45,.94) .25s both}
+html.rl-logo-go .rl-p-life{animation:rl-text .55s cubic-bezier(.25,.46,.45,.94) .45s both}
+html.rl-logo-go .rl-p-leaf{animation:rl-leaf .5s cubic-bezier(.34,1.4,.64,1) .65s both}
+html.rl-logo-go .rl-p-curve{animation:rl-wipe .85s cubic-bezier(.45,0,.55,1) .75s both}
+html.rl-logo-go .rl-p-tagline{animation:rl-text-sm .6s cubic-bezier(.25,.46,.45,.94) 1.15s both}
+@keyframes rl-draw{from{opacity:1;-webkit-mask-position:100% 0;mask-position:100% 0}to{opacity:1;-webkit-mask-position:0 100%;mask-position:0 100%}}
+@keyframes rl-wipe{from{opacity:1;-webkit-mask-position:100% 0;mask-position:100% 0}to{opacity:1;-webkit-mask-position:0 0;mask-position:0 0}}
+@keyframes rl-text-blur{from{opacity:0;transform:translateY(30%);filter:blur(3px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes rl-text{from{opacity:0;transform:translateY(30%)}to{opacity:1;transform:none}}
+@keyframes rl-text-sm{from{opacity:0;transform:translateY(40%)}to{opacity:1;transform:none}}
+@keyframes rl-leaf{from{opacity:0;transform:scale(.7) rotate(-4deg)}to{opacity:1;transform:none}}
+html.rl-logo-quick .brand__logo{animation:rl-fade .32s ease-out both;animation-play-state:paused}
+html.rl-logo-quick.rl-logo-go .brand__logo{animation-play-state:running}
+@keyframes rl-fade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.brand{transition:none}}
+</style>
+<script>(function(d,w){var h=d.documentElement,rm=false;try{rm=w.matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){}
+if(!rm){var seen=false;try{seen=w.sessionStorage.getItem("rl-logo")==="1";w.sessionStorage.setItem("rl-logo","1")}catch(e){}
+var go=false,done=false,ov=null;
+var end=function(){if(done)return;done=true;h.classList.remove("rl-logo-intro");h.classList.remove("rl-logo-quick");h.classList.remove("rl-logo-go");h.classList.remove("rl-logo-done");if(ov&&ov.parentNode)ov.parentNode.removeChild(ov)};
+var finish=function(){if(done)return;h.classList.add("rl-logo-done");setTimeout(end,340)};
+var start=function(){if(go||done)return;go=true;h.classList.add("rl-logo-go");setTimeout(seen?end:finish,seen?400:1850)};
+var fail=setTimeout(function(){if(!go)end()},2600);
+if(seen){h.classList.add("rl-logo-quick");
+var hit=function(e){var t=e.target;if(t&&t.classList&&t.classList.contains("brand__logo"))start()};
+d.addEventListener("load",hit,true);d.addEventListener("error",hit,true);
+d.addEventListener("DOMContentLoaded",function(){var i=d.querySelector(".brand__logo");if(!i||i.complete)start()})
+}else{h.classList.add("rl-logo-intro");
+var tick=function(){if(done)return;var b=d.querySelector(".brand"),tp=b&&b.querySelector("template.rl-parts-tpl");var frag=tp&&tp.content;var ims=frag?frag.querySelectorAll("img"):[];
+if(ims.length<6){if(!b||!tp||d.readyState==="loading"){setTimeout(tick,16);return}end();return}
+ov=d.createElement("span");ov.className="rl-parts";ov.setAttribute("aria-hidden","true");ov.appendChild(d.importNode(frag,true));ims=ov.querySelectorAll("img");
+var n=0,ok=true,one=function(){if(++n<ims.length)return;clearTimeout(fail);if(ok)start();else end()};
+for(var k=0;k<ims.length;k++){(function(im){var ld=function(){if(!im.naturalWidth){ok=false;one();return}(im.decode?im.decode():Promise.resolve()).then(one,one)};
+im.onload=ld;im.onerror=function(){ok=false;one()};if(im.complete)ld()})(ims[k])}
+b.appendChild(ov)};tick()}}
+var on=false,q=false,f=function(){q=false;var y=w.pageYOffset||0;if(!on&&y>40){on=true;h.classList.add("rl-compact")}else if(on&&y<10){on=false;h.classList.remove("rl-compact")}};
+w.addEventListener("scroll",function(){if(!q){q=true;w.requestAnimationFrame(f)}},{passive:true});d.addEventListener("DOMContentLoaded",f)})(document,window)</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18458618505"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18458618505');
+  gtag('config', 'G-49D1Z94ELS');
+</script>
+<script>window.SITE_ADS = { sendTo: "AW-18458618505/Yi50CJ3hpv0cEInV4OFE" };</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"トップ","item":"https://restartlife.jp/"},{"@type":"ListItem","position":2,"name":"コラム","item":"https://restartlife.jp/column/"},{"@type":"ListItem","position":3,"name":"物件価格の決め方。借入可能額と返せる額の違い","item":"https://restartlife.jp/column/bukken-kakaku-kimekata/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"物件価格の決め方。借入可能額と返せる額の違い、逆算の手順","datePublished":"2026-10-11","dateModified":"2026-10-11","author":{"@type":"Organization","name":"住宅ローン相談窓口 restartlife"}}</script>
+</head>
+<body>
+<!-- ⚠️ このファイルは scripts/build-site.mjs の生成物である。手で編集しない。本文の正本は site/pages/。 -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="../../"><img class="brand__logo" src="../../assets/site/logo.webp" alt="住宅ローン相談窓口 restartlife" width="1200" height="479" decoding="async"><template class="rl-parts-tpl"><img class="rl-p rl-p-curve" src="../../assets/site/logo-curve.webp" alt="" decoding="async" width="517" height="45"><img class="rl-p rl-p-house" src="../../assets/site/logo-house.webp" alt="" decoding="async" width="159" height="180"><img class="rl-p rl-p-restart" src="../../assets/site/logo-restart.webp" alt="" decoding="async" width="318" height="76"><img class="rl-p rl-p-life" src="../../assets/site/logo-life.webp" alt="" decoding="async" width="132" height="76"><img class="rl-p rl-p-leaf" src="../../assets/site/logo-leaf.webp" alt="" decoding="async" width="46" height="43"><img class="rl-p rl-p-tagline" src="../../assets/site/logo-tagline.webp" alt="" decoding="async" width="400" height="27"></template></a>
+      <nav class="site-nav" aria-label="サイト内">
+        <a href="../../service/kariire/">借入があっても住宅購入</a>
+        <a href="../../service/cardloan/">カードローンがある方</a>
+        <a href="../../column/">コラム</a>
+        <a href="../../faq/">よくあるご質問</a>
+        <a href="../../company/">運営者情報</a>
+      </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="現在位置"><ol><li><a href="../../">トップ</a></li><li><a href="../../column/">コラム</a></li><li>物件価格の決め方。借入可能額と返せる額の違い</li></ol></nav>
+  </div>
+
+<article class="article"><div class="wrap">
+  <span class="hero__eyebrow">COLUMN</span>
+  <h1 style="font-size:24px;line-height:1.45;color:var(--navy);margin-top:6px">物件価格の決め方。借入可能額と返せる額の違い、逆算の手順</h1>
+  <p class="post-meta">公開日 2026-10-11</p>
+  <img class="article__img" src="../../assets/site/column-bukken-kakaku.webp" width="1200" height="675" alt="物差しに合わせて家の模型を選ぶ家族と、遠くの大きな家を描いたイラスト" fetchpriority="high" decoding="async">
+  <p>物件探しを始めると、「いくらまで借りられるか」を先に知りたくなります。しかし、金融機関が検討する上限（借入可能額）と、ご家庭が無理なく返せる額は別の数字です。上限で物件を選ぶと、購入後の家計が苦しくなりやすいです。この記事では、返せる額から物件価格の上限を逆算する手順を整理します。今週の親記事 <a href="../../column/atamakin-nashi-shikin-keikaku/">頭金がない場合の住宅購入の資金計画</a> の関連記事で、今週のまとめにあたります。</p>
+  <div class="note"><strong>この記事について</strong><ul><li>計算例の数値は考え方を説明するための仮のものです。金利・条件は金融機関ごとに異なります。</li><li>返せる額はご家庭の支出と将来の予定によって変わります。</li></ul></div>
+
+  <h2>借入可能額と返せる額の違い</h2>
+  <div class="table-wrap">
+  <table class="cmp">
+    <tr><th></th><th>借入可能額</th><th>返せる額</th></tr>
+    <tr><th>誰が決めるか</th><td>金融機関</td><td>ご家庭</td></tr>
+    <tr><th>基準</th><td>年収に対する返済の割合（返済負担率）の上限</td><td>毎月の家計から無理なく出せる額</td></tr>
+    <tr><th>考慮するもの</th><td>年収、既存のお借入れ、返済期間、計算用の金利</td><td>生活費、教育費、車の買い替え、貯蓄、購入後の維持費</td></tr>
+    <tr><th>傾向</th><td>返せる額より大きくなりやすい</td><td>借入可能額の 7〜9 割程度に収まることが多い</td></tr>
+  </table>
+  </div>
+
+  <h2>返せる額から逆算する 4 つの手順</h2>
+  <h3>手順 1: 毎月の「住まいに使える額」を決める</h3>
+  <p>いまの家賃と、購入後に増えても受け止められる額を足して、住まいに使える月額の上限を決めます。たとえば家賃 8 万円で、月 2 万円までなら増えても大丈夫なら、上限は 10 万円です。</p>
+  <h3>手順 2: 維持費を差し引く</h3>
+  <p>購入後は、管理費・修繕積立金（または修繕の積立）、固定資産税、保険が毎月かかります。合計 2.5 万円なら、住宅ローンの返済に使えるのは 10 万円 − 2.5 万円 ＝ 7.5 万円です。比較の方法は <a href="../../column/yachin-vs-jutaku-loan/">家賃と住宅ローンの毎月の支払いを比較する方法</a> をご覧ください。</p>
+  <h3>手順 3: 返済額から借入額を求める</h3>
+  <p>適用金利 年 1.5%・35 年なら、100 万円あたりの毎月の返済額は約 3,060 円です。7.5 万円 ÷ 3,060 円 × 100 万円 ＝ 約 2,450 万円が、返せる借入額です。</p>
+  <h3>手順 4: 頭金と諸費用を足し引きして物件価格にする</h3>
+  <p>物件価格 ＝ 返せる借入額 ＋ 頭金 − 諸費用（住宅ローンに含める場合はゼロ）。頭金なし、諸費用（約 8%）を住宅ローンに含める場合は、2,450 万円 ÷ 1.08 ＝ 約 2,270 万円が物件価格の上限です。</p>
+
+  <h2>計算例のまとめ</h2>
+  <ul>
+    <li>住まいに使える月額: 10 万円</li>
+    <li>維持費: 2.5 万円 → 住宅ローン返済に使える額: 7.5 万円</li>
+    <li>返せる借入額（年 1.5%・35 年）: 約 2,450 万円</li>
+    <li>頭金なし・諸費用込みの物件価格の上限: 約 2,270 万円</li>
+  </ul>
+  <p>同じ家庭で、年収 400 万円・返済負担率 35% の借入可能額を計算すると約 3,000 万円になります。借入可能額で探すと、返せる額より 700 万円以上高い物件を見てしまうことになります。</p>
+
+  <h2>既存のお借入れがある場合</h2>
+  <p>カードローンや車のローンの返済が続く場合、手順 1 の「住まいに使える額」から、その返済額も差し引く必要があります。月 3 万円の返済があれば、住宅ローンに使える額は 7.5 万円 − 3 万円 ＝ 4.5 万円になり、返せる借入額は約 1,470 万円まで下がります。</p>
+  <p>この差が大きい場合、既存のお借入れを先に整理する、住宅の取得と合わせて既存のお借入れの返済資金を検討できる商品を使う、という選択肢が現実的になります。考え方は <a href="../../column/temoto-shikin-tsukaimichi/">手元資金をお借入れの整理と頭金のどちらに使うか</a> と <a href="../../column/omatome-jutaku-loan-products/">商品の型と条件の見方</a> をご覧ください。</p>
+
+  <h2>物件価格の上限を決めるときの注意</h2>
+  <ul>
+    <li><strong>将来の支出を入れる。</strong> 教育費のピーク、車の買い替え、親の介護など、10〜20 年先の支出を見込む。</li>
+    <li><strong>収入が減る時期を想定する。</strong> 育児・転職・病気などで収入が一時的に減っても返せるか。</li>
+    <li><strong>金利の上昇を見込む。</strong> 変動金利なら、金利が上がった場合の返済額も試算しておく。</li>
+    <li><strong>上限で買わない。</strong> 返せる額の 9 割程度に収めると、予期しない出費に対応できる。</li>
+  </ul>
+
+  <h2>今週のまとめ</h2>
+  <ol>
+    <li>頭金がなくても検討はできる。ただし予備費と諸費用の出所を先に決める。</li>
+    <li>諸費用は物件価格の 5〜10%。含められるかは金融機関次第。</li>
+    <li>家賃と比べるときは、維持費まで足した「購入後の毎月の支払い」で比べる。</li>
+    <li>手元資金は、予備費 → 金利の高いお借入れの整理 → 頭金の順に使う。</li>
+    <li>控除の対象は住宅の取得に充てた部分だけ。</li>
+    <li>物件価格は借入可能額ではなく、返せる額から逆算する。</li>
+  </ol>
+
+  <div class="cta-block">
+  <h2>返せる額から逆算した物件価格の上限を、ご自身の家計で一緒に出します。</h2>
+  <a class="line-cta" href="https://lin.ee/wIjLMkF" data-cta-type="line" data-cta-position="article" data-cta-id="article">
+      <span class="line-cta__icon" aria-hidden="true">LINE</span>LINEで無料相談</a>
+</div>
+  <div class="related">
+    <a href="../../column/atamakin-nashi-shikin-keikaku/">頭金がない場合の住宅購入の資金計画<small>今週の親記事</small></a>
+    <a href="../../column/nenshu-betsu-meyasu/">年収別・住宅ローン借入額の目安早見表</a>
+    <a href="../../service/kariire/">借入があっても住宅購入をあきらめない<small>サービスのご案内</small></a>
+    <a href="../../column/">コラム一覧へ戻る</a>
+  </div>
+</div></article>
+
+</main>
+
+<div class="sticky-cta" aria-hidden="false">
+  <a class="line-cta" href="https://lin.ee/wIjLMkF" data-cta-type="line" data-cta-position="sticky" data-cta-id="sticky">
+      <span class="line-cta__icon" aria-hidden="true">LINE</span>LINEで無料相談</a>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <nav class="site-footer__nav">
+      <a href="../../">トップ</a>
+      <a href="../../service/kariire/">借入があっても住宅購入</a>
+      <a href="../../service/cardloan/">カードローンがある方</a>
+      <a href="../../column/">コラム</a>
+      <a href="../../faq/">よくあるご質問</a>
+      <a href="../../company/">運営者情報</a>
+      <a href="../../privacy.html" data-legal-link="privacy">プライバシーポリシー</a>
+      <a href="../../tokushoho.html" data-legal-link="law">特定商取引法に基づく表示</a>
+    </nav>
+    <!-- 運営者情報の詳細（事業者名・免許番号・所在地）は tokushoho.html だけが持つ（2026-09-11 人間指示。
+         scripts/verify-production-values.mjs の面検査もこれを前提にする）。ここには Copyright の名義だけ。 -->
+    <!-- 2026-09-28 人間決定（第2次）: Copyright の名義は全ページで屋号（config.TRADE_NAME = restartlife）。 -->
+    <p class="site-footer__copyright">Copyright(C) 2026 restartlife All rights reserved.</p>
+  </div>
+</footer>
+<script src="../../site/site.js" defer></script>
+</body>
+</html>

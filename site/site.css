@@ -523,18 +523,49 @@ table.cmp th { background: var(--soft); color: var(--navy); white-space: nowrap;
 .lph-consult__head { margin-top: 22px; color: #fff; font-size: 22px; font-weight: 700; letter-spacing: .1em; text-shadow: 0 2px 8px rgba(0,0,0,.45); }
 .lph-consult__head::before { content: "＼"; margin-right: .6em; }
 .lph-consult__head::after { content: "／"; margin-left: .6em; }
-.lph-consult .line-cta { margin-top: 14px; animation: lph-shake 2.4s ease-in-out infinite; transform-origin: 50% 50%; }
-@keyframes lph-shake {
-  0%, 60%, 100% { transform: rotate(0); }
-  64% { transform: rotate(-3deg); }
-  70% { transform: rotate(3deg); }
-  76% { transform: rotate(-2deg); }
-  82% { transform: rotate(2deg); }
-  88% { transform: rotate(0); }
-}
+.lph-consult .line-cta { margin-top: 14px; } /* 2026-09-29 指示書: 揺れ・点滅の常時アニメーションは禁止 → 撤去 */
 @media (min-width: 720px) {
   .lph-consult__inner { padding: 64px var(--pad) 56px; }
   .lph-consult__text { font-size: 25px; }
   .lph-consult__head { font-size: 28px; }
 }
-@media (prefers-reduced-motion: reduce) { .lph-consult .line-cta { animation: none; } }
+
+/* =====================================================================
+   スクロール演出（2026-09-29 指示書）。演出の本体は site/animations.js（GSAP）。
+   ここでは JS が無くても壊れない土台だけ置く。CSS で要素を隠さない（Progressive Enhancement）。
+   ===================================================================== */
+.lph { --motion-fast: .5s; --motion-base: .8s; --motion-slow: 1.4s; }
+/* CTA: hover でわずかに拡大、tap で .98。常時アニメーションは無し */
+.lph .line-cta { transition: transform .18s ease, background-color .18s ease; }
+@media (hover: hover) { .lph .line-cta:hover { transform: scale(1.02); } }
+.lph .line-cta:active { transform: scale(.98); }
+/* 進捗バー（2px、ブランドのオレンジ） */
+.lph-progress { position: fixed; left: 0; top: 0; width: 100%; height: 2px; background: var(--lph-orange, #f28c1e); z-index: 100; pointer-events: none; transform: scaleX(0); transform-origin: 0 50%; }
+/* FV のスクロール誘導: 細い縦線の中を光が流れる */
+.lph-scrollhint { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 2px; height: 22px; pointer-events: none; }
+.lph-scrollhint__line { position: absolute; inset: 0; background: rgba(255,255,255,.35); overflow: hidden; }
+.lph-scrollhint__line i { position: absolute; left: 0; width: 100%; height: 50%; top: -50%; background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #fff 100%); animation: lph-hint 1.8s ease-in-out infinite; }
+@keyframes lph-hint { 0% { top: -50%; } 100% { top: 100%; } }
+.lph-hero__bottom { bottom: 30px; }
+/* 画像の mask reveal 用ラッパー（JS が付ける）。img と同じ幅・角丸 */
+.lph-mask { overflow: hidden; display: block; width: 100%; }
+.lph-mask > img { margin-top: 0; }
+/* 縦ライン（対象者リスト・サービスの流れ）。--line は ScrollTrigger がスクロール進捗で 0→1 にする */
+.lph-line { position: relative; }
+.lph-line::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--lph-orange, #f28c1e), rgba(242,140,30,.25)); transform: scaleY(var(--line, 0)); transform-origin: 50% 0; }
+.lph-target.lph-line { padding-left: 18px; }
+.lph-flow.lph-line { padding-left: 22px; }
+.lph-flow.lph-line li { position: relative; }
+.lph-flow.lph-line li::before { content: ""; position: absolute; left: -27px; top: 22px; width: 12px; height: 12px; border-radius: 50%; background: var(--lph-orange, #f28c1e); box-shadow: 0 0 0 4px #fdf3e6; }
+/* 追従 CTA: 最終 CTA の付近では隠す（JS が付ける） */
+.sticky-cta.is-hidden { transform: translateY(110%) !important; }
+/* CTA 周辺: 非常に薄いグラデーションがゆっくり動く（既存の紺・白・暖色の範囲） */
+.lph-ctabox { position: relative; }
+.lph-cta-final::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(120deg, rgba(242,140,30,.10), rgba(255,255,255,0) 40%, rgba(18,58,102,.08) 100%); background-size: 200% 200%; animation: lph-drift 14s ease-in-out infinite alternate; }
+@keyframes lph-drift { 0% { background-position: 0% 0%; } 100% { background-position: 100% 100%; } }
+/* 横はみ出し防止（transform で一時的に外へ出ても横スクロールを作らない） */
+.lph-section, .lph-consult, .lph-ctamid, .lph-hero, .lph-band { overflow-x: clip; }
+@media (prefers-reduced-motion: reduce) {
+  .lph-scrollhint__line i, .lph-cta-final::after { animation: none; }
+  .lph .line-cta { transition: none; }
+}

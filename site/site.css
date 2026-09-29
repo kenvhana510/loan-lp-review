@@ -305,17 +305,18 @@ table.cmp th { background: var(--soft); color: var(--navy); white-space: nowrap;
 .lph-hero__img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
 .lph-hero::before {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(11,35,64,.62) 0%, rgba(11,35,64,.15) 38%, rgba(11,35,64,0) 55%, rgba(11,35,64,.70) 100%);
+  /* 2026-09-29 人間指示: 写真を暗くしない。暗幕はほぼ無くし、文字の可読性は text-shadow と半透明白の帯で確保する */
+  background: linear-gradient(180deg, rgba(11,35,64,.22) 0%, rgba(11,35,64,0) 30%, rgba(11,35,64,0) 70%, rgba(11,35,64,.22) 100%);
 }
 .lph-hero__top { position: absolute; left: 0; right: 0; top: 0; padding: 18px var(--pad) 0; }
 .lph-chip { display: inline-block; font-size: 12px; font-weight: 700; color: #fff; background: var(--lph-navy); padding: 5px 10px; border-radius: 3px; letter-spacing: .04em; }
-.lph-hero__title { margin-top: 10px; color: #fff; line-height: 1.2; text-shadow: 0 2px 8px rgba(11,35,64,.55), 0 0 2px rgba(11,35,64,.9); }
+.lph-hero__title { margin-top: 10px; color: #fff; line-height: 1.2; text-shadow: 0 2px 10px rgba(11,35,64,.75), 0 0 3px rgba(11,35,64,.95), 0 0 14px rgba(11,35,64,.6); }
 .lph-hero__t1 { display: block; font-size: 24px; font-weight: 800; }
 .lph-hero__t2 { display: block; font-size: 40px; font-weight: 900; letter-spacing: .01em; }
 .lph-ribbon {
   display: inline-block; margin-top: 12px; padding: 8px 14px;
-  background: var(--lph-orange); color: #fff; font-size: 14.5px; font-weight: 700; line-height: 1.5;
-  transform: rotate(-2deg); box-shadow: 0 3px 10px rgba(0,0,0,.25);
+  background: rgba(255,255,255,.82); color: var(--lph-navy); font-size: 14.5px; font-weight: 700; line-height: 1.5;
+  transform: rotate(-2deg); box-shadow: 0 3px 10px rgba(0,0,0,.18);
 }
 .lph-hero__bottom { position: absolute; left: 0; right: 0; bottom: 18px; padding: 0 var(--pad); }
 .lph-circles { display: flex; justify-content: center; gap: 10px; }
@@ -324,18 +325,18 @@ table.cmp th { background: var(--soft); color: var(--navy); white-space: nowrap;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   box-shadow: 0 6px 18px rgba(0,0,0,.25); text-align: center; line-height: 1.15;
 }
-.lph-circles b { font-size: 19px; font-weight: 900; color: var(--lph-orange); }
-.lph-circles small { font-size: 12px; font-weight: 700; color: var(--lph-navy); margin-top: 3px; }
+.lph-circles b { font-size: 24px; font-weight: 900; color: var(--lph-orange); letter-spacing: -.01em; }
+.lph-circles small { font-size: 13.5px; font-weight: 700; color: var(--lph-navy); margin-top: 3px; }
 @media (min-width: 720px) {
   .lph-hero__top { padding-top: 32px; }
   .lph-hero__t1 { font-size: 32px; }
   .lph-hero__t2 { font-size: 56px; }
   .lph-ribbon { font-size: 18px; }
-  .lph-circles b { font-size: 26px; }
-  .lph-circles small { font-size: 14px; }
+  .lph-circles b { font-size: 34px; }
+  .lph-circles small { font-size: 16px; }
 }
 /* 紺の帯（ヒーロー直下） */
-.lph-band { background: linear-gradient(180deg, #123a66 0%, #0b2340 100%); color: #fff; text-align: center; padding: 24px 0 28px; }
+.lph-band { background: linear-gradient(180deg, #123a66 0%, #0b2340 100%); color: #fff; text-align: center; padding: 24px 0 0; }
 .lph-band__pills { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; }
 .lph-band__pills span { background: var(--lph-orange); color: #fff; font-weight: 800; font-size: 15px; padding: 6px 12px; border-radius: 4px; }
 .lph-band__pills i { font-style: normal; font-weight: 800; font-size: 16px; }
@@ -499,7 +500,8 @@ table.cmp th { background: var(--soft); color: var(--navy); white-space: nowrap;
 @media (min-width: 720px) { .lph-cta-final .wrap { padding-top: 52px; padding-bottom: 52px; } }
 
 /* 「ひとつの計画に。」の下のバッジ画像 */
-.lph-badges { display: block; width: 100%; max-width: 460px; height: auto; margin: 14px auto 0; background: #fff; border-radius: 8px; }
+/* 2026-09-29 人間指示: 横いっぱい（.wrap の左右余白を打ち消して帯の端まで） */
+.lph-badges { display: block; width: calc(100% + var(--pad) * 2); max-width: none; height: auto; margin: 16px calc(-1 * var(--pad)) 0; background: #fff; border-radius: 0; }
 
 /* 相談バナー（各セクションの合間）: 写真＋暗幕＋白文字＋揺れる LINE ボタン */
 .lph-consult { position: relative; max-width: 760px; margin: 0 auto; overflow: hidden; background: var(--lph-navy); }

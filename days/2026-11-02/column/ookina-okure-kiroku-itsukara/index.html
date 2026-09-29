@@ -28,20 +28,20 @@ html.rl-compact .brand{transform:scale(.94)}
 .rl-parts{position:absolute;inset:0;pointer-events:none}
 .rl-parts img{position:absolute;display:block;height:auto;opacity:0;will-change:transform,opacity}
 html.rl-logo-intro .brand__logo{opacity:0}
-html.rl-logo-intro.rl-logo-done .brand__logo{opacity:1;transition:opacity .3s ease-out}
-html.rl-logo-done .rl-parts{opacity:0;transition:opacity .3s ease-out}
+html.rl-logo-intro.rl-logo-done .brand__logo{opacity:1;transition:opacity .45s ease-out}
+html.rl-logo-done .rl-parts{opacity:0;transition:opacity .45s ease-out}
 .rl-p-house{left:1.567%;top:3.967%;width:26.533%;-webkit-mask-image:linear-gradient(68deg,#000 48%,transparent 52%);mask-image:linear-gradient(68deg,#000 48%,transparent 52%);-webkit-mask-size:300% 300%;mask-size:300% 300%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
 .rl-p-restart{left:17.833%;top:34.432%;width:52.917%}
 .rl-p-life{left:71.917%;top:34.167%;width:22.083%}
 .rl-p-leaf{left:91.058%;top:23.038%;width:7.633%;transform-origin:15% 90%}
 .rl-p-curve{left:6.590%;top:66.365%;width:86.243%;-webkit-mask-image:linear-gradient(90deg,#000 47%,transparent 53%);mask-image:linear-gradient(90deg,#000 47%,transparent 53%);-webkit-mask-size:250% 100%;mask-size:250% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
 .rl-p-tagline{left:20.583%;top:85.488%;width:66.583%}
-html.rl-logo-go .rl-p-house{animation:rl-draw .8s cubic-bezier(.25,.46,.45,.94) 0s both}
-html.rl-logo-go .rl-p-restart{animation:rl-text-blur .6s cubic-bezier(.25,.46,.45,.94) .25s both}
-html.rl-logo-go .rl-p-life{animation:rl-text .55s cubic-bezier(.25,.46,.45,.94) .45s both}
-html.rl-logo-go .rl-p-leaf{animation:rl-leaf .5s cubic-bezier(.34,1.4,.64,1) .65s both}
-html.rl-logo-go .rl-p-curve{animation:rl-wipe .85s cubic-bezier(.45,0,.55,1) .75s both}
-html.rl-logo-go .rl-p-tagline{animation:rl-text-sm .6s cubic-bezier(.25,.46,.45,.94) 1.15s both}
+html.rl-logo-go .rl-p-house{animation:rl-draw 1.15s cubic-bezier(.25,.46,.45,.94) 0s both}
+html.rl-logo-go .rl-p-restart{animation:rl-text-blur .85s cubic-bezier(.25,.46,.45,.94) .4s both}
+html.rl-logo-go .rl-p-life{animation:rl-text .8s cubic-bezier(.25,.46,.45,.94) .7s both}
+html.rl-logo-go .rl-p-leaf{animation:rl-leaf .7s cubic-bezier(.34,1.4,.64,1) 1s both}
+html.rl-logo-go .rl-p-curve{animation:rl-wipe 1.2s cubic-bezier(.45,0,.55,1) 1.15s both}
+html.rl-logo-go .rl-p-tagline{animation:rl-text-sm .85s cubic-bezier(.25,.46,.45,.94) 1.75s both}
 @keyframes rl-draw{from{opacity:1;-webkit-mask-position:100% 0;mask-position:100% 0}to{opacity:1;-webkit-mask-position:0 100%;mask-position:0 100%}}
 @keyframes rl-wipe{from{opacity:1;-webkit-mask-position:100% 0;mask-position:100% 0}to{opacity:1;-webkit-mask-position:0 0;mask-position:0 0}}
 @keyframes rl-text-blur{from{opacity:0;transform:translateY(30%);filter:blur(3px)}to{opacity:1;transform:none;filter:blur(0)}}
@@ -57,8 +57,8 @@ html.rl-logo-quick.rl-logo-go .brand__logo{animation-play-state:running}
 if(!rm){var seen=false;try{seen=w.sessionStorage.getItem("rl-logo")==="1";w.sessionStorage.setItem("rl-logo","1")}catch(e){}
 var go=false,done=false,ov=null;
 var end=function(){if(done)return;done=true;h.classList.remove("rl-logo-intro");h.classList.remove("rl-logo-quick");h.classList.remove("rl-logo-go");h.classList.remove("rl-logo-done");if(ov&&ov.parentNode)ov.parentNode.removeChild(ov)};
-var finish=function(){if(done)return;h.classList.add("rl-logo-done");setTimeout(end,340)};
-var start=function(){if(go||done)return;go=true;h.classList.add("rl-logo-go");setTimeout(seen?end:finish,seen?400:1850)};
+var finish=function(){if(done)return;h.classList.add("rl-logo-done");setTimeout(end,500)};
+var start=function(){if(go||done)return;go=true;h.classList.add("rl-logo-go");setTimeout(seen?end:finish,seen?400:2750)};
 var fail=setTimeout(function(){if(!go)end()},2600);
 if(seen){h.classList.add("rl-logo-quick");
 var hit=function(e){var t=e.target;if(t&&t.classList&&t.classList.contains("brand__logo"))start()};

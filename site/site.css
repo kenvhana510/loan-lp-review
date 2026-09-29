@@ -279,7 +279,7 @@ table.cmp th { background: var(--soft); color: var(--navy); white-space: nowrap;
    写真の上に大きな見出し、オレンジの帯と丸、紺の帯、白い丸の 3 連、LINE 緑。
    すべて .lph 配下に閉じる（他ページの見た目は変えない）。
    ===================================================================== */
-.lph { --lph-orange: #f28c1e; --lph-navy: #0b2340; --lph-sky: #1e6fb8; }
+.lph { --lph-orange: #f28c1e; --lph-navy: #0b2340; --lph-sky: #1e6fb8; --pad: 12px; /* 2026-09-29 人間指示: 左右の余白を狭く（20→12px） */ }
 .lph .wrap { max-width: var(--col-max); }
 .lph-section { padding: 36px 0; }
 .lph-section--soft { background: var(--soft); }

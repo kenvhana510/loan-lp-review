@@ -16,6 +16,9 @@
   var ScrollTrigger = window.ScrollTrigger;
   gsap.registerPlugin(ScrollTrigger);
   window.__animInit = true;
+  // 本文先頭が付けた仮の透明状態（html.anim-pre）を引き継ぐ。GSAP が from() で自前の初期状態を付けるので class は外す
+  gsap.set(".lph-hero__top, .lph-circles li", { opacity: 1 });
+  document.documentElement.classList.remove("anim-pre");
 
   /* ---------- design tokens ---------- */
   var D = { fast: 0.5, base: 0.8, slow: 1.4, hero: 1.8 };
@@ -141,7 +144,7 @@
     // Sequence 1〜4（ロード直後。CTA は別要素で常に押せる）
     var tl = gsap.timeline({ defaults: { ease: EASE } });
     if (img) tl.fromTo(img, { scale: 1.08 }, { scale: 1.04, duration: D.hero, ease: EASE_SOFT }, 0);
-    if (chip) tl.from(chip, { opacity: 0, y: 14, duration: D.base }, 0.15);
+    if (chip) tl.from(chip, { opacity: 0, x: 24, duration: D.base, clearProps: "transform" }, 0.15);   // 右上へ右から滑り込む
     if (t1) tl.from(t1, { opacity: 0, y: 18, filter: "blur(3px)", duration: D.base, clearProps: "filter" }, 0.35);
     if (t2) tl.from(t2, { opacity: 0, y: 22, filter: "blur(3px)", duration: D.base + 0.2, clearProps: "filter" }, 0.5);
     if (t3) tl.from(t3, { opacity: 0, y: 16, filter: "blur(3px)", duration: D.base, clearProps: "filter" }, 0.7);

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T13:24:46.989Z",
+  "generatedAt": "2026-09-29T14:09:16.945Z",
   "from": "2026-09-29",
   "to": "2026-11-08",
   "days": {
@@ -101,6 +101,12 @@
         "assets/site/column-yachin-vs-loan.webp",
         "assets/site/company.webp",
         "assets/site/flow.webp",
+        "assets/site/logo-curve.webp",
+        "assets/site/logo-house.webp",
+        "assets/site/logo-leaf.webp",
+        "assets/site/logo-life.webp",
+        "assets/site/logo-restart.webp",
+        "assets/site/logo-tagline.webp",
         "assets/site/logo.webp",
         "assets/site/lp-badges.webp",
         "assets/site/lp-benefit.webp",
@@ -509,6 +515,7 @@
       "files": [
         "column/index.html",
         "column/kiroku-shurui-nokoru-kikan/index.html",
+        "site/site.css",
         "sitemap.xml"
       ]
     },

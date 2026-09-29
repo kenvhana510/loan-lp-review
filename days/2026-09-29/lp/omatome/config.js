@@ -47,6 +47,16 @@ window.LP_CONFIG = {
     GA4_ID: "G-49D1Z94ELS",
   },
 
+  // ---- Meta 広告 ピクセル（2026-09-29 準備。docs/meta-ads-plan.md） ----
+  //   REPLACE_ME の間はピクセルのコードを一切出力しない（fail-closed）。15〜16 桁の数字だけを有効とする。
+  //   有効なときは Google タグと同じページ（LP 本体＋サイトページ。法定表示・stub には置かない）に
+  //   ベースコード（PageView）を置き、LINE CTA クリック時だけ標準イベント "Lead" を送る。
+  //   ⚠️ 広告の配信開始・課金開始はこの設定では起きない（タグの設置と計測だけ）。
+  //   値は Meta イベントマネージャで発行されたデータセット ID（ピクセル ID）を人間が投入する。
+  META_PIXEL: {
+    PIXEL_ID: "REPLACE_ME",
+  },
+
   // ---- 運営者情報（F-6 必須開示 / docs/operator-information-intake.md） ----
   //
   // ⚠️ **推測で埋めない。** 受領した実値だけを入れる。

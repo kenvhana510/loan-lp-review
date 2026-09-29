@@ -570,3 +570,6 @@ table.cmp th { background: var(--soft); color: var(--navy); white-space: nowrap;
   .lph-scrollhint__line i, .lph-cta-final::after { animation: none; }
   .lph .line-cta { transition: none; }
 }
+/* 演出の初期状態（JS 有効時のみ。本文先頭の 1 行が html.anim-pre を付け、animations.js が引き継いで外す。2.5 秒で自動解除） */
+html.anim-pre .lph-hero__top, html.anim-pre .lph-circles li { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { html.anim-pre .lph-hero__top, html.anim-pre .lph-circles li { opacity: 1; } }

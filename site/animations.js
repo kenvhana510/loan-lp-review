@@ -16,6 +16,9 @@
   var ScrollTrigger = window.ScrollTrigger;
   gsap.registerPlugin(ScrollTrigger);
   window.__animInit = true;
+  // 本文先頭が付けた仮の透明状態（html.anim-pre）を引き継ぐ。GSAP が from() で自前の初期状態を付けるので class は外す
+  gsap.set(".lph-hero__top, .lph-circles li", { opacity: 1 });
+  document.documentElement.classList.remove("anim-pre");
 
   /* ---------- design tokens ---------- */
   var D = { fast: 0.5, base: 0.8, slow: 1.4, hero: 1.8 };

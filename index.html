@@ -74,6 +74,7 @@ w.addEventListener("scroll",function(){if(!q){q=true;w.requestAnimationFrame(f)}
 <main>
 
 <div class="lph">
+<script>document.documentElement.classList.add("anim-pre");setTimeout(function(){document.documentElement.classList.remove("anim-pre")},2500)</script>
 
 <!-- 1. キャッチコピー（2026-09-29 人間指示: 「夢のオーダーメイドの／マイホームを／現実の住まいの計画に。」参考画像の文字サイズ比に合わせる。広告見出しとの整合は要確認） -->
 <section class="lph-hero">
@@ -462,9 +463,9 @@ w.addEventListener("scroll",function(){if(!q){q=true;w.requestAnimationFrame(f)}
     <p class="site-footer__copyright">Copyright(C) 2026 restartlife All rights reserved.</p>
   </div>
 </footer>
-<script src="site/gsap.min.js"></script>
-<script src="site/ScrollTrigger.min.js"></script>
-<script src="site/animations.js"></script>
+<script src="site/gsap.min.js" defer></script>
+<script src="site/ScrollTrigger.min.js" defer></script>
+<script src="site/animations.js" defer></script>
 <script src="site/site.js" defer></script>
 </body>
 </html>

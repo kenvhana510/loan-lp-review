@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T12:39:11.144Z",
+  "generatedAt": "2026-09-29T05:20:17.519Z",
   "from": "2026-09-29",
   "to": "2026-11-08",
   "days": {
@@ -515,7 +515,6 @@
       "files": [
         "column/index.html",
         "column/kiroku-kaiji-yomikata/index.html",
-        "site/site.css",
         "sitemap.xml"
       ]
     },
@@ -526,10 +525,6 @@
       "files": [
         "column/index.html",
         "column/keitai-bunkatsu-zeikin-okure/index.html",
-        "index.html",
-        "site/ScrollTrigger.min.js",
-        "site/animations.js",
-        "site/gsap.min.js",
         "sitemap.xml"
       ]
     },

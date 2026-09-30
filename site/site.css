@@ -317,6 +317,7 @@ table.cmp th { background: var(--soft); color: var(--navy); white-space: nowrap;
 .lph-hero__title { margin-top: 0; color: #fff; line-height: 1.2; text-shadow: 0 2px 10px rgba(11,35,64,.75), 0 0 3px rgba(11,35,64,.95), 0 0 14px rgba(11,35,64,.6); }
 /* 2026-09-29 人間指示: 参考画像の文字サイズ比（小：大：中 ≒ 1 : 2.1 : 1.1）に合わせる。3 行目は右寄せ */
 .lph-hero__t1 { display: block; font-size: 22px; font-weight: 800; padding-right: 126px; }
+.lph-hero__t1 small { font-size: 17px; font-weight: 800; } /* 2026-09-30 人間指示: 末尾の「の」だけ少し小さく */
 .lph-hero__t2 { display: block; font-size: 46px; font-weight: 900; letter-spacing: .01em; line-height: 1.1; }
 .lph-hero__t2 small { font-size: 24px; font-weight: 800; margin-left: .08em; }
 .lph-hero__t3 { display: block; font-size: 24px; font-weight: 900; text-align: right; margin-top: 4px; }
@@ -339,6 +340,7 @@ table.cmp th { background: var(--soft); color: var(--navy); white-space: nowrap;
   .lph-chip { font-size: 13px; top: 20px; padding: 7px 14px 7px 17px; }
   .lph-hero__t1 { padding-right: 0; }
   .lph-hero__t1 { font-size: 30px; }
+  .lph-hero__t1 small { font-size: 23px; }
   .lph-hero__t2 { font-size: 64px; }
   .lph-hero__t2 small { font-size: 32px; }
   .lph-hero__t3 { font-size: 34px; }

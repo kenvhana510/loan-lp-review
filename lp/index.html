@@ -13,6 +13,8 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  // 2026-10-06 人間指示: 自分のアクセスを GA4 から除外する。各端末で一度 ?internal=1 を付けて開くと、その端末は traffic_type=internal（GA4 の「内部トラフィック」データフィルタで除外）。?internal=0 で解除
+  (function(){try{var q=location.search;if(/[?&]internal=1(&|$)/.test(q))localStorage.setItem('lc_internal','1');if(/[?&]internal=0(&|$)/.test(q))localStorage.removeItem('lc_internal');if(localStorage.getItem('lc_internal')==='1')gtag('set',{traffic_type:'internal'});}catch(e){}})();
   gtag('config', 'AW-18458618505');
   gtag('config', 'G-49D1Z94ELS');
 </script>

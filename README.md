@@ -1,5 +1,5 @@
 # 予約公開キュー
 
-生成: 2026-09-30T02:50:51.596Z（scripts/build-queue.mjs）
+生成: 2026-10-06T07:49:47.722Z（scripts/build-queue.mjs）
 
 `days/<日付>/` を日付順に main へ重ねると、その日の配信物になる。手で編集しない。

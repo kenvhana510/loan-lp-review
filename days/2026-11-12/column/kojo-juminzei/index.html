@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>所得税から引ききれない控除は住民税へ。上限と戻り方の違い｜コラム</title>
+<meta name="description" content="住宅ローン控除のうち所得税から引ききれない分は、翌年度の住民税から差し引かれます。入居の年で違う上限の計算、2025 年までに入居した方の調整、所得税の分と住民税の分で戻る時期と形がどう違うかを、課税所得別の試算表で整理します。">
+<meta name="robots" content="index, follow">
+<meta name="google-site-verification" content="ZkXZGklnJLYVLAcr4kTjXUxK-qsl-ue8xseky8Gm0wc"><!-- Search Console 所有権確認（2026-09-28）。削除すると確認が外れる -->
+<link rel="canonical" href="https://restartlife.jp/column/kojo-juminzei/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="所得税から引ききれない控除は住民税へ。上限と戻り方の違い｜コラム">
+<meta property="og:description" content="住宅ローン控除のうち所得税から引ききれない分は、翌年度の住民税から差し引かれます。入居の年で違う上限の計算、2025 年までに入居した方の調整、所得税の分と住民税の分で戻る時期と形がどう違うかを、課税所得別の試算表で整理します。">
+<meta property="og:url" content="https://restartlife.jp/column/kojo-juminzei/">
+<meta property="og:site_name" content="住宅ローン相談窓口 restartlife">
+<meta property="og:image" content="https://restartlife.jp/assets/site/og.webp">
+<link rel="image_src" href="../../assets/site/og.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" onload="this.onload=null;this.rel='stylesheet'"><!-- 2026-09-29 Lighthouse 対応: フォント CSS を描画ブロックにしない（読込後に適用。display=swap で本文は先に出る） -->
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap"></noscript>
+
+<link rel="stylesheet" href="../../site/site.css">
+<style>
+.brand{position:relative;transform-origin:left center;transition:transform .35s cubic-bezier(.25,.46,.45,.94)}
+html.rl-compact .brand{transform:scale(.94)}
+.rl-parts{position:absolute;inset:0;pointer-events:none}
+.rl-parts img{position:absolute;display:block;height:auto;opacity:0;will-change:transform,opacity}
+html.rl-logo-intro .brand__logo{opacity:0}
+html.rl-logo-intro.rl-logo-done .brand__logo{opacity:1;transition:opacity .45s ease-out}
+html.rl-logo-done .rl-parts{opacity:0;transition:opacity .45s ease-out}
+.rl-p-house{left:1.567%;top:3.967%;width:26.533%;-webkit-mask-image:linear-gradient(68deg,#000 48%,transparent 52%);mask-image:linear-gradient(68deg,#000 48%,transparent 52%);-webkit-mask-size:300% 300%;mask-size:300% 300%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.rl-p-restart{left:17.833%;top:34.432%;width:52.917%}
+.rl-p-life{left:71.917%;top:34.167%;width:22.083%}
+.rl-p-leaf{left:91.058%;top:23.038%;width:7.633%;transform-origin:15% 90%}
+.rl-p-curve{left:6.590%;top:66.365%;width:86.243%;-webkit-mask-image:linear-gradient(90deg,#000 47%,transparent 53%);mask-image:linear-gradient(90deg,#000 47%,transparent 53%);-webkit-mask-size:250% 100%;mask-size:250% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.rl-p-tagline{left:20.583%;top:85.488%;width:66.583%}
+html.rl-logo-go .rl-p-house{animation:rl-draw 1.15s cubic-bezier(.25,.46,.45,.94) 0s both}
+html.rl-logo-go .rl-p-restart{animation:rl-text-blur .85s cubic-bezier(.25,.46,.45,.94) .4s both}
+html.rl-logo-go .rl-p-life{animation:rl-text .8s cubic-bezier(.25,.46,.45,.94) .7s both}
+html.rl-logo-go .rl-p-leaf{animation:rl-leaf .7s cubic-bezier(.34,1.4,.64,1) 1s both}
+html.rl-logo-go .rl-p-curve{animation:rl-wipe 1.2s cubic-bezier(.45,0,.55,1) 1.15s both}
+html.rl-logo-go .rl-p-tagline{animation:rl-text-sm .85s cubic-bezier(.25,.46,.45,.94) 1.75s both}
+@keyframes rl-draw{from{opacity:1;-webkit-mask-position:100% 0;mask-position:100% 0}to{opacity:1;-webkit-mask-position:0 100%;mask-position:0 100%}}
+@keyframes rl-wipe{from{opacity:1;-webkit-mask-position:100% 0;mask-position:100% 0}to{opacity:1;-webkit-mask-position:0 0;mask-position:0 0}}
+@keyframes rl-text-blur{from{opacity:0;transform:translateY(30%);filter:blur(3px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes rl-text{from{opacity:0;transform:translateY(30%)}to{opacity:1;transform:none}}
+@keyframes rl-text-sm{from{opacity:0;transform:translateY(40%)}to{opacity:1;transform:none}}
+@keyframes rl-leaf{from{opacity:0;transform:scale(.7) rotate(-4deg)}to{opacity:1;transform:none}}
+html.rl-logo-quick .brand__logo{animation:rl-fade .32s ease-out both;animation-play-state:paused}
+html.rl-logo-quick.rl-logo-go .brand__logo{animation-play-state:running}
+@keyframes rl-fade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.brand{transition:none}}
+</style>
+<script>(function(d,w){var h=d.documentElement,rm=false;try{rm=w.matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){}
+if(!rm){var seen=false;try{seen=w.sessionStorage.getItem("rl-logo")==="1";w.sessionStorage.setItem("rl-logo","1")}catch(e){}
+var go=false,done=false,ov=null;
+var end=function(){if(done)return;done=true;h.classList.remove("rl-logo-intro");h.classList.remove("rl-logo-quick");h.classList.remove("rl-logo-go");h.classList.remove("rl-logo-done");if(ov&&ov.parentNode)ov.parentNode.removeChild(ov)};
+var finish=function(){if(done)return;h.classList.add("rl-logo-done");setTimeout(end,500)};
+var start=function(){if(go||done)return;go=true;h.classList.add("rl-logo-go");setTimeout(seen?end:finish,seen?400:2750)};
+var fail=setTimeout(function(){if(!go)end()},2600);
+if(seen){h.classList.add("rl-logo-quick");
+var hit=function(e){var t=e.target;if(t&&t.classList&&t.classList.contains("brand__logo"))start()};
+d.addEventListener("load",hit,true);d.addEventListener("error",hit,true);
+d.addEventListener("DOMContentLoaded",function(){var i=d.querySelector(".brand__logo");if(!i||i.complete)start()})
+}else{h.classList.add("rl-logo-intro");
+var tick=function(){if(done)return;var b=d.querySelector(".brand"),tp=b&&b.querySelector("template.rl-parts-tpl");var frag=tp&&tp.content;var ims=frag?frag.querySelectorAll("img"):[];
+if(ims.length<6){if(!b||!tp||d.readyState==="loading"){setTimeout(tick,16);return}end();return}
+ov=d.createElement("span");ov.className="rl-parts";ov.setAttribute("aria-hidden","true");ov.appendChild(d.importNode(frag,true));ims=ov.querySelectorAll("img");
+var n=0,ok=true,one=function(){if(++n<ims.length)return;clearTimeout(fail);if(ok)start();else end()};
+for(var k=0;k<ims.length;k++){(function(im){var ld=function(){if(!im.naturalWidth){ok=false;one();return}(im.decode?im.decode():Promise.resolve()).then(one,one)};
+im.onload=ld;im.onerror=function(){ok=false;one()};if(im.complete)ld()})(ims[k])}
+b.appendChild(ov)};tick()}}
+var on=false,q=false,f=function(){q=false;var y=w.pageYOffset||0;if(!on&&y>40){on=true;h.classList.add("rl-compact")}else if(on&&y<10){on=false;h.classList.remove("rl-compact")}};
+w.addEventListener("scroll",function(){if(!q){q=true;w.requestAnimationFrame(f)}},{passive:true});d.addEventListener("DOMContentLoaded",f)})(document,window)</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18458618505"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // 2026-10-06 人間指示: 自分のアクセスを GA4 から除外する。各端末で一度 ?internal=1 を付けて開くと、その端末は traffic_type=internal（GA4 の「内部トラフィック」データフィルタで除外）。?internal=0 で解除
+  (function(){try{var q=location.search;if(/[?&]internal=1(&|$)/.test(q))localStorage.setItem('lc_internal','1');if(/[?&]internal=0(&|$)/.test(q))localStorage.removeItem('lc_internal');if(localStorage.getItem('lc_internal')==='1')gtag('set',{traffic_type:'internal'});}catch(e){}})();
+  gtag('config', 'AW-18458618505');
+  gtag('config', 'G-49D1Z94ELS');
+</script>
+<script>window.SITE_ADS = { sendTo: "AW-18458618505/Yi50CJ3hpv0cEInV4OFE" };</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"トップ","item":"https://restartlife.jp/"},{"@type":"ListItem","position":2,"name":"コラム","item":"https://restartlife.jp/column/"},{"@type":"ListItem","position":3,"name":"所得税から引ききれない控除は住民税へ","item":"https://restartlife.jp/column/kojo-juminzei/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"所得税から引ききれない控除は住民税へ。上限と戻り方の違い","datePublished":"2026-11-12","dateModified":"2026-11-12","author":{"@type":"Organization","name":"住宅ローン相談窓口 restartlife"}}</script>
+</head>
+<body>
+<!-- ⚠️ このファイルは scripts/build-site.mjs の生成物である。手で編集しない。本文の正本は site/pages/。 -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="../../"><img class="brand__logo" src="../../assets/site/logo.webp" alt="住宅ローン相談窓口 restartlife" width="1200" height="479" decoding="async"><template class="rl-parts-tpl"><img class="rl-p rl-p-curve" src="../../assets/site/logo-curve.webp" alt="" decoding="async" width="517" height="45"><img class="rl-p rl-p-house" src="../../assets/site/logo-house.webp" alt="" decoding="async" width="159" height="180"><img class="rl-p rl-p-restart" src="../../assets/site/logo-restart.webp" alt="" decoding="async" width="318" height="76"><img class="rl-p rl-p-life" src="../../assets/site/logo-life.webp" alt="" decoding="async" width="132" height="76"><img class="rl-p rl-p-leaf" src="../../assets/site/logo-leaf.webp" alt="" decoding="async" width="46" height="43"><img class="rl-p rl-p-tagline" src="../../assets/site/logo-tagline.webp" alt="" decoding="async" width="400" height="27"></template></a>
+      <nav class="site-nav" aria-label="サイト内">
+        <a href="../../service/kariire/">借入があっても住宅購入</a>
+        <a href="../../service/cardloan/">カードローンがある方</a>
+        <a href="../../column/">コラム</a>
+        <a href="../../faq/">よくあるご質問</a>
+        <a href="../../company/">運営者情報</a>
+      </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="現在位置"><ol><li><a href="../../">トップ</a></li><li><a href="../../column/">コラム</a></li><li>所得税から引ききれない控除は住民税へ</li></ol></nav>
+  </div>
+
+<article class="article"><div class="wrap">
+  <span class="hero__eyebrow">COLUMN</span>
+  <h1 style="font-size:24px;line-height:1.45;color:var(--navy);margin-top:6px">所得税から引ききれない控除は住民税へ。上限と戻り方の違い</h1>
+  <p class="post-meta">公開日 2026-11-12</p>
+  <img class="article__img" src="../../assets/site/column-futanritsu.webp" width="1200" height="675" alt="大きな器から小さな器へ水が移り、あふれずに収まる様子を家族が見守るイラスト" fetchpriority="high" decoding="async">
+  <p>年末調整で所得税が全額戻ったのに、源泉徴収票を見ると「控除しきれなかった額」が書かれている。その分はどこへ行ったのか、もう戻ってこないのか。共働きで年収がそれほど高くない方や、育休・時短で収入が下がった年の方から、とても多くいただく疑問です。住宅ローン控除のうち所得税から引ききれない分は、翌年度の住民税から差し引かれます。ただし上限があり、戻り方も所得税とはまったく違います。この記事では、住民税から差し引かれる仕組み、入居の年で違う上限、課税所得別に使い切れる額と使い切れない額を、試算表で整理します。今週の親記事 <a href="../../column/nenmatsu-chosei-jutaku-loan-kojo/">住宅ローン控除の年末調整。2 年目以降の書き方・必要書類・記入ミスの防ぎ方</a> の関連記事です。</p>
+  <div class="note"><strong>この記事について</strong><ul><li>住民税の上限と調整の内容は、市区町村が公表している個人住民税の住宅借入金等特別税額控除の案内（2026 年 10 月時点）と、国税庁「令和8年分 年末調整のしかた」をもとにしています。</li><li>試算は所得税の速算表と「課税総所得金額等の 5%（最高 97,500 円）」で計算した目安です。実際の住民税額は、お住まいの市区町村が計算します。</li><li>金額はすべて想定例です。個別の取り扱いは市区町村の住民税の担当窓口にご確認ください。</li></ul></div>
+
+  <h2>結論：住民税の分について押さえる 5 つ</h2>
+  <ul class="checklist">
+    <li><strong>所得税から引ききれない分は、翌年度の住民税から差し引かれます。</strong> 会社員の方は、原則として市区町村への申告は不要です。</li>
+    <li><strong>上限は「所得税の課税総所得金額等の 5%、最高 97,500 円」（2022 年以降に入居した方の原則）。</strong> 2021 年までに入居した方などは 7%、最高 136,500 円の場合があります。</li>
+    <li><strong>2025 年 12 月までに入居した方は、上限の計算に加算が入ります。</strong> 令和 8 年度の住民税から、課税総所得金額等に「所得税の基礎控除 − 48 万円」を加えて計算します。</li>
+    <li><strong>住民税の分は現金では戻りません。</strong> 翌年 6 月からの住民税が少なくなる形で、12 か月に分けて効きます。</li>
+    <li><strong>上限を超えた分は、その年は使い切れずに終わります。</strong> 翌年に繰り越すことはできません。</li>
+  </ul>
+
+  <h2>住民税から差し引かれる仕組み</h2>
+  <p>住宅ローン控除の額（住宅借入金等特別控除可能額）が、その年の所得税より大きいと、所得税は 0 円になり、残りが出ます。この残りと、次の上限の小さい方が、翌年度の住民税（所得割）から差し引かれます。</p>
+  <ul>
+    <li>住民税から差し引かれる額 ＝ 次の A と B の小さい方</li>
+    <li>A：住宅ローン控除の額のうち、所得税から引ききれなかった額</li>
+    <li>B：上限（入居の年で決まる。下の表）</li>
+  </ul>
+  <p>会社員の方は、勤務先が作る源泉徴収票の情報（住宅借入金等特別控除可能額や居住開始年月日）が市区町村に届くため、原則として自分で住民税の申告をする必要はありません。確定申告をする方は、申告書に住宅借入金等特別控除可能額と居住開始年月日を書き漏らすと、住民税からの控除が受けられないことがあります。</p>
+
+  <h2>上限は入居の年で違う</h2>
+  <div class="table-wrap">
+  <table class="cmp">
+    <tr><th>入居の時期</th><th>住民税の上限</th><th>補足</th></tr>
+    <tr><td>2014 年 1 月〜2021 年 12 月</td><td>所得税の課税総所得金額等の 7%（最高 136,500 円）</td><td>住宅の対価に含まれる消費税率が 8% または 10% の場合。それ以外は 5%（最高 97,500 円）</td></tr>
+    <tr><td>2022 年 1 月〜2030 年 12 月</td><td>所得税の課税総所得金額等の 5%（最高 97,500 円）</td><td>2022 年に入居し、消費税率 10% で一定期間内に契約した場合などは 7%（最高 136,500 円）</td></tr>
+    <tr><td>2025 年 12 月までに入居した方（共通）</td><td>上の計算の「課税総所得金額等」に「所得税の基礎控除 − 48 万円」を加える</td><td>令和 8 年度の住民税から。所得税の基礎控除が引き上げられたことに伴う調整</td></tr>
+  </table>
+  </div>
+  <p>ここで使う「課税総所得金額等」は、住民税ではなく所得税の課税所得です。給与だけの方なら、源泉徴収票の「給与所得控除後の金額」から「所得控除の額の合計額」を引いた額と考えて差し支えありません。2025 年 12 月までに入居した方の加算額は、その年の所得税の基礎控除の額によって変わります。たとえば基礎控除が 58 万円なら加算は 10 万円です。正確な額は、お住まいの市区町村の案内で確認してください。</p>
+
+  <h2>課税所得別の試算：どこまで使い切れるか</h2>
+  <p>住宅ローン控除の額を 210,000 円（新築の省エネ基準適合住宅、2025 年入居、年末残高 3,000 万円以上の想定）として、課税所得別に計算しました。右の 2 列は、加算が 10 万円の場合の目安です。</p>
+  <div class="table-wrap">
+  <table class="cmp">
+    <tr><th>課税所得</th><th>所得税から</th><th>住民税へ回る額</th><th>上限（加算なし）</th><th>住民税から</th><th>使い切れない額</th><th>上限（加算 10 万円）</th><th>使い切れない額（加算 10 万円）</th></tr>
+    <tr><td>100 万円</td><td>50,000 円</td><td>160,000 円</td><td>50,000 円</td><td>50,000 円</td><td>110,000 円</td><td>55,000 円</td><td>105,000 円</td></tr>
+    <tr><td>150 万円</td><td>75,000 円</td><td>135,000 円</td><td>75,000 円</td><td>75,000 円</td><td>60,000 円</td><td>80,000 円</td><td>55,000 円</td></tr>
+    <tr><td>200 万円</td><td>102,500 円</td><td>107,500 円</td><td>97,500 円</td><td>97,500 円</td><td>10,000 円</td><td>97,500 円</td><td>10,000 円</td></tr>
+    <tr><td>250 万円</td><td>152,500 円</td><td>57,500 円</td><td>97,500 円</td><td>57,500 円</td><td>0 円</td><td>97,500 円</td><td>0 円</td></tr>
+    <tr><td>300 万円</td><td>202,500 円</td><td>7,500 円</td><td>97,500 円</td><td>7,500 円</td><td>0 円</td><td>97,500 円</td><td>0 円</td></tr>
+    <tr><td>400 万円</td><td>210,000 円</td><td>0 円</td><td>—</td><td>0 円</td><td>0 円</td><td>—</td><td>0 円</td></tr>
+  </table>
+  </div>
+  <p>課税所得が 250 万円を超えると、所得税と住民税で 210,000 円を使い切れます。200 万円では、住民税の上限 97,500 円に当たって 10,000 円が残り、150 万円以下では使い切れない額が大きくなります。課税所得 195 万円以下は所得税率が 5% になるため、所得税から引ける額が急に小さくなるのが理由です。</p>
+
+  <h2>想定例：育休の年に何が起きるか</h2>
+  <p>共働きで、妻もご自身の名義で住宅ローン控除（控除額 210,000 円）を受けている想定です。2026 年は課税所得 250 万円で使い切れましたが、2027 年は育休と時短で課税所得が 80 万円に下がったとします。</p>
+  <div class="table-wrap">
+  <table class="cmp">
+    <tr><th>年</th><th>課税所得</th><th>所得税から</th><th>住民税から（加算なしの目安）</th><th>実際に効く額</th><th>使い切れない額</th></tr>
+    <tr><td>2026 年</td><td>250 万円</td><td>152,500 円</td><td>57,500 円</td><td>210,000 円</td><td>0 円</td></tr>
+    <tr><td>2027 年</td><td>80 万円</td><td>40,000 円</td><td>40,000 円</td><td>80,000 円</td><td>130,000 円</td></tr>
+  </table>
+  </div>
+  <p>育児休業給付金は所得税がかからないお金なので、休業中の期間が長い年は課税所得がさらに小さくなり、0 円になることもあります。その場合、その年の控除はほとんど使えません。控除は翌年に繰り越せないため、この年の分はそのまま終わります。ご夫婦で借りている場合の考え方は、今週の関連記事で扱います。収入が下がる時期の資金計画は <a href="../../column/ikukyu-tanjikan-shunyu/">育休・時短で収入が下がるときの住宅ローン</a> もご覧ください。</p>
+
+  <h2>所得税の分と住民税の分は、戻り方が違う</h2>
+  <div class="table-wrap">
+  <table class="cmp">
+    <tr><th>項目</th><th>所得税の分</th><th>住民税の分</th></tr>
+    <tr><td>いつ効くか</td><td>その年の年末調整（12 月か 1 月の給与）</td><td>翌年 6 月から翌々年 5 月までの住民税</td></tr>
+    <tr><td>どう効くか</td><td>天引きされていた所得税が現金で戻る</td><td>住民税の額が少なくなる（現金は戻らない）</td></tr>
+    <tr><td>会社員の場合</td><td>給与明細に還付として表示されることが多い</td><td>毎月の住民税の天引きが少なくなる</td></tr>
+    <tr><td>確認する書類</td><td>源泉徴収票の「住宅借入金等特別控除の額」</td><td>6 月ごろに届く住民税の決定通知書の税額控除の欄</td></tr>
+    <tr><td>手続き</td><td>年末調整（2 年目以降）</td><td>原則不要</td></tr>
+  </table>
+  </div>
+  <p>たとえば課税所得 200 万円の想定では、住民税から 97,500 円が差し引かれます。会社員の方なら、これが 12 か月に分かれるので、毎月の住民税の天引きがおおむね 8,000 円ほど少なくなる計算です（1 か月目に端数が寄るなど、月ごとの額は市区町村の計算によります）。「住民税の分が戻ってこない」と感じる方が多いのは、まとまった現金として見えないためです。</p>
+  <p>住民税の決定通知書は、市区町村によって様式が少しずつ違いますが、「所得割額」から「税額控除額」を差し引いた形で税額が書かれているのが一般的です。住宅ローン控除の住民税の分は、この税額控除の中に含まれています。前年の通知書と見比べて、収入がほぼ同じなのに税額が少なくなっていれば、住宅ローン控除が反映されていると考えられます。なお、住民税は 1 月 1 日に住んでいる市区町村で計算されます。年の途中で引っ越した方は、翌年 1 月 1 日時点の住所の市区町村から通知が届きます。</p>
+
+  <h2>住民税の分を確かめる手順</h2>
+  <ol class="steps">
+    <li><h3>源泉徴収票で 2 つの数字を見る</h3><p>「住宅借入金等特別控除の額」（所得税から引かれた額）と、「住宅借入金等特別控除可能額」（その年に受けられる控除の総額）を確認します。</p></li>
+    <li><h3>差を出す</h3><p>控除可能額 − 所得税から引かれた額 が、住民税へ回る額です。0 円なら、所得税で使い切れています。</p></li>
+    <li><h3>上限を計算する</h3><p>課税所得 × 5%（2021 年までの入居で条件を満たす方は 7%）を計算し、最高額と比べます。2025 年 12 月までに入居した方は加算が入ります。</p></li>
+    <li><h3>6 月の決定通知書と照らし合わせる</h3><p>勤務先から配られる住民税の決定通知書の税額控除の欄に、住宅ローン控除の分が反映されているかを確認します。</p></li>
+    <li><h3>合わないときは市区町村に問い合わせる</h3><p>反映されていない、または額が大きく違う場合は、お住まいの市区町村の住民税の担当窓口に問い合わせます。源泉徴収票を手元に用意しておくと話が早く進みます。</p></li>
+  </ol>
+
+  <h2>よくある失敗・見落とし</h2>
+  <ul>
+    <li><strong>住民税の分はなくなったと思い込む。</strong> 現金で戻らないだけで、翌年の住民税が少なくなっています。決定通知書で確認できます。</li>
+    <li><strong>上限を住民税の所得で計算する。</strong> 上限の計算に使うのは所得税の課税総所得金額等です。</li>
+    <li><strong>確定申告で控除可能額を書き漏らす。</strong> 1 年目や、医療費控除などで確定申告をした年は、申告書に住宅借入金等特別控除可能額と居住開始年月日を書かないと、住民税で控除されないことがあります。</li>
+    <li><strong>使い切れない分を翌年に繰り越せると思う。</strong> 繰り越しはできません。収入が下がる年は、その年の分だけ小さくなります。</li>
+    <li><strong>退職した年の扱いを忘れる。</strong> 年の途中で退職して年末調整を受けていない場合は、確定申告をしないと所得税の分も住民税の分も受けられません。</li>
+  </ul>
+
+  <h2>他のお借入れがある場合</h2>
+  <p>住民税の分は、毎月の天引きが少なくなる形で手取りが少し増えます。月数千円の差は家計の中で見えにくく、いつの間にかほかの支出に吸収されがちです。カードローンやリボ払いの残高がある方は、増えた手取りの分をそのまま毎月の返済に上乗せすると決めておくと、控除の効果を残高の減少として目に見える形にできます。</p>
+  <p>また、個人事業主の方や退職後の方など、住民税を納付書で払う普通徴収の方は、住宅ローン控除の分が反映された納付書が届きます。住民税の支払いの遅れは、納税の記録として住宅ローンの見直しや次のお申込みの際に確認されることがあります。少なくなった分も含めて、期限どおりに納めることが大切です。税金の遅れの扱いは <a href="../../column/keitai-bunkatsu-zeikin-okure/">携帯電話の分割払い・公共料金・税金の遅れはどう扱われるか</a> で整理しています。</p>
+
+  <h2>よくあるご質問</h2>
+  <div class="faq"><details><summary>住宅ローン控除の住民税の分は、申告が必要ですか？</summary><div class="faq__a"><p>会社員で年末調整を受けている方は、原則として不要です。源泉徴収票の情報が市区町村に届き、住民税の計算に反映されます。確定申告をする方は、申告書に住宅借入金等特別控除可能額と居住開始年月日を記入します。</p></div></details>
+<details><summary>住民税から引かれる上限はいくらですか？</summary><div class="faq__a"><p>2022 年以降に入居した方の原則は、所得税の課税総所得金額等の 5%（最高 97,500 円）です。2021 年までに入居し、消費税率 8% または 10% で取得した方などは 7%（最高 136,500 円）です。2025 年 12 月までに入居した方は、令和 8 年度の住民税から上限の計算に加算が入ります。</p></div></details>
+<details><summary>住民税の分はいつ戻りますか？</summary><div class="faq__a"><p>現金では戻らず、翌年 6 月から翌々年 5 月までの住民税が少なくなる形で効きます。会社員の方は、毎月の住民税の天引きが少なくなります。</p></div></details>
+<details><summary>所得税も住民税も少なく、控除を使い切れません。繰り越せますか？</summary><div class="faq__a"><p>繰り越すことはできません。その年に使い切れなかった分は終わります。ご夫婦で控除を受けている場合は、収入が下がる時期を見越して名義や持分を考えておくことが大切です。</p></div></details></div>
+
+  <div class="cta-block">
+  <h2>控除の効き方も含めて、毎月の手取りと返済のバランスをご一緒に確認します。</h2>
+  <a class="line-cta" href="https://lin.ee/wIjLMkF" data-cta-type="line" data-cta-position="article" data-cta-id="article">
+      <span class="line-cta__icon" aria-hidden="true">LINE</span>LINEで無料相談</a>
+</div>
+  <div class="related">
+    <a href="../../column/nenmatsu-chosei-jutaku-loan-kojo/">住宅ローン控除の年末調整。2 年目以降の書き方・必要書類・記入ミスの防ぎ方<small>今週の親記事</small></a>
+    <a href="../../column/kojo-ikura-modoru/">住宅ローン控除でいくら戻るか。年末残高・税額・上限から自分で計算する</a>
+    <a href="../../column/ikukyu-tanjikan-shunyu/">育休・時短で収入が下がるときの住宅ローン</a>
+    <a href="../../column/">コラム一覧へ戻る</a>
+  </div>
+</div></article>
+
+</main>
+
+<div class="sticky-cta" aria-hidden="false">
+  <a class="line-cta" href="https://lin.ee/wIjLMkF" data-cta-type="line" data-cta-position="sticky" data-cta-id="sticky">
+      <span class="line-cta__icon" aria-hidden="true">LINE</span>LINEで無料相談</a>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <nav class="site-footer__nav">
+      <a href="../../">トップ</a>
+      <a href="../../service/kariire/">借入があっても住宅購入</a>
+      <a href="../../service/cardloan/">カードローンがある方</a>
+      <a href="../../column/">コラム</a>
+      <a href="../../faq/">よくあるご質問</a>
+      <a href="../../company/">運営者情報</a>
+      <a href="../../privacy.html" data-legal-link="privacy">プライバシーポリシー</a>
+      <a href="../../tokushoho.html" data-legal-link="law">特定商取引法に基づく表示</a>
+    </nav>
+    <!-- 運営者情報の詳細（事業者名・免許番号・所在地）は tokushoho.html だけが持つ（2026-09-11 人間指示。
+         scripts/verify-production-values.mjs の面検査もこれを前提にする）。ここには Copyright の名義だけ。 -->
+    <!-- 2026-09-28 人間決定（第2次）: Copyright の名義は全ページで屋号（config.TRADE_NAME = restartlife）。 -->
+    <p class="site-footer__copyright">Copyright(C) 2026 restartlife All rights reserved.</p>
+  </div>
+</footer>
+<script src="../../site/site.js" defer></script>
+</body>
+</html>

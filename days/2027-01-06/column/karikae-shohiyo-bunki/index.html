@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>借り換えの諸費用と損益分岐点。いくら金利が下がれば得か、自分で計算する手順｜コラム</title>
+<meta name="description" content="住宅ローンの借り換えにかかる諸費用の内訳（事務手数料・保証料・登記費用・印紙代・いまの金融機関への手数料）と目安、そして「利息の減る額 − 諸費用」で損益分岐点を自分で出す 5 つの手順をまとめます。残高 2,500 万円・残り 25 年の想定例で、金利差別・残期間別に何年で元が取れるかを表にしました。">
+<meta name="robots" content="index, follow">
+<meta name="google-site-verification" content="ZkXZGklnJLYVLAcr4kTjXUxK-qsl-ue8xseky8Gm0wc"><!-- Search Console 所有権確認（2026-09-28）。削除すると確認が外れる -->
+<link rel="canonical" href="https://restartlife.jp/column/karikae-shohiyo-bunki/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="借り換えの諸費用と損益分岐点。いくら金利が下がれば得か、自分で計算する手順｜コラム">
+<meta property="og:description" content="住宅ローンの借り換えにかかる諸費用の内訳（事務手数料・保証料・登記費用・印紙代・いまの金融機関への手数料）と目安、そして「利息の減る額 − 諸費用」で損益分岐点を自分で出す 5 つの手順をまとめます。残高 2,500 万円・残り 25 年の想定例で、金利差別・残期間別に何年で元が取れるかを表にしました。">
+<meta property="og:url" content="https://restartlife.jp/column/karikae-shohiyo-bunki/">
+<meta property="og:site_name" content="住宅ローン相談窓口 restartlife">
+<meta property="og:image" content="https://restartlife.jp/assets/site/og.webp">
+<link rel="image_src" href="../../assets/site/og.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" onload="this.onload=null;this.rel='stylesheet'"><!-- 2026-09-29 Lighthouse 対応: フォント CSS を描画ブロックにしない（読込後に適用。display=swap で本文は先に出る） -->
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap"></noscript>
+
+<link rel="stylesheet" href="../../site/site.css">
+<style>
+.brand{position:relative;transform-origin:left center;transition:transform .35s cubic-bezier(.25,.46,.45,.94)}
+html.rl-compact .brand{transform:scale(.94)}
+.rl-parts{position:absolute;inset:0;pointer-events:none}
+.rl-parts img{position:absolute;display:block;height:auto;opacity:0;will-change:transform,opacity}
+html.rl-logo-intro .brand__logo{opacity:0}
+html.rl-logo-intro.rl-logo-done .brand__logo{opacity:1;transition:opacity .45s ease-out}
+html.rl-logo-done .rl-parts{opacity:0;transition:opacity .45s ease-out}
+.rl-p-house{left:1.567%;top:3.967%;width:26.533%;-webkit-mask-image:linear-gradient(68deg,#000 48%,transparent 52%);mask-image:linear-gradient(68deg,#000 48%,transparent 52%);-webkit-mask-size:300% 300%;mask-size:300% 300%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.rl-p-restart{left:17.833%;top:34.432%;width:52.917%}
+.rl-p-life{left:71.917%;top:34.167%;width:22.083%}
+.rl-p-leaf{left:91.058%;top:23.038%;width:7.633%;transform-origin:15% 90%}
+.rl-p-curve{left:6.590%;top:66.365%;width:86.243%;-webkit-mask-image:linear-gradient(90deg,#000 47%,transparent 53%);mask-image:linear-gradient(90deg,#000 47%,transparent 53%);-webkit-mask-size:250% 100%;mask-size:250% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.rl-p-tagline{left:20.583%;top:85.488%;width:66.583%}
+html.rl-logo-go .rl-p-house{animation:rl-draw 1.15s cubic-bezier(.25,.46,.45,.94) 0s both}
+html.rl-logo-go .rl-p-restart{animation:rl-text-blur .85s cubic-bezier(.25,.46,.45,.94) .4s both}
+html.rl-logo-go .rl-p-life{animation:rl-text .8s cubic-bezier(.25,.46,.45,.94) .7s both}
+html.rl-logo-go .rl-p-leaf{animation:rl-leaf .7s cubic-bezier(.34,1.4,.64,1) 1s both}
+html.rl-logo-go .rl-p-curve{animation:rl-wipe 1.2s cubic-bezier(.45,0,.55,1) 1.15s both}
+html.rl-logo-go .rl-p-tagline{animation:rl-text-sm .85s cubic-bezier(.25,.46,.45,.94) 1.75s both}
+@keyframes rl-draw{from{opacity:1;-webkit-mask-position:100% 0;mask-position:100% 0}to{opacity:1;-webkit-mask-position:0 100%;mask-position:0 100%}}
+@keyframes rl-wipe{from{opacity:1;-webkit-mask-position:100% 0;mask-position:100% 0}to{opacity:1;-webkit-mask-position:0 0;mask-position:0 0}}
+@keyframes rl-text-blur{from{opacity:0;transform:translateY(30%);filter:blur(3px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes rl-text{from{opacity:0;transform:translateY(30%)}to{opacity:1;transform:none}}
+@keyframes rl-text-sm{from{opacity:0;transform:translateY(40%)}to{opacity:1;transform:none}}
+@keyframes rl-leaf{from{opacity:0;transform:scale(.7) rotate(-4deg)}to{opacity:1;transform:none}}
+html.rl-logo-quick .brand__logo{animation:rl-fade .32s ease-out both;animation-play-state:paused}
+html.rl-logo-quick.rl-logo-go .brand__logo{animation-play-state:running}
+@keyframes rl-fade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.brand{transition:none}}
+</style>
+<script>(function(d,w){var h=d.documentElement,rm=false;try{rm=w.matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){}
+if(!rm){var seen=false;try{seen=w.sessionStorage.getItem("rl-logo")==="1";w.sessionStorage.setItem("rl-logo","1")}catch(e){}
+var go=false,done=false,ov=null;
+var end=function(){if(done)return;done=true;h.classList.remove("rl-logo-intro");h.classList.remove("rl-logo-quick");h.classList.remove("rl-logo-go");h.classList.remove("rl-logo-done");if(ov&&ov.parentNode)ov.parentNode.removeChild(ov)};
+var finish=function(){if(done)return;h.classList.add("rl-logo-done");setTimeout(end,500)};
+var start=function(){if(go||done)return;go=true;h.classList.add("rl-logo-go");setTimeout(seen?end:finish,seen?400:2750)};
+var fail=setTimeout(function(){if(!go)end()},2600);
+if(seen){h.classList.add("rl-logo-quick");
+var hit=function(e){var t=e.target;if(t&&t.classList&&t.classList.contains("brand__logo"))start()};
+d.addEventListener("load",hit,true);d.addEventListener("error",hit,true);
+d.addEventListener("DOMContentLoaded",function(){var i=d.querySelector(".brand__logo");if(!i||i.complete)start()})
+}else{h.classList.add("rl-logo-intro");
+var tick=function(){if(done)return;var b=d.querySelector(".brand"),tp=b&&b.querySelector("template.rl-parts-tpl");var frag=tp&&tp.content;var ims=frag?frag.querySelectorAll("img"):[];
+if(ims.length<6){if(!b||!tp||d.readyState==="loading"){setTimeout(tick,16);return}end();return}
+ov=d.createElement("span");ov.className="rl-parts";ov.setAttribute("aria-hidden","true");ov.appendChild(d.importNode(frag,true));ims=ov.querySelectorAll("img");
+var n=0,ok=true,one=function(){if(++n<ims.length)return;clearTimeout(fail);if(ok)start();else end()};
+for(var k=0;k<ims.length;k++){(function(im){var ld=function(){if(!im.naturalWidth){ok=false;one();return}(im.decode?im.decode():Promise.resolve()).then(one,one)};
+im.onload=ld;im.onerror=function(){ok=false;one()};if(im.complete)ld()})(ims[k])}
+b.appendChild(ov)};tick()}}
+var on=false,q=false,f=function(){q=false;var y=w.pageYOffset||0;if(!on&&y>40){on=true;h.classList.add("rl-compact")}else if(on&&y<10){on=false;h.classList.remove("rl-compact")}};
+w.addEventListener("scroll",function(){if(!q){q=true;w.requestAnimationFrame(f)}},{passive:true});d.addEventListener("DOMContentLoaded",f)})(document,window)</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18458618505"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // 2026-10-06 人間指示: 自分のアクセスを GA4 から除外する。各端末で一度 ?internal=1 を付けて開くと、その端末は traffic_type=internal（GA4 の「内部トラフィック」データフィルタで除外）。?internal=0 で解除
+  (function(){try{var q=location.search;if(/[?&]internal=1(&|$)/.test(q))localStorage.setItem('lc_internal','1');if(/[?&]internal=0(&|$)/.test(q))localStorage.removeItem('lc_internal');if(localStorage.getItem('lc_internal')==='1')gtag('set',{traffic_type:'internal'});}catch(e){}})();
+  gtag('config', 'AW-18458618505');
+  gtag('config', 'G-49D1Z94ELS');
+</script>
+<script>window.SITE_ADS = { sendTo: "AW-18458618505/Yi50CJ3hpv0cEInV4OFE" };</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"トップ","item":"https://restartlife.jp/"},{"@type":"ListItem","position":2,"name":"コラム","item":"https://restartlife.jp/column/"},{"@type":"ListItem","position":3,"name":"借り換えの諸費用と損益分岐点","item":"https://restartlife.jp/column/karikae-shohiyo-bunki/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"借り換えの諸費用と損益分岐点。いくら金利が下がれば得か、自分で計算する手順","datePublished":"2027-01-06","dateModified":"2027-01-06","author":{"@type":"Organization","name":"住宅ローン相談窓口 restartlife"}}</script>
+</head>
+<body>
+<!-- ⚠️ このファイルは scripts/build-site.mjs の生成物である。手で編集しない。本文の正本は site/pages/。 -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="../../"><img class="brand__logo" src="../../assets/site/logo.webp" alt="住宅ローン相談窓口 restartlife" width="1200" height="479" decoding="async"><template class="rl-parts-tpl"><img class="rl-p rl-p-curve" src="../../assets/site/logo-curve.webp" alt="" decoding="async" width="517" height="45"><img class="rl-p rl-p-house" src="../../assets/site/logo-house.webp" alt="" decoding="async" width="159" height="180"><img class="rl-p rl-p-restart" src="../../assets/site/logo-restart.webp" alt="" decoding="async" width="318" height="76"><img class="rl-p rl-p-life" src="../../assets/site/logo-life.webp" alt="" decoding="async" width="132" height="76"><img class="rl-p rl-p-leaf" src="../../assets/site/logo-leaf.webp" alt="" decoding="async" width="46" height="43"><img class="rl-p rl-p-tagline" src="../../assets/site/logo-tagline.webp" alt="" decoding="async" width="400" height="27"></template></a>
+      <nav class="site-nav" aria-label="サイト内">
+        <a href="../../service/kariire/">借入があっても住宅購入</a>
+        <a href="../../service/cardloan/">カードローンがある方</a>
+        <a href="../../column/">コラム</a>
+        <a href="../../faq/">よくあるご質問</a>
+        <a href="../../company/">運営者情報</a>
+      </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="現在位置"><ol><li><a href="../../">トップ</a></li><li><a href="../../column/">コラム</a></li><li>借り換えの諸費用と損益分岐点</li></ol></nav>
+  </div>
+
+<article class="article"><div class="wrap">
+  <span class="hero__eyebrow">COLUMN</span>
+  <h1 style="font-size:24px;line-height:1.45;color:var(--navy);margin-top:6px">借り換えの諸費用と損益分岐点。いくら金利が下がれば得か、自分で計算する手順</h1>
+  <p class="post-meta">公開日 2027-01-06</p>
+  <img class="article__img" src="../../assets/site/column-shohiyo.webp" width="1200" height="675" alt="天秤の片側に一つの大きな包み、もう片側に小分けの包みを並べ、どちらが重いかを見比べる夫婦のイラスト" fetchpriority="high" decoding="async">
+  <p>「金利差が 1% あれば借り換えたほうがよい」「残高 1,000 万円以上、残期間 10 年以上」といった目安はよく知られています。ただ、この目安は諸費用を一定の水準と仮定したうえでの経験則で、ご自身の残高・残期間・諸費用で計算すると、目安より小さな金利差でも得になることも、目安を満たしていても得にならないこともあります。借り換えの損益は、「利息の減る額」から「諸費用」を引いた残りで決まり、何年で元が取れるか（損益分岐点）も同じ式から出ます。この記事では、諸費用の内訳と目安、そして電卓とシミュレーションサイトで損益分岐点を自分で出す手順を、残高 2,500 万円・残り 25 年の想定例で説明します。今週の親記事 <a href="../../column/jutaku-loan-karikae-kihon/">住宅ローンの借り換えとは。金利差・残高・残期間の 3 条件と、他のお借入れがある家庭の考え方</a> の関連記事です。</p>
+  <div class="note"><strong>この記事について</strong><ul><li>諸費用の目安は、事務手数料 2.2%（税込）、抵当権設定の登録免許税 0.4%、抵当権抹消の登録免許税、司法書士への報酬、印紙代、いまの金融機関への全額返済の手数料を、一般的に案内されている水準で仮定したものです。金融機関・司法書士・契約の形によって異なります。</li><li>試算は元利均等返済の想定例です。保証料の戻り、団信の金利上乗せ、繰り上げ返済は含めていません。</li><li>実際の金利・手数料・条件は金融機関の判断によります。登録免許税の軽減措置や印紙税の扱いは、最新の国税庁・法務局の案内でご確認ください。</li></ul></div>
+
+  <h2>結論: 損益は「利息の減る額 − 諸費用」で決まる</h2>
+  <ul class="checklist">
+    <li>借り換えの諸費用は、残高 2,500 万円で 70〜90 万円前後が目安（事務手数料 2.2% の商品の場合）。残高が大きいほど、定率の手数料と登記費用が増える。</li>
+    <li>残高 2,500 万円・残り 25 年で金利が年 1.5% → 0.7% に下がる想定例では、利息が約 274 万円減り、諸費用 78.5 万円を引いて約 195 万円の差。元が取れるのは約 7 年 2 か月後。</li>
+    <li>同じ残高・残期間で金利差が 0.3% だと、差は約 26 万円で、元が取れるのは約 18 年 9 か月後。残期間が 20 年を切ると、諸費用のほうが大きくなる。</li>
+    <li>「何年で元が取れるか」が、売却や住み替えの可能性がある時期より前に来るかを見る。元が取れる前に完済すると、諸費用の分だけ損をする。</li>
+    <li>いまの金融機関に金利の見直しを相談すると、登記費用などがかからずに金利が下がる場合がある。借り換え先の見積もりを取ったうえで、両方を比べる。</li>
+  </ul>
+
+  <h2>借り換えの諸費用の内訳と目安</h2>
+  <p>借り換えの諸費用は、「新しい金融機関に払うもの」「登記にかかるもの」「いまの金融機関に払うもの」の 3 つに分けると整理しやすくなります。残高 2,500 万円で新しいお借入れを 2,500 万円とした場合の目安です。</p>
+  <div class="table-wrap">
+  <table class="cmp">
+    <tr><th>区分</th><th>項目</th><th>目安（残高 2,500 万円）</th><th>備考</th></tr>
+    <tr><td rowspan="3">新しい金融機関</td><td>事務手数料</td><td>約 55 万円（2.2%）または 3.3〜5.5 万円（定額型）</td><td>定額型は保証料がかかる、または金利に上乗せされることが多い</td></tr>
+    <tr><td>保証料</td><td>0 円〜約 50 万円</td><td>事務手数料型では不要の商品が多い。保証料型は借入額と期間で決まる</td></tr>
+    <tr><td>印紙代</td><td>2 万円（契約額 1,000 万円超 5,000 万円以下）</td><td>電子契約なら不要の金融機関もある</td></tr>
+    <tr><td rowspan="3">登記</td><td>抵当権設定の登録免許税</td><td>約 10 万円（借入額 × 0.4%）</td><td>一定の要件を満たす住宅は軽減される場合がある（法務局の案内で確認）</td></tr>
+    <tr><td>抵当権抹消の登録免許税</td><td>2,000 円（不動産 1 件あたり 1,000 円）</td><td>土地と建物で 2 件が一般的</td></tr>
+    <tr><td>司法書士への報酬</td><td>約 5〜10 万円</td><td>設定と抹消を合わせて。事務所によって異なる</td></tr>
+    <tr><td>いまの金融機関</td><td>全額返済の手数料</td><td>0〜5.5 万円程度</td><td>金融機関と契約内容による。保証料を前払いしていれば一部戻る場合がある</td></tr>
+    <tr><td colspan="2">合計の目安</td><td>約 70〜90 万円（事務手数料型の場合）</td><td>この記事の試算では 78.5 万円と仮定</td></tr>
+  </table>
+  </div>
+  <p>見落としやすいのは、登記の費用と、いまの金融機関に払う手数料です。借り換え先の金融機関のシミュレーションには、自社の事務手数料しか入っていないことがあります。また、いまの住宅ローンで保証料を一括で前払いしている方は、全額返済のときに保証料の一部が戻る場合があり、その分は諸費用から差し引いて考えられます。戻る額は保証会社の計算によるため、いまの金融機関に確かめます。事務手数料型と保証料型の総額の違いは <a href="../../column/jimu-tesuryo-hoshoryo/">事務手数料型と保証料型の比較</a> で詳しく扱いました。</p>
+
+  <h2>想定例: 残高 2,500 万円・残り 25 年の損益分岐点</h2>
+  <p>いまの金利が年 1.5%、残高 2,500 万円、残りの返済期間 25 年の方が、年 0.7% の商品に借り換える場合で計算します。諸費用は 78.5 万円を現金で払う前提です。</p>
+  <div class="table-wrap">
+  <table class="cmp">
+    <tr><th></th><th>借り換えしない（1.5%）</th><th>借り換え後（0.7%）</th><th>差</th></tr>
+    <tr><td>毎月の返済額</td><td>約 99,984 円</td><td>約 90,862 円</td><td>月 9,122 円</td></tr>
+    <tr><td>25 年の総支払額</td><td>約 2,999.5 万円</td><td>約 2,725.9 万円</td><td>約 273.7 万円</td></tr>
+    <tr><td>諸費用</td><td>0 円</td><td>78.5 万円</td><td>—</td></tr>
+    <tr><td>諸費用を引いた差</td><td colspan="2">—</td><td>約 195.2 万円</td></tr>
+    <tr><td>損益分岐点（諸費用 ÷ 毎月の差）</td><td colspan="2">—</td><td>約 86 か月 = 約 7 年 2 か月</td></tr>
+  </table>
+  </div>
+  <p>この想定例では、借り換えてから約 7 年 2 か月で諸費用の分を取り戻し、その後の約 18 年分の差（約 195 万円）が手元に残る計算です。逆に言うと、7 年以内に売却や完済をする予定がある方は、この条件でも損になります。</p>
+
+  <h2>金利差が小さいとどうなるか</h2>
+  <p>同じ残高 2,500 万円・残り 25 年で、借り換え後の金利を変えて比べます。いまの金利は年 1.5% のままです。</p>
+  <div class="table-wrap">
+  <table class="cmp">
+    <tr><th>借り換え後の金利</th><th>金利差</th><th>毎月の差</th><th>25 年の利息の差</th><th>諸費用を引いた差</th><th>損益分岐点</th></tr>
+    <tr><td>0.5%</td><td>1.0%</td><td>約 11,317 円</td><td>約 339.5 万円</td><td>約 261.0 万円</td><td>約 5 年 9 か月</td></tr>
+    <tr><td>0.7%</td><td>0.8%</td><td>約 9,122 円</td><td>約 273.7 万円</td><td>約 195.2 万円</td><td>約 7 年 2 か月</td></tr>
+    <tr><td>1.0%</td><td>0.5%</td><td>約 5,766 円</td><td>約 173.0 万円</td><td>約 94.5 万円</td><td>約 11 年 4 か月</td></tr>
+    <tr><td>1.2%</td><td>0.3%</td><td>約 3,485 円</td><td>約 104.6 万円</td><td>約 26.1 万円</td><td>約 18 年 9 か月</td></tr>
+  </table>
+  </div>
+  <p>金利差 0.3% でも 25 年払い続ければ損にはなりませんが、差は 26 万円で、損益分岐点は 18 年を超えます。その間に売却・住み替え・まとまった繰り上げ返済があれば、諸費用のほうが大きくなります。金利差が小さいときは、借り換えよりも、いまの金融機関への金利見直しの相談（諸費用がほとんどかからない）や、繰り上げ返済のほうが効率がよい場合があります。繰り上げ返済の考え方は <a href="../../column/kuriage-hensai-suru-beki/">繰り上げ返済はするべきか</a> をご覧ください。</p>
+
+  <h2>残りの期間が短いとどうなるか</h2>
+  <p>金利差を 0.8%（1.5% → 0.7%）に固定し、残高 2,500 万円のまま残りの期間を変えます。残りの期間が短いほど、金利差が効く年数が減り、諸費用を取り戻しにくくなります。</p>
+  <div class="table-wrap">
+  <table class="cmp">
+    <tr><th>残りの期間</th><th>毎月の差</th><th>利息の差</th><th>諸費用を引いた差</th><th>損益分岐点</th></tr>
+    <tr><td>25 年</td><td>約 9,122 円</td><td>約 273.7 万円</td><td>約 195.2 万円</td><td>約 7 年 2 か月</td></tr>
+    <tr><td>20 年</td><td>約 8,978 円</td><td>約 215.5 万円</td><td>約 137.0 万円</td><td>約 7 年 3 か月</td></tr>
+    <tr><td>15 年</td><td>約 8,837 円</td><td>約 159.1 万円</td><td>約 80.6 万円</td><td>約 7 年 5 か月</td></tr>
+    <tr><td>10 年</td><td>約 8,708 円</td><td>約 104.5 万円</td><td>約 26.0 万円</td><td>約 7 年 6 か月</td></tr>
+  </table>
+  </div>
+  <p>毎月の差はほとんど変わらないため、損益分岐点も 7 年前後で変わりません。変わるのは「分岐点を過ぎてから完済までの年数」です。残り 10 年では、分岐点を過ぎた後に 2 年半しか残らず、差は 26 万円にとどまります。残りの期間が 10 年を切ると、借り換え後の返済期間が 10 年未満になって住宅ローン控除の対象から外れる点にも注意が必要です（今週の関連記事で扱います）。</p>
+
+  <h2>自分で計算する 5 つの手順</h2>
+  <ol class="steps">
+    <li><h3>いまの住宅ローンの 3 つの数字を書き出す</h3><p>残高、残りの返済期間（回数）、いまの金利です。返済予定表か金融機関のアプリで確かめます。固定期間中の方は、固定期間が終わった後の金利の決まり方も控えておきます。</p></li>
+    <li><h3>借り換え先の金利で、毎月の返済額と総支払額を出す</h3><p>金融機関のシミュレーションサイトに、残高・残りの期間・借り換え後の金利を入れます。いまの金利でも同じ条件で計算し、総支払額の差を「利息の減る額」とします。返済期間は延ばさずに同じ期間で比べます。</p></li>
+    <li><h3>諸費用を 3 つの区分で足す</h3><p>借り換え先の事務手数料と保証料、登記の費用（設定・抹消・司法書士）、いまの金融機関の全額返済の手数料を足します。前払いした保証料が戻る見込みがあれば差し引きます。借り換え先のシミュレーションに入っていない項目を、自分で補います。</p></li>
+    <li><h3>「利息の減る額 − 諸費用」と「諸費用 ÷ 毎月の差」を出す</h3><p>前者がプラスなら総額で得、後者が損益分岐点（元が取れるまでの月数）です。</p></li>
+    <li><h3>売却・住み替え・まとまった繰り上げの予定と照らす</h3><p>損益分岐点より前にそうした予定があるなら、借り換えは見合わせるか、諸費用の小さい商品を探します。団信の上乗せが必要な場合は、上乗せ後の金利で手順 2 からやり直します。</p></li>
+  </ol>
+  <p>手順 2 で使う借り換え用のシミュレーションでは、「諸費用を含める」の設定があるかどうかを確かめ、含まれていなければ手順 3 で足します。借入額別・金利別の毎月の返済額の目安は <a href="../../column/3000-4000-5000man-tsukizuki/">3,000万・4,000万・5,000万円の住宅ローンは月々いくら？金利・期間別の早見表</a> でも確かめられます。</p>
+
+  <h2>諸費用を現金で払うか、上乗せするか</h2>
+  <p>諸費用を新しいお借入れに含められる商品もあります。想定例の 78.5 万円を上乗せして 2,578.5 万円を年 0.7%・25 年で借りると、毎月の返済は約 93,715 円、総支払額は約 2,811.4 万円です。現金で払った場合と比べると、諸費用そのものに加えて利息が約 7 万円かかり、諸費用を引いた差は約 188 万円に縮みます。</p>
+  <p>手元資金を残せる利点はありますが、上乗せした分は住宅ローン控除の対象にならず、控除の対象となる年末残高は按分で小さくなります。金利の高い他のお借入れが残っている方は、手元資金をそちらの整理に回し、諸費用は上乗せする、という組み合わせのほうが家計全体の利息が少なくなる場合もあります。手元資金の配分は <a href="../../column/temoto-shikin-tsukaimichi/">手元資金をお借入れの整理と頭金のどちらに使うか</a> の考え方がそのまま使えます。</p>
+
+  <h2>他のお借入れがある場合</h2>
+  <p>カードローンや車のローン、リボ払いなどがある方は、損益分岐点の計算に 2 つの要素が加わります。</p>
+  <ul>
+    <li><strong>借り換えが進むかどうかに、他のお借入れの毎月の支払額が関わる。</strong> 新しい金融機関は、借り換え後の住宅ローンの返済額と他のお借入れの支払額を合わせて、年収に対する割合を確認します。割合が上限を超えると、借り換え自体が進みません。先に整理する順番は <a href="../../column/fukusu-kariire-seiri-junban/">複数社からのお借入れを整理する順番</a> をご覧ください。</li>
+    <li><strong>他のお借入れをまとめると、諸費用も、利息の減る額も変わる。</strong> 借り換えと同時に他のお借入れを住宅ローンに含めて検討できる商品では、お借入れの額が増える分、定率の事務手数料や登記費用も増えます。その代わり、金利 15% 前後の支払いが住宅ローンに近い金利になるため、利息の減る額は住宅ローンの金利差だけの場合より大きくなることがあります。この場合は、「住宅ローンの金利差による利息の減る額」と「他のお借入れの利息の減る額」を別々に出し、合計から諸費用を引きます。仕組みと対象は <a href="../../column/omatome-jutaku-loan/">他の借入をまとめて検討できる住宅ローンとは</a>、購入時との違いは <a href="../../column/kounyu-to-karikae/">購入と同時にまとめる場合と、借り換えでまとめる場合の違い</a> にまとめています。</li>
+  </ul>
+  <p>どちらの場合も、まとめた部分は住宅ローン控除の対象外です。控除が減る額も、損益の計算に入れておきます。</p>
+
+  <h2>よくある失敗・見落とし</h2>
+  <ul>
+    <li><strong>借り換え先のシミュレーションの「諸費用」だけで計算する。</strong> 登記費用やいまの金融機関への手数料が入っていないことがあります。3 つの区分で自分で足します。</li>
+    <li><strong>返済期間を延ばした結果で比べる。</strong> 期間を延ばすと月々の差が大きく見えますが、総支払額の比較にはなりません。同じ期間でそろえます。</li>
+    <li><strong>団信の上乗せ前の金利で計算する。</strong> 上乗せが 0.3% あると、想定例では月々の差が 9,122 円から 5,766 円に縮み、損益分岐点は 7 年から 11 年に延びます。</li>
+    <li><strong>保証料の戻りを確かめない。</strong> いまの住宅ローンで保証料を前払いしていれば、戻る分は諸費用から引けます。</li>
+    <li><strong>いまの金融機関に相談しない。</strong> 借り換えの見積もりを示して金利の見直しを相談すると、諸費用をほとんどかけずに金利が下がる場合があります。応じるかどうかは金融機関の判断です。</li>
+    <li><strong>金利が「いまの金利」のまま 25 年続くと決めつける。</strong> 変動金利どうしの比較では、どちらも将来の金利は動きます。金利が上がった場合の返済額は <a href="../../column/kinri-1pct-hensai/">金利が 0.5%・1% 上がると毎月の返済はいくら増えるか</a> で確かめられます。</li>
+  </ul>
+
+  <h2>よくあるご質問</h2>
+  <div class="faq"><details><summary>住宅ローンの借り換えの諸費用はいくらかかりますか？</summary><div class="faq__a"><p>事務手数料 2.2% の商品の場合、残高 2,500 万円で 70〜90 万円前後が目安です。事務手数料、保証料、印紙代、抵当権の設定と抹消の登記費用、司法書士への報酬、いまの金融機関への全額返済の手数料で構成されます。金融機関・司法書士・契約の形によって異なります。</p></div></details>
+<details><summary>金利差がどれくらいあれば借り換えたほうがよいですか？</summary><div class="faq__a"><p>残高・残りの期間・諸費用によって変わります。残高 2,500 万円・残り 25 年の想定例では、金利差 0.8% で諸費用を引いた差が約 195 万円、金利差 0.3% では約 26 万円でした。「利息の減る額 − 諸費用」と、売却や完済の予定の時期との関係で判断します。</p></div></details>
+<details><summary>損益分岐点とは何ですか？どう計算しますか？</summary><div class="faq__a"><p>借り換えの諸費用を、毎月の返済額の差で取り戻すまでの期間です。「諸費用 ÷ 毎月の差」で月数が出ます。想定例では 78.5 万円 ÷ 9,122 円 = 約 86 か月（約 7 年 2 か月）です。この時期より前に売却や完済をすると、諸費用の分だけ損になります。</p></div></details>
+<details><summary>借り換えの諸費用も住宅ローンに含められますか？</summary><div class="faq__a"><p>含められる商品もあります。想定例で 78.5 万円を上乗せすると、利息が約 7 万円増え、上乗せした分は住宅ローン控除の対象になりません。手元資金を残す必要があるかどうかと合わせて判断します。</p></div></details>
+<details><summary>残りの期間が 10 年を切っていても借り換えの意味はありますか？</summary><div class="faq__a"><p>金利差が大きければ総額で得になる場合はありますが、差は小さくなります。想定例では残り 10 年・金利差 0.8% で約 26 万円でした。借り換え後の返済期間が 10 年未満になると住宅ローン控除の対象から外れる点も考える必要があります。</p></div></details></div>
+
+  <div class="cta-block">
+  <h2>返済予定表の残高・金利・残りの期間と、他のお借入れの状況から、諸費用を含めた損益分岐点を一緒に計算します。</h2>
+  <a class="line-cta" href="https://lin.ee/wIjLMkF" data-cta-type="line" data-cta-position="article" data-cta-id="article">
+      <span class="line-cta__icon" aria-hidden="true">LINE</span>LINEで無料相談</a>
+</div>
+  <div class="related">
+    <a href="../../column/jutaku-loan-karikae-kihon/">住宅ローンの借り換えとは。金利差・残高・残期間の 3 条件と、他のお借入れがある家庭の考え方<small>今週の親記事</small></a>
+    <a href="../../column/jimu-tesuryo-hoshoryo/">事務手数料型と保証料型の比較。総支払額で見る住宅ローン諸費用の選び方</a>
+    <a href="../../column/temoto-shikin-tsukaimichi/">手元資金をお借入れの整理と頭金のどちらに使うか</a>
+    <a href="../../column/">コラム一覧へ戻る</a>
+  </div>
+</div></article>
+
+</main>
+
+<div class="sticky-cta" aria-hidden="false">
+  <a class="line-cta" href="https://lin.ee/wIjLMkF" data-cta-type="line" data-cta-position="sticky" data-cta-id="sticky">
+      <span class="line-cta__icon" aria-hidden="true">LINE</span>LINEで無料相談</a>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <nav class="site-footer__nav">
+      <a href="../../">トップ</a>
+      <a href="../../service/kariire/">借入があっても住宅購入</a>
+      <a href="../../service/cardloan/">カードローンがある方</a>
+      <a href="../../column/">コラム</a>
+      <a href="../../faq/">よくあるご質問</a>
+      <a href="../../company/">運営者情報</a>
+      <a href="../../privacy.html" data-legal-link="privacy">プライバシーポリシー</a>
+      <a href="../../tokushoho.html" data-legal-link="law">特定商取引法に基づく表示</a>
+    </nav>
+    <!-- 運営者情報の詳細（事業者名・免許番号・所在地）は tokushoho.html だけが持つ（2026-09-11 人間指示。
+         scripts/verify-production-values.mjs の面検査もこれを前提にする）。ここには Copyright の名義だけ。 -->
+    <!-- 2026-09-28 人間決定（第2次）: Copyright の名義は全ページで屋号（config.TRADE_NAME = restartlife）。 -->
+    <p class="site-footer__copyright">Copyright(C) 2026 restartlife All rights reserved.</p>
+  </div>
+</footer>
+<script src="../../site/site.js" defer></script>
+</body>
+</html>

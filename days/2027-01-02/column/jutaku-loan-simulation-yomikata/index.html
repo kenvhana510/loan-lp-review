@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>住宅ローンシミュレーションの使い方と読み方。入力する数字・足りない項目・結果の見方｜コラム</title>
+<meta name="description" content="金融機関のサイトなどにある住宅ローンシミュレーションの種類、入力する数字をどこから取るか、ツールに欄がない項目（他のお借入れ・諸費用・金利の上昇・管理費など）をどう足すか、出てきた結果をどう読むかを整理します。年収 500 万円・物件 3,500 万円の想定例で、金利別の返済額と返済負担率を比べます。">
+<meta name="robots" content="index, follow">
+<meta name="google-site-verification" content="ZkXZGklnJLYVLAcr4kTjXUxK-qsl-ue8xseky8Gm0wc"><!-- Search Console 所有権確認（2026-09-28）。削除すると確認が外れる -->
+<link rel="canonical" href="https://restartlife.jp/column/jutaku-loan-simulation-yomikata/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="住宅ローンシミュレーションの使い方と読み方。入力する数字・足りない項目・結果の見方｜コラム">
+<meta property="og:description" content="金融機関のサイトなどにある住宅ローンシミュレーションの種類、入力する数字をどこから取るか、ツールに欄がない項目（他のお借入れ・諸費用・金利の上昇・管理費など）をどう足すか、出てきた結果をどう読むかを整理します。年収 500 万円・物件 3,500 万円の想定例で、金利別の返済額と返済負担率を比べます。">
+<meta property="og:url" content="https://restartlife.jp/column/jutaku-loan-simulation-yomikata/">
+<meta property="og:site_name" content="住宅ローン相談窓口 restartlife">
+<meta property="og:image" content="https://restartlife.jp/assets/site/og.webp">
+<link rel="image_src" href="../../assets/site/og.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" onload="this.onload=null;this.rel='stylesheet'"><!-- 2026-09-29 Lighthouse 対応: フォント CSS を描画ブロックにしない（読込後に適用。display=swap で本文は先に出る） -->
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap"></noscript>
+
+<link rel="stylesheet" href="../../site/site.css">
+<style>
+.brand{position:relative;transform-origin:left center;transition:transform .35s cubic-bezier(.25,.46,.45,.94)}
+html.rl-compact .brand{transform:scale(.94)}
+.rl-parts{position:absolute;inset:0;pointer-events:none}
+.rl-parts img{position:absolute;display:block;height:auto;opacity:0;will-change:transform,opacity}
+html.rl-logo-intro .brand__logo{opacity:0}
+html.rl-logo-intro.rl-logo-done .brand__logo{opacity:1;transition:opacity .45s ease-out}
+html.rl-logo-done .rl-parts{opacity:0;transition:opacity .45s ease-out}
+.rl-p-house{left:1.567%;top:3.967%;width:26.533%;-webkit-mask-image:linear-gradient(68deg,#000 48%,transparent 52%);mask-image:linear-gradient(68deg,#000 48%,transparent 52%);-webkit-mask-size:300% 300%;mask-size:300% 300%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.rl-p-restart{left:17.833%;top:34.432%;width:52.917%}
+.rl-p-life{left:71.917%;top:34.167%;width:22.083%}
+.rl-p-leaf{left:91.058%;top:23.038%;width:7.633%;transform-origin:15% 90%}
+.rl-p-curve{left:6.590%;top:66.365%;width:86.243%;-webkit-mask-image:linear-gradient(90deg,#000 47%,transparent 53%);mask-image:linear-gradient(90deg,#000 47%,transparent 53%);-webkit-mask-size:250% 100%;mask-size:250% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.rl-p-tagline{left:20.583%;top:85.488%;width:66.583%}
+html.rl-logo-go .rl-p-house{animation:rl-draw 1.15s cubic-bezier(.25,.46,.45,.94) 0s both}
+html.rl-logo-go .rl-p-restart{animation:rl-text-blur .85s cubic-bezier(.25,.46,.45,.94) .4s both}
+html.rl-logo-go .rl-p-life{animation:rl-text .8s cubic-bezier(.25,.46,.45,.94) .7s both}
+html.rl-logo-go .rl-p-leaf{animation:rl-leaf .7s cubic-bezier(.34,1.4,.64,1) 1s both}
+html.rl-logo-go .rl-p-curve{animation:rl-wipe 1.2s cubic-bezier(.45,0,.55,1) 1.15s both}
+html.rl-logo-go .rl-p-tagline{animation:rl-text-sm .85s cubic-bezier(.25,.46,.45,.94) 1.75s both}
+@keyframes rl-draw{from{opacity:1;-webkit-mask-position:100% 0;mask-position:100% 0}to{opacity:1;-webkit-mask-position:0 100%;mask-position:0 100%}}
+@keyframes rl-wipe{from{opacity:1;-webkit-mask-position:100% 0;mask-position:100% 0}to{opacity:1;-webkit-mask-position:0 0;mask-position:0 0}}
+@keyframes rl-text-blur{from{opacity:0;transform:translateY(30%);filter:blur(3px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes rl-text{from{opacity:0;transform:translateY(30%)}to{opacity:1;transform:none}}
+@keyframes rl-text-sm{from{opacity:0;transform:translateY(40%)}to{opacity:1;transform:none}}
+@keyframes rl-leaf{from{opacity:0;transform:scale(.7) rotate(-4deg)}to{opacity:1;transform:none}}
+html.rl-logo-quick .brand__logo{animation:rl-fade .32s ease-out both;animation-play-state:paused}
+html.rl-logo-quick.rl-logo-go .brand__logo{animation-play-state:running}
+@keyframes rl-fade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.brand{transition:none}}
+</style>
+<script>(function(d,w){var h=d.documentElement,rm=false;try{rm=w.matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){}
+if(!rm){var seen=false;try{seen=w.sessionStorage.getItem("rl-logo")==="1";w.sessionStorage.setItem("rl-logo","1")}catch(e){}
+var go=false,done=false,ov=null;
+var end=function(){if(done)return;done=true;h.classList.remove("rl-logo-intro");h.classList.remove("rl-logo-quick");h.classList.remove("rl-logo-go");h.classList.remove("rl-logo-done");if(ov&&ov.parentNode)ov.parentNode.removeChild(ov)};
+var finish=function(){if(done)return;h.classList.add("rl-logo-done");setTimeout(end,500)};
+var start=function(){if(go||done)return;go=true;h.classList.add("rl-logo-go");setTimeout(seen?end:finish,seen?400:2750)};
+var fail=setTimeout(function(){if(!go)end()},2600);
+if(seen){h.classList.add("rl-logo-quick");
+var hit=function(e){var t=e.target;if(t&&t.classList&&t.classList.contains("brand__logo"))start()};
+d.addEventListener("load",hit,true);d.addEventListener("error",hit,true);
+d.addEventListener("DOMContentLoaded",function(){var i=d.querySelector(".brand__logo");if(!i||i.complete)start()})
+}else{h.classList.add("rl-logo-intro");
+var tick=function(){if(done)return;var b=d.querySelector(".brand"),tp=b&&b.querySelector("template.rl-parts-tpl");var frag=tp&&tp.content;var ims=frag?frag.querySelectorAll("img"):[];
+if(ims.length<6){if(!b||!tp||d.readyState==="loading"){setTimeout(tick,16);return}end();return}
+ov=d.createElement("span");ov.className="rl-parts";ov.setAttribute("aria-hidden","true");ov.appendChild(d.importNode(frag,true));ims=ov.querySelectorAll("img");
+var n=0,ok=true,one=function(){if(++n<ims.length)return;clearTimeout(fail);if(ok)start();else end()};
+for(var k=0;k<ims.length;k++){(function(im){var ld=function(){if(!im.naturalWidth){ok=false;one();return}(im.decode?im.decode():Promise.resolve()).then(one,one)};
+im.onload=ld;im.onerror=function(){ok=false;one()};if(im.complete)ld()})(ims[k])}
+b.appendChild(ov)};tick()}}
+var on=false,q=false,f=function(){q=false;var y=w.pageYOffset||0;if(!on&&y>40){on=true;h.classList.add("rl-compact")}else if(on&&y<10){on=false;h.classList.remove("rl-compact")}};
+w.addEventListener("scroll",function(){if(!q){q=true;w.requestAnimationFrame(f)}},{passive:true});d.addEventListener("DOMContentLoaded",f)})(document,window)</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18458618505"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // 2026-10-06 人間指示: 自分のアクセスを GA4 から除外する。各端末で一度 ?internal=1 を付けて開くと、その端末は traffic_type=internal（GA4 の「内部トラフィック」データフィルタで除外）。?internal=0 で解除
+  (function(){try{var q=location.search;if(/[?&]internal=1(&|$)/.test(q))localStorage.setItem('lc_internal','1');if(/[?&]internal=0(&|$)/.test(q))localStorage.removeItem('lc_internal');if(localStorage.getItem('lc_internal')==='1')gtag('set',{traffic_type:'internal'});}catch(e){}})();
+  gtag('config', 'AW-18458618505');
+  gtag('config', 'G-49D1Z94ELS');
+</script>
+<script>window.SITE_ADS = { sendTo: "AW-18458618505/Yi50CJ3hpv0cEInV4OFE" };</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"トップ","item":"https://restartlife.jp/"},{"@type":"ListItem","position":2,"name":"コラム","item":"https://restartlife.jp/column/"},{"@type":"ListItem","position":3,"name":"住宅ローンシミュレーションの使い方と読み方","item":"https://restartlife.jp/column/jutaku-loan-simulation-yomikata/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"住宅ローンシミュレーションの使い方と読み方。入力する数字・足りない項目・結果の見方","datePublished":"2027-01-02","dateModified":"2027-01-02","author":{"@type":"Organization","name":"住宅ローン相談窓口 restartlife"}}</script>
+</head>
+<body>
+<!-- ⚠️ このファイルは scripts/build-site.mjs の生成物である。手で編集しない。本文の正本は site/pages/。 -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="../../"><img class="brand__logo" src="../../assets/site/logo.webp" alt="住宅ローン相談窓口 restartlife" width="1200" height="479" decoding="async"><template class="rl-parts-tpl"><img class="rl-p rl-p-curve" src="../../assets/site/logo-curve.webp" alt="" decoding="async" width="517" height="45"><img class="rl-p rl-p-house" src="../../assets/site/logo-house.webp" alt="" decoding="async" width="159" height="180"><img class="rl-p rl-p-restart" src="../../assets/site/logo-restart.webp" alt="" decoding="async" width="318" height="76"><img class="rl-p rl-p-life" src="../../assets/site/logo-life.webp" alt="" decoding="async" width="132" height="76"><img class="rl-p rl-p-leaf" src="../../assets/site/logo-leaf.webp" alt="" decoding="async" width="46" height="43"><img class="rl-p rl-p-tagline" src="../../assets/site/logo-tagline.webp" alt="" decoding="async" width="400" height="27"></template></a>
+      <nav class="site-nav" aria-label="サイト内">
+        <a href="../../service/kariire/">借入があっても住宅購入</a>
+        <a href="../../service/cardloan/">カードローンがある方</a>
+        <a href="../../column/">コラム</a>
+        <a href="../../faq/">よくあるご質問</a>
+        <a href="../../company/">運営者情報</a>
+      </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="現在位置"><ol><li><a href="../../">トップ</a></li><li><a href="../../column/">コラム</a></li><li>住宅ローンシミュレーションの使い方と読み方</li></ol></nav>
+  </div>
+
+<article class="article"><div class="wrap">
+  <span class="hero__eyebrow">COLUMN</span>
+  <h1 style="font-size:24px;line-height:1.45;color:var(--navy);margin-top:6px">住宅ローンシミュレーションの使い方と読み方。入力する数字・足りない項目・結果の見方</h1>
+  <p class="post-meta">公開日 2027-01-02</p>
+  <img class="article__img" src="../../assets/site/column-futanritsu.webp" width="1200" height="675" alt="硬貨の形をした円グラフの一片に小さな家が載り、そのそばに電卓と鉛筆が置かれているイラスト" fetchpriority="high" decoding="async">
+  <p>年末年始の休みに、金融機関のサイトで住宅ローンのシミュレーションを試した方は多いと思います。年収と希望の借入額を入れると数秒で結果が出る便利なツールですが、相談の場でよく起きるのは、「シミュレーションでは借りられると出たのに、実際には届かなかった」「月々の返済はこの額だと思っていたのに、住み始めたら住居費が思ったより重い」というずれです。原因は、ツールが間違っているのではなく、入力した数字の取り方と、ツールに入力欄がない項目にあります。この記事では、シミュレーションの種類、入力する数字をどこから取るか、足りない項目をどう足すか、結果をどう読むかを順番に整理します。今週の親記事 <a href="../../column/rainen-kounyu-nenmatsu-check/">来年家を買う人の年末年始チェックリスト</a> の関連記事です。</p>
+  <div class="note"><strong>この記事について</strong><ul><li>シミュレーションの仕様は金融機関やサイトによって違います。ここでは一般的な作りを前提に説明しています。</li><li>試算の数字は、返済負担率の上限 35%、計算用の金利 年 3%、35 年の元利均等返済を前提にした目安です。実際の上限や計算に使う金利は金融機関ごとに異なり、判断は金融機関が行います。</li><li>最新の金利水準は、各金融機関の案内でご確認ください。</li></ul></div>
+
+  <h2>結論: 入力の前に用意する数字と、結果に足す項目</h2>
+  <ul class="checklist">
+    <li>シミュレーションは「借入可能額」と「毎月の返済額」の 2 種類に分かれる。前者は上限の目安、後者は家計の試算で、目的が違う。</li>
+    <li>年収は源泉徴収票の「支払金額」、他のお借入れは毎月の返済額の合計、金利はいまの適用金利と計算用の金利（年 3% 前後）の 2 通りで入れる。</li>
+    <li>多くのツールには、諸費用・管理費や修繕積立金・固定資産税・金利の上昇・団信の上乗せ・完済年齢の欄がない。結果に自分で足す。</li>
+    <li>「借入可能額」の結果は、他のお借入れを入れていない、または計算用の金利ではなく実際の金利で計算している場合がある。返済負担率に戻して確かめる。</li>
+    <li>結果は月々の返済額だけでなく、手取りに対する住居費全体の割合と、金利が 1% 上がったときの返済額で読む。</li>
+  </ul>
+
+  <h2>シミュレーションの種類と、それぞれで分かること</h2>
+  <div class="table-wrap">
+  <table class="cmp">
+    <tr><th>種類</th><th>主な入力</th><th>出てくる結果</th><th>注意点</th></tr>
+    <tr><td>借入可能額の試算</td><td>年収、返済期間、金利、（ツールによって）他のお借入れの年間返済額</td><td>借りられる金額の目安</td><td>他のお借入れの欄がないツールが多い。計算用の金利ではなく、実際の金利で計算しているものもある</td></tr>
+    <tr><td>毎月の返済額の試算</td><td>借入額、金利、返済期間、返済方法（元利均等・元金均等）、ボーナス返済の割合</td><td>月々の返済額、総返済額、ボーナス月の返済額</td><td>住宅ローン以外の住居費が含まれない。金利は入力した値のまま 35 年間変わらない前提</td></tr>
+    <tr><td>物件価格からの逆算</td><td>物件価格、頭金、年収</td><td>必要な借入額と月々の返済額</td><td>諸費用が物件価格に含まれていないことが多い</td></tr>
+    <tr><td>返済計画表（償還表）</td><td>借入額、金利、期間</td><td>毎月の元金と利息の内訳、残高の推移</td><td>繰り上げ返済や借り換えの検討に使う。金利の変化は反映されない</td></tr>
+  </table>
+  </div>
+  <p>相談の場で使い分ける順番は、「借入可能額の試算」で上限の目安を見る → 「返済額の試算」で家計に合う借入額を決める → 「物件価格からの逆算」で予算を出す、です。上限の目安だけで物件を探し始めると、返せる額との差に後で気づくことになります。上限と返せる額の違いは <a href="../../column/bukken-kakaku-kimekata/">物件価格の決め方</a> で説明しています。</p>
+
+  <h2>入力する数字は、どこから取るか</h2>
+  <p>シミュレーションの結果がずれる原因の半分は、入力する数字の取り方にあります。項目ごとに、どの書類のどの欄を使うかを決めておきます。</p>
+  <div class="table-wrap">
+  <table class="cmp">
+    <tr><th>入力項目</th><th>どこから取るか</th><th>間違えやすい点</th></tr>
+    <tr><td>年収</td><td>前年分の源泉徴収票の「支払金額」。個人事業主は確定申告書の所得金額</td><td>手取りや基本給で入れると上限が低く出る。見込みの年収や残業の多かった月から推定すると高く出る</td></tr>
+    <tr><td>他のお借入れの返済額</td><td>車・奨学金・カードローン・リボ払い・分割払い・携帯電話の端末代の毎月の返済額の合計 × 12</td><td>欄がないツールでは、結果から自分で引く必要がある。奨学金や端末代を忘れやすい</td></tr>
+    <tr><td>金利</td><td>検討している金融機関のいまの適用金利と、計算用の金利（年 3% 前後）の 2 通り</td><td>店頭金利と引き下げ後の適用金利を混同する。1 回だけの入力で済ませる</td></tr>
+    <tr><td>返済期間</td><td>完済年齢（多くは 80 歳未満）から逆算した年数と、35 年の両方</td><td>45 歳で 35 年を入れると完済が 80 歳になる。期間が短くなると月々は増える</td></tr>
+    <tr><td>頭金・物件価格</td><td>手元資金から諸費用と予備費を引いた残りを頭金にする</td><td>手元資金の全部を頭金に入れると、諸費用を払う現金が残らない</td></tr>
+    <tr><td>ボーナス返済</td><td>使わない前提で 0 円にして見る</td><td>ボーナス返済を入れると月々が軽く見えるが、賞与が減ったときに返済が重くなる</td></tr>
+  </table>
+  </div>
+  <p>源泉徴収票は今年の 1 月中に勤務先から交付されます。届くまでは、昨年 1 月に受け取った前年分（2025 年分）の源泉徴収票と 12 月の給与明細で仮の数字を入れ、届いたら入れ直します。段取りは <a href="../../column/gensen-made-junbi/">源泉徴収票が出るまでの 1 月に準備しておくこと</a> にまとめました。他のお借入れの数字は <a href="../../column/kariire-ichiran-tsukurikata/">お借入れの一覧表の作り方</a> のとおりに一覧にしてから入力すると、漏れが出にくくなります。</p>
+
+  <h2>ツールに欄がない項目を、結果に足す</h2>
+  <p>シミュレーションは住宅ローンそのものを計算する道具なので、住宅を買って住むのにかかるお金のうち、住宅ローン以外の部分は出てきません。結果を見たら、次の項目を自分で足します。</p>
+  <div class="table-wrap">
+  <table class="cmp">
+    <tr><th>欄がないことが多い項目</th><th>目安</th><th>結果にどう足すか</th></tr>
+    <tr><td>諸費用</td><td>物件価格の 5〜10% 程度（新築マンションは低め、中古は仲介手数料が加わり高め）</td><td>頭金とは別に、現金で用意する額として足す（<a href="../../column/shohiyo-uchiwake/">諸費用の内訳と目安</a>）</td></tr>
+    <tr><td>管理費・修繕積立金（マンション）</td><td>合計で月 2〜4 万円程度。築年数とともに上がる</td><td>月々の返済額に足して「住居費」として見る</td></tr>
+    <tr><td>固定資産税・都市計画税</td><td>年 10〜20 万円程度（物件による）</td><td>月 1〜1.5 万円として足す</td></tr>
+    <tr><td>火災保険・地震保険</td><td>年数万円。戸建ては高め</td><td>月数千円として足す</td></tr>
+    <tr><td>団信の上乗せ（がん保障など）</td><td>金利に年 0.1〜0.3% 程度の上乗せ</td><td>金利に足して再計算する</td></tr>
+    <tr><td>金利の上昇（変動金利）</td><td>0.5%・1%・2% 上がった場合</td><td>金利を変えて 3〜4 回計算し、返済額の増え方を見る（<a href="../../column/kinri-1pct-hensai/">金利が 0.5%・1% 上がると毎月の返済はいくら増えるか</a>）</td></tr>
+    <tr><td>他のお借入れの返済額</td><td>毎月の返済額の合計</td><td>借入可能額の結果から、月額 1 万円あたり約 260 万円を引く（計算用の金利 年 3%・35 年）</td></tr>
+  </table>
+  </div>
+  <p>住宅ローン以外の住居費の全体像は <a href="../../column/juukyohi-zentai/">住宅ローン以外にかかる住居費はいくら？</a> にまとめています。シミュレーションの月々の返済額に、この記事の月額を足したものが、家賃と比べるべき数字です（<a href="../../column/yachin-vs-jutaku-loan/">家賃と住宅ローンの毎月の支払いを比較する方法</a>）。</p>
+
+  <h2>想定例: 年収 500 万円・物件 3,500 万円で、結果を読み直す</h2>
+  <p><strong>前提:</strong> 年収 500 万円（手取り約 390 万円、月約 32.5 万円）、車のローンの返済が月 2 万円。物件価格 3,500 万円の中古マンションで、頭金 200 万円、借入額 3,300 万円、35 年の元利均等返済。管理費・修繕積立金が月 2.5 万円、固定資産税を月 1 万円とします。検討している金融機関の変動金利を年 0.7% とします。</p>
+  <p>金融機関のサイトの返済額シミュレーションに「3,300 万円・0.7%・35 年」と入れると、月々の返済額は約 8.9 万円と出ます。この数字だけを見ると、手取り 32.5 万円に対して約 27% で、いまの家賃と大きく変わらないと感じるかもしれません。ここから読み直します。</p>
+  <div class="table-wrap">
+  <table class="cmp">
+    <tr><th>見方</th><th>金利</th><th>住宅ローンの月々</th><th>住居費の合計（＋3.5 万円）</th><th>手取りに対する割合</th><th>返済負担率（車 2 万円を含む・額面）</th></tr>
+    <tr><td>ツールの結果のまま</td><td>0.7%</td><td>約 8.9 万円</td><td>約 12.4 万円</td><td>約 38%</td><td>約 26%</td></tr>
+    <tr><td>金利が 0.5% 上がった場合</td><td>1.2%</td><td>約 9.6 万円</td><td>約 13.1 万円</td><td>約 40%</td><td>約 28%</td></tr>
+    <tr><td>金利が 1% 上がった場合</td><td>1.7%</td><td>約 10.4 万円</td><td>約 13.9 万円</td><td>約 43%</td><td>約 30%</td></tr>
+    <tr><td>金利が 2% 上がった場合</td><td>2.7%</td><td>約 12.2 万円</td><td>約 15.7 万円</td><td>約 48%</td><td>約 34%</td></tr>
+    <tr><td>金融機関の確認で使われる計算用の金利</td><td>3.0%</td><td>約 12.7 万円</td><td>—</td><td>—</td><td>約 35%</td></tr>
+  </table>
+  </div>
+  <p>読み取れることは 3 つあります。第一に、住宅ローンの月々は手取りの 27% でも、管理費や税金を足した住居費は 38% になります。手取りの 4 割近くが住居費になると、教育費や車の買い替えが重なる時期に家計が苦しくなりやすい水準です。第二に、金利が 1% 上がると住居費は手取りの 43% になります。変動金利で組むなら、この行の数字で生活できるかを先に確かめます。第三に、いちばん下の行は、金融機関が計算用の金利 年 3% で返済負担率を見た場合の数字です。車のローン月 2 万円を足すと約 35% で、上限 35% の金融機関ではぎりぎり、上限 30% の金融機関では超えています。</p>
+  <p>つまり、同じ 3,300 万円でも、「ツールでは余裕」「金融機関の確認では上限いっぱい」「家計では重い」という 3 つの違う答えが出ます。この想定例では、車のローンを完済する、頭金を増やして借入額を 3,000 万円前後にする、物件価格を見直す、のいずれかを検討するのが現実的です。借入額別の月々の早見表は <a href="../../column/3000-4000-5000man-tsukizuki/">3,000万・4,000万・5,000万円の住宅ローンは月々いくら？</a> にあります。</p>
+
+  <h2>結果の読み方: 5 つの確認</h2>
+  <ol class="steps">
+    <li><h3>月々の返済額を、住居費に直す</h3><p>管理費・修繕積立金・固定資産税・保険を足し、手取りで割ります。目安として 25〜30% 以内に収まるかを見ます（<a href="../../column/tsukizuki-ikura-kaeseru/">住宅ローンは月々いくらなら払えるか</a>）。</p></li>
+    <li><h3>金利を 1% 上げて、もう一度計算する</h3><p>変動金利で組む場合は、1% 上がった行の返済額で家計が回るかを確かめます。回らなければ、借入額を下げるか固定金利を検討します。</p></li>
+    <li><h3>計算用の金利 年 3% で返済負担率を出す</h3><p>住宅ローンの年間返済額に他のお借入れの年間返済額を足し、額面の年収で割ります。30% と 35% のどちらに収まるかを見ます（<a href="../../column/hensai-futanritsu-keisan/">返済負担率の計算方法と年収別の目安</a>）。</p></li>
+    <li><h3>完済年齢を確かめる</h3><p>借入時の年齢に返済期間を足します。80 歳近くになる場合は、退職後の返済の見通しを別に立てます（<a href="../../column/hensai-kikan-kimekata/">住宅ローンの返済期間は 35 年か 40 年か、短くするか</a>）。</p></li>
+    <li><h3>必要な現金を足し合わせる</h3><p>頭金、諸費用、引越しや家具の費用、予備費を足し、手元資金で足りるかを見ます。足りなければ、頭金を減らして借入額を増やすのではなく、物件価格から見直します。</p></li>
+  </ol>
+
+  <h2>無料ツールの違いと、使い分け</h2>
+  <p>シミュレーションは、金融機関のサイト、住宅金融支援機構のサイト、不動産のポータルサイト、家計の相談サイトなど、いろいろな場所にあります。どれを使っても計算式は同じですが、前提と目的に違いがあります。</p>
+  <ul>
+    <li><strong>金融機関のサイト</strong>は、その金融機関の金利と商品を前提にしています。借入可能額の試算では、その金融機関の計算用の金利と返済負担率の上限が使われている場合と、実際の金利で計算している場合があり、どちらかは明記されていないことが多いです。</li>
+    <li><strong>住宅金融支援機構のサイト</strong>は、全期間固定の商品を前提にした試算で、年収から借入可能額を見るときに返済負担率の基準が示されています。固定金利で組む場合の目安として使いやすいです。</li>
+    <li><strong>不動産のポータルサイト</strong>は、物件価格から月々の返済額を出す作りが多く、金利が低めの初期値になっていることがあります。初期値のままにせず、金利を自分で入れ直します。</li>
+  </ul>
+  <p>どのツールを使う場合も、「金利を 2 通り以上入れる」「他のお借入れを引く」「住居費を足す」の 3 つを行えば、結果の読み方は同じになります。</p>
+
+  <h2>他のお借入れがある場合</h2>
+  <p>他のお借入れがある方にとって、シミュレーションの結果はそのままでは使えません。多くのツールは、他のお借入れがない方を前提に作られているからです。借入可能額の試算に他のお借入れの欄がない場合は、結果から月額 1 万円あたり約 260 万円を引きます（計算用の金利 年 3%・35 年）。月 3 万円の返済があれば、約 780 万円の引き算です。年収別の引き算の早見表は <a href="../../column/nenshu-betsu-meyasu/">年収別・住宅ローン借入額の目安早見表</a> にあります。</p>
+  <ul>
+    <li>欄がある場合も、「年間返済額」で入力する作りが多いため、月額 × 12 に直して入れます。賞与で返している分があれば足します。</li>
+    <li>リボ払いや分割払いは、毎月の支払額が小さくても返済負担率に入ります。残高が少なければ、シミュレーションの前に完済して数字から外すほうが、結果が実態に近づきます（<a href="../../column/revo-bunkatsu-jutaku-loan/">リボ払い・分割払いの残高は住宅ローンにどう影響するか</a>）。</li>
+    <li>住宅の取得と合わせて既存のお借入れの返済資金を検討できる商品を使う場合は、まとめる金額を借入額に足して返済額を計算します。この場合、住宅ローンの月々は増えますが、他のお借入れの月々は消えるため、家計全体の支払いは軽くなることがあります。対象や上限は金融機関によって違います（<a href="../../column/omatome-jutaku-loan/">他の借入をまとめて検討できる住宅ローンとは</a>）。</li>
+    <li>過去にお支払いの遅れがある方は、シミュレーションで数字が収まっても、記録の状態が別に見られます。数字と記録は分けて確かめます（<a href="../../column/jutaku-loan-kumeruka-shiraberu/">住宅ローンを組めるかどうかを、お申込み前に自分で調べる方法</a>）。</li>
+  </ul>
+
+  <h2>よくある失敗・見落とし</h2>
+  <ul>
+    <li><strong>借入可能額の結果を、そのまま物件の予算にする。</strong> 上限の目安であって、返せる額ではありません。他のお借入れが入っていない場合もあります。</li>
+    <li><strong>金利を 1 回しか入れない。</strong> 変動金利の初期値のままだと、金利が上がった場合と、金融機関の確認で使われる計算用の金利での見え方が分かりません。</li>
+    <li><strong>月々の返済額と家賃を直接比べる。</strong> 管理費・修繕積立金・固定資産税・保険を足してから比べます。マンションでは月 3〜4 万円の差になります。</li>
+    <li><strong>ボーナス返済を入れて月々を軽く見せる。</strong> 賞与が減った年に返済が重くなります。まずボーナス返済なしで試算します（<a href="../../column/bonus-barai/">住宅ローンのボーナス払いはやめたほうがいい？</a>）。</li>
+    <li><strong>手元資金を全部頭金に入力する。</strong> 諸費用と予備費の現金が残らず、契約から引渡しまでの支払いに困ります。</li>
+    <li><strong>年収を見込みで入れる。</strong> 源泉徴収票の支払金額と違うと、相談や本申込みの段階で結果が変わります。</li>
+  </ul>
+
+  <h2>よくあるご質問</h2>
+  <div class="faq"><details><summary>シミュレーションで借りられると出れば、実際に借りられますか？</summary><div class="faq__a"><p>シミュレーションは入力した数字だけで計算した目安です。金融機関の確認では、他のお借入れを含めた返済負担率、計算用の金利、お支払いの記録、勤続年数、物件などが合わせて見られます。シミュレーションで収まっていても、他のお借入れや記録の状態によって結果が変わることがあります。判断は金融機関が行います。</p></div></details>
+<details><summary>金利はいくらで入力すればよいですか？</summary><div class="faq__a"><p>検討している金融機関のいまの適用金利と、計算用の金利（年 3% 前後）の 2 通りで入れます。変動金利で組む場合は、1% 上がった場合も追加します。適用金利は店頭金利から引き下げ幅を引いた値で、金融機関の案内で確認してください。</p></div></details>
+<details><summary>他のお借入れを入力する欄がありません。どうすればよいですか？</summary><div class="faq__a"><p>借入可能額の結果から、他のお借入れの毎月の返済額 1 万円あたり約 260 万円を引きます（計算用の金利 年 3%・35 年）。月 2 万円なら約 520 万円です。欄がある場合は、年間返済額（月額 × 12、賞与払いがあれば足す）で入れます。</p></div></details>
+<details><summary>元利均等と元金均等はどちらで試算すればよいですか？</summary><div class="faq__a"><p>多くの金融機関で標準になっているのは元利均等返済で、毎月の返済額が一定です。元金均等返済は、初めの返済額が多く、後から軽くなります。返済負担率の計算も元利均等で行われるのが一般的なので、まず元利均等で試算し、必要なら元金均等と比べます。</p></div></details>
+<details><summary>シミュレーションの結果は相談のときに持っていったほうがよいですか？</summary><div class="faq__a"><p>入力した数字と結果を控えておくと、相談が早く進みます。特に、年収をどの書類から取ったか、他のお借入れを入れたかどうか、金利をいくらにしたかが分かると、結果の読み直しがその場でできます。当窓口の LINE 相談でも、画面の控えを送っていただければ、同じ前提で確かめます。</p></div></details></div>
+
+  <div class="cta-block">
+  <h2>お試しになったシミュレーションの数字をもとに、他のお借入れと住居費を足した場合の見え方と、無理のない借入額をお伝えします。</h2>
+  <a class="line-cta" href="https://lin.ee/wIjLMkF" data-cta-type="line" data-cta-position="article" data-cta-id="article">
+      <span class="line-cta__icon" aria-hidden="true">LINE</span>LINEで無料相談</a>
+</div>
+  <div class="related">
+    <a href="../../column/rainen-kounyu-nenmatsu-check/">来年家を買う人の年末年始チェックリスト<small>今週の親記事</small></a>
+    <a href="../../column/hensai-futanritsu-keisan/">返済負担率の計算方法と年収別の目安</a>
+    <a href="../../column/juukyohi-zentai/">住宅ローン以外にかかる住居費はいくら？</a>
+    <a href="../../column/">コラム一覧へ戻る</a>
+  </div>
+</div></article>
+
+</main>
+
+<div class="sticky-cta" aria-hidden="false">
+  <a class="line-cta" href="https://lin.ee/wIjLMkF" data-cta-type="line" data-cta-position="sticky" data-cta-id="sticky">
+      <span class="line-cta__icon" aria-hidden="true">LINE</span>LINEで無料相談</a>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <nav class="site-footer__nav">
+      <a href="../../">トップ</a>
+      <a href="../../service/kariire/">借入があっても住宅購入</a>
+      <a href="../../service/cardloan/">カードローンがある方</a>
+      <a href="../../column/">コラム</a>
+      <a href="../../faq/">よくあるご質問</a>
+      <a href="../../company/">運営者情報</a>
+      <a href="../../privacy.html" data-legal-link="privacy">プライバシーポリシー</a>
+      <a href="../../tokushoho.html" data-legal-link="law">特定商取引法に基づく表示</a>
+    </nav>
+    <!-- 運営者情報の詳細（事業者名・免許番号・所在地）は tokushoho.html だけが持つ（2026-09-11 人間指示。
+         scripts/verify-production-values.mjs の面検査もこれを前提にする）。ここには Copyright の名義だけ。 -->
+    <!-- 2026-09-28 人間決定（第2次）: Copyright の名義は全ページで屋号（config.TRADE_NAME = restartlife）。 -->
+    <p class="site-footer__copyright">Copyright(C) 2026 restartlife All rights reserved.</p>
+  </div>
+</footer>
+<script src="../../site/site.js" defer></script>
+</body>
+</html>

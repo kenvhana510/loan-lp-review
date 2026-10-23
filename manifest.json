@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-20T01:17:05.024Z",
-  "from": "2026-10-20",
+  "generatedAt": "2026-10-23T08:58:22.655Z",
+  "from": "2026-10-23",
   "to": "2027-02-28",
   "days": {
-    "2026-10-20": {
+    "2026-10-23": {
       "publishes": [
-        "column/jizen-kakunin-hon-moshikomi-chigai"
+        "column/toranai-riyu-suisoku"
       ],
       "files": [
         "404.html",
@@ -162,6 +162,7 @@
         "column/car-loan-jutaku-loan/index.html",
         "column/cardloan-hensai/index.html",
         "column/fufu-shunyu-awaseru/index.html",
+        "column/fukusu-kinyukikan-doji-moshikomi/index.html",
         "column/futanritsu-chosei-5/index.html",
         "column/hensai-futanritsu-keisan/index.html",
         "column/hensai-okure-kiroku/index.html",
@@ -173,6 +174,7 @@
         "column/jutaku-loan-toranai-hito-tokucho/index.html",
         "column/keiyaku-haken-jutaku-loan/index.html",
         "column/kojin-jigyonushi-jutaku-loan/index.html",
+        "column/kotowarareta-ato-kikan-junbi/index.html",
         "column/kounyu-to-karikae/index.html",
         "column/nenshu-betsu-meyasu/index.html",
         "column/omatome-jutaku-loan-products/index.html",
@@ -183,10 +185,12 @@
         "column/shorui-checklist/index.html",
         "column/temoto-shikin-tsukaimichi/index.html",
         "column/tenshoku-chokugo-jutaku-loan/index.html",
+        "column/toranai-riyu-suisoku/index.html",
         "column/unused-cardloan-seiri/index.html",
         "column/yachin-vs-jutaku-loan/index.html",
         "company/index.html",
         "faq/index.html",
+        "feed.xml",
         "index.html",
         "legal.css",
         "lp/index.html",
@@ -210,36 +214,6 @@
         "tracking/tracking.js"
       ]
     },
-    "2026-10-21": {
-      "publishes": [
-        "column/kotowarareta-ato-kikan-junbi"
-      ],
-      "files": [
-        "column/index.html",
-        "column/kotowarareta-ato-kikan-junbi/index.html",
-        "sitemap.xml"
-      ]
-    },
-    "2026-10-22": {
-      "publishes": [
-        "column/fukusu-kinyukikan-doji-moshikomi"
-      ],
-      "files": [
-        "column/fukusu-kinyukikan-doji-moshikomi/index.html",
-        "column/index.html",
-        "sitemap.xml"
-      ]
-    },
-    "2026-10-23": {
-      "publishes": [
-        "column/toranai-riyu-suisoku"
-      ],
-      "files": [
-        "column/index.html",
-        "column/toranai-riyu-suisoku/index.html",
-        "sitemap.xml"
-      ]
-    },
     "2026-10-24": {
       "publishes": [
         "column/toranai-self-check-12"
@@ -247,6 +221,7 @@
       "files": [
         "column/index.html",
         "column/toranai-self-check-12/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -257,6 +232,7 @@
       "files": [
         "column/ie-akirameru-mae-minaoshi/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -267,6 +243,7 @@
       "files": [
         "column/index.html",
         "column/shohisha-kinyu-jutaku-loan/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -277,6 +254,7 @@
       "files": [
         "column/index.html",
         "column/shohisha-kinyu-kansai-go/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -287,6 +265,7 @@
       "files": [
         "column/haigusha-kariire-jutaku-loan/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -297,6 +276,7 @@
       "files": [
         "column/index.html",
         "column/jutaku-loan-kumeruka-shiraberu/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -307,6 +287,7 @@
       "files": [
         "column/index.html",
         "column/kariire-shinkoku-kakunin-hani/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -317,6 +298,7 @@
       "files": [
         "column/index.html",
         "column/shohisha-kinyu-matomeru/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -327,6 +309,7 @@
       "files": [
         "column/fukusu-kariire-seiri-junban/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -337,6 +320,7 @@
       "files": [
         "column/index.html",
         "column/ookina-okure-kiroku-itsukara/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -347,6 +331,7 @@
       "files": [
         "column/index.html",
         "column/kiroku-shurui-nokoru-kikan/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -357,6 +342,7 @@
       "files": [
         "column/index.html",
         "column/kiroku-kaiji-yomikata/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -367,6 +353,7 @@
       "files": [
         "column/index.html",
         "column/keitai-bunkatsu-zeikin-okure/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -377,6 +364,7 @@
       "files": [
         "column/index.html",
         "column/kiroku-kieru-made-junbi/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -387,6 +375,7 @@
       "files": [
         "column/index.html",
         "column/tanki-okure-kurikaeshi-chigai/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -397,6 +386,7 @@
       "files": [
         "column/fufu-katahou-okure-kiroku/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -407,6 +397,7 @@
       "files": [
         "column/index.html",
         "column/nenmatsu-chosei-jutaku-loan-kojo/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -417,6 +408,7 @@
       "files": [
         "column/index.html",
         "column/kojo-shomeisho-funshitsu/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -427,6 +419,7 @@
       "files": [
         "column/index.html",
         "column/kojo-ikura-modoru/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -437,6 +430,7 @@
       "files": [
         "column/index.html",
         "column/kojo-juminzei/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -447,6 +441,7 @@
       "files": [
         "column/furusato-nozei-kojo-heiyo/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -457,6 +452,7 @@
       "files": [
         "column/index.html",
         "column/pair-loan-kojo-nenmatsu/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -467,6 +463,7 @@
       "files": [
         "column/index.html",
         "column/tenshoku-kuriage-kojo/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -477,6 +474,7 @@
       "files": [
         "column/hendo-kotei-erabikata/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -487,6 +485,7 @@
       "files": [
         "column/hendo-5nen-125/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -497,6 +496,7 @@
       "files": [
         "column/index.html",
         "column/kinri-1pct-hensai/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -507,6 +507,7 @@
       "files": [
         "column/index.html",
         "column/kotei-kikan-manryo/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -517,6 +518,7 @@
       "files": [
         "column/index.html",
         "column/kinri-joshou-sonae/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -527,6 +529,7 @@
       "files": [
         "column/index.html",
         "column/mix-loan/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -537,6 +540,7 @@
       "files": [
         "column/flat35-muki-fumuki/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -547,6 +551,7 @@
       "files": [
         "column/index.html",
         "column/tsukizuki-ikura-kaeseru/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -557,6 +562,7 @@
       "files": [
         "column/3000-4000-5000man-tsukizuki/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -567,6 +573,7 @@
       "files": [
         "column/index.html",
         "column/tsukizuki-10man-kitsui/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -577,6 +584,7 @@
       "files": [
         "column/bonus-barai/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -587,6 +595,7 @@
       "files": [
         "column/index.html",
         "column/juukyohi-zentai/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -597,6 +606,7 @@
       "files": [
         "column/index.html",
         "column/kyoikuhi-peak/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -607,6 +617,7 @@
       "files": [
         "column/hensai-kikan-kimekata/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -617,6 +628,7 @@
       "files": [
         "column/index.html",
         "column/kuriage-hensai-suru-beki/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -627,6 +639,7 @@
       "files": [
         "column/index.html",
         "column/kikan-tanshuku-keigen/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -637,6 +650,7 @@
       "files": [
         "column/index.html",
         "column/kuriage-kojo-kankei/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -647,6 +661,7 @@
       "files": [
         "column/index.html",
         "column/kuriage-tesuryo-timing/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -657,6 +672,7 @@
       "files": [
         "column/index.html",
         "column/kuriage-yori-saki/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -667,6 +683,7 @@
       "files": [
         "column/ikkatsu-hensai-tetsuzuki/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -677,6 +694,7 @@
       "files": [
         "column/index.html",
         "column/kuruma-kuriage-junban/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -687,6 +705,7 @@
       "files": [
         "column/chuko-jutaku-loan-chui/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -697,6 +716,7 @@
       "files": [
         "column/chuko-kojo-joken/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -707,6 +727,7 @@
       "files": [
         "column/index.html",
         "column/reform-ittaigata/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -717,6 +738,7 @@
       "files": [
         "column/chikunen-hensai-kikan/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -727,6 +749,7 @@
       "files": [
         "column/index.html",
         "column/kanrihi-shuzen-tsumitate/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -737,6 +760,7 @@
       "files": [
         "column/chuko-shohiyo-inspection/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -747,6 +771,7 @@
       "files": [
         "column/index.html",
         "column/shinchiku-chuko-hikaku/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -757,6 +782,7 @@
       "files": [
         "column/index.html",
         "column/jutaku-loan-soudan-saki/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -767,6 +793,7 @@
       "files": [
         "column/index.html",
         "column/loan-daiko-tesuryo/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -777,6 +804,7 @@
       "files": [
         "column/index.html",
         "column/teikei-loan-jibun/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -787,6 +815,7 @@
       "files": [
         "column/fp-muryo-soudan/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -797,6 +826,7 @@
       "files": [
         "column/index.html",
         "column/kariire-ichiran-tsukurikata/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -807,6 +837,7 @@
       "files": [
         "column/index.html",
         "column/soudan-madoguchi-kakunin/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -817,6 +848,7 @@
       "files": [
         "column/index.html",
         "column/jimu-tesuryo-hoshoryo/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -827,6 +859,7 @@
       "files": [
         "column/index.html",
         "column/kakutei-shinkoku-1nenme/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -837,6 +870,7 @@
       "files": [
         "column/index.html",
         "column/kakutei-hitsuyo-shorui/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -847,6 +881,7 @@
       "files": [
         "column/etax-kojo-shinkoku/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -857,6 +892,7 @@
       "files": [
         "column/index.html",
         "column/pair-kakutei-shinkoku/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -867,6 +903,7 @@
       "files": [
         "column/index.html",
         "column/kojo-ukerarenai-case/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -877,6 +914,7 @@
       "files": [
         "column/12gatsu-nyukyo-kojo/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -887,6 +925,7 @@
       "files": [
         "column/index.html",
         "column/kojo-uke-wasure/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -897,6 +936,7 @@
       "files": [
         "column/index.html",
         "column/rainen-kounyu-nenmatsu-check/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -907,6 +947,7 @@
       "files": [
         "column/index.html",
         "column/nenmatsu-shishutsu-revo/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -917,6 +958,7 @@
       "files": [
         "column/gensen-made-junbi/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -927,6 +969,7 @@
       "files": [
         "column/index.html",
         "column/rainen-kounyu-schedule/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -937,6 +980,7 @@
       "files": [
         "column/index.html",
         "column/jutaku-loan-nenshu-nanbai/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -947,6 +991,7 @@
       "files": [
         "column/index.html",
         "column/jutaku-loan-simulation-yomikata/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -957,6 +1002,7 @@
       "files": [
         "column/index.html",
         "column/jutaku-loan-kinri-yoso-2027/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -967,6 +1013,7 @@
       "files": [
         "column/index.html",
         "column/jutaku-loan-karikae-kihon/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -977,6 +1024,7 @@
       "files": [
         "column/index.html",
         "column/karikae-shippai-koukai/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -987,6 +1035,7 @@
       "files": [
         "column/index.html",
         "column/karikae-shohiyo-bunki/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -997,6 +1046,7 @@
       "files": [
         "column/index.html",
         "column/karikae-jutaku-loan-kojo/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1007,6 +1057,7 @@
       "files": [
         "column/index.html",
         "column/karikae-toranai-toki/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1017,6 +1068,7 @@
       "files": [
         "column/hendo-kara-kotei-karikae/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1027,6 +1079,7 @@
       "files": [
         "column/index.html",
         "column/karikae-to-doji-ni-matomeru/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1037,6 +1090,7 @@
       "files": [
         "column/danshin-toha-shurui/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1047,6 +1101,7 @@
       "files": [
         "column/danshin-jibyo-tsuin/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1057,6 +1112,7 @@
       "files": [
         "column/gan-danshin-hitsuyou/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1067,6 +1123,7 @@
       "files": [
         "column/danshin-seimei-hoken-minaoshi/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1077,6 +1134,7 @@
       "files": [
         "column/index.html",
         "column/pair-loan-danshin/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1087,6 +1145,7 @@
       "files": [
         "column/index.html",
         "column/kasai-hoken-jutaku-loan/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1097,6 +1156,7 @@
       "files": [
         "column/danshin-kokuchi-chui/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1107,6 +1167,7 @@
       "files": [
         "column/index.html",
         "column/jutaku-loan-haraenai-toki/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1117,6 +1178,7 @@
       "files": [
         "column/hensai-joken-henko/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1127,6 +1189,7 @@
       "files": [
         "column/bonus-barai-haraenai/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1137,6 +1200,7 @@
       "files": [
         "column/index.html",
         "column/shunyu-gen-kyushoku-jutaku-loan/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1147,6 +1211,7 @@
       "files": [
         "column/index.html",
         "column/rikon-jutaku-loan/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1157,6 +1222,7 @@
       "files": [
         "column/index.html",
         "column/jutaku-loan-nokoru-ie-baikyaku/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1167,6 +1233,7 @@
       "files": [
         "column/index.html",
         "column/okure-dasu-mae-ni/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1177,6 +1244,7 @@
       "files": [
         "column/index.html",
         "column/jutaku-loan-doko-de-kariru/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1187,6 +1255,7 @@
       "files": [
         "column/index.html",
         "column/net-ginko-jutaku-loan/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1197,6 +1266,7 @@
       "files": [
         "column/index.html",
         "column/roukin-jutaku-loan/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1207,6 +1277,7 @@
       "files": [
         "column/index.html",
         "column/ja-jutaku-loan/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1217,6 +1288,7 @@
       "files": [
         "column/index.html",
         "column/kinri-hikaku-shikata/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1227,6 +1299,7 @@
       "files": [
         "column/chigin-shinkin-jutaku-loan/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1237,6 +1310,7 @@
       "files": [
         "column/index.html",
         "column/jutaku-loan-erabikata-checklist/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1247,6 +1321,7 @@
       "files": [
         "column/index.html",
         "column/jutaku-loan-nagare/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1257,6 +1332,7 @@
       "files": [
         "column/index.html",
         "column/kakunin-nissu-meyasu/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1267,6 +1343,7 @@
       "files": [
         "column/index.html",
         "column/loan-tokuyaku-toha/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1277,6 +1354,7 @@
       "files": [
         "column/index.html",
         "column/tetsukekin-meyasu/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1287,6 +1365,7 @@
       "files": [
         "column/index.html",
         "column/moshikomisho-kakikata/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1297,6 +1376,7 @@
       "files": [
         "column/index.html",
         "column/kinsho-keiyaku-toha/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1307,6 +1387,7 @@
       "files": [
         "column/index.html",
         "column/keiyaku-go-hikiwatashi-chui/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1317,6 +1398,7 @@
       "files": [
         "column/index.html",
         "column/jutaku-shutoku-shikin-zoyo/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1327,6 +1409,7 @@
       "files": [
         "column/index.html",
         "column/zoyo-atamakin-ni-shinai/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1337,6 +1420,7 @@
       "files": [
         "column/index.html",
         "column/zoyo-shippai-kigen/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1347,6 +1431,7 @@
       "files": [
         "column/index.html",
         "column/oyako-relay-loan/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1357,6 +1442,7 @@
       "files": [
         "column/index.html",
         "column/oyako-pair-shunyu-gassan/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1367,6 +1453,7 @@
       "files": [
         "column/index.html",
         "column/oya-kara-kariru-zoyo-chigai/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1377,6 +1464,7 @@
       "files": [
         "column/index.html",
         "column/nisetai-jutaku-loan/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1387,6 +1475,7 @@
       "files": [
         "column/index.html",
         "column/jutaku-loan-meigi-kimekata/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1397,6 +1486,7 @@
       "files": [
         "column/index.html",
         "column/kyodo-meigi-mochibun/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1407,6 +1497,7 @@
       "files": [
         "column/index.html",
         "column/tsuma-meigi-jutaku-loan/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1417,6 +1508,7 @@
       "files": [
         "column/index.html",
         "column/kyodo-meigi-katahou-shibo/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1427,6 +1519,7 @@
       "files": [
         "column/index.html",
         "column/rentai-hoshonin-rentai-saimu/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1437,6 +1530,7 @@
       "files": [
         "column/index.html",
         "column/part-shunyu-gassan/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1447,6 +1541,7 @@
       "files": [
         "column/index.html",
         "column/jutaku-loan-meigi-henko/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1457,6 +1552,7 @@
       "files": [
         "column/index.html",
         "column/tenkin-jutaku-loan/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1467,6 +1563,7 @@
       "files": [
         "column/index.html",
         "column/jutaku-loan-chintai-ni-dasu/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1477,6 +1574,7 @@
       "files": [
         "column/index.html",
         "column/tenkin-jutaku-loan-kojo/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1487,6 +1585,7 @@
       "files": [
         "column/index.html",
         "column/kaigai-tenkin-jutaku-loan/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1497,6 +1596,7 @@
       "files": [
         "column/index.html",
         "column/tenkinzoku-kounyu-timing/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1507,6 +1607,7 @@
       "files": [
         "column/chumon-jutaku-loan-nagare/index.html",
         "column/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     },
@@ -1517,6 +1618,7 @@
       "files": [
         "column/index.html",
         "column/jutaku-loan-hatan-sakeru/index.html",
+        "feed.xml",
         "sitemap.xml"
       ]
     }

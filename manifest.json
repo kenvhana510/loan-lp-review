@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-24T08:37:55.985Z",
-  "from": "2026-10-24",
+  "generatedAt": "2026-10-25T23:16:10.124Z",
+  "from": "2026-10-26",
   "to": "2027-02-28",
   "days": {
-    "2026-10-24": {
+    "2026-10-26": {
       "publishes": [
-        "column/toranai-self-check-12"
+        "column/shohisha-kinyu-jutaku-loan"
       ],
       "files": [
         "404.html",
@@ -258,6 +258,7 @@
         "column/hensai-futanritsu-keisan/index.html",
         "column/hensai-okure-kiroku/index.html",
         "column/hitorioya-tanshin-kounyu/index.html",
+        "column/ie-akirameru-mae-minaoshi/index.html",
         "column/ikukyu-tanjikan-shunyu/index.html",
         "column/index.html",
         "column/jizen-kakunin-hon-moshikomi-chigai/index.html",
@@ -272,6 +273,7 @@
         "column/omatome-jutaku-loan/index.html",
         "column/revo-bunkatsu-jutaku-loan/index.html",
         "column/shogakukin-jutaku-loan/index.html",
+        "column/shohisha-kinyu-jutaku-loan/index.html",
         "column/shohiyo-uchiwake/index.html",
         "column/shorui-checklist/index.html",
         "column/temoto-shikin-tsukaimichi/index.html",
@@ -298,34 +300,16 @@
         "site/ScrollTrigger.min.js",
         "site/animations.js",
         "site/gsap.min.js",
+        "site/loan-calc.js",
+        "site/loan-tool.css",
+        "site/loan-tool.js",
         "site/site.css",
         "site/site.js",
         "sitemap.xml",
         "tokushoho.html",
+        "tools/kariire-kanougaku/index.html",
         "tracking/attribution-token.js",
         "tracking/tracking.js"
-      ]
-    },
-    "2026-10-25": {
-      "publishes": [
-        "column/ie-akirameru-mae-minaoshi"
-      ],
-      "files": [
-        "column/ie-akirameru-mae-minaoshi/index.html",
-        "column/index.html",
-        "feed.xml",
-        "sitemap.xml"
-      ]
-    },
-    "2026-10-26": {
-      "publishes": [
-        "column/shohisha-kinyu-jutaku-loan"
-      ],
-      "files": [
-        "column/index.html",
-        "column/shohisha-kinyu-jutaku-loan/index.html",
-        "feed.xml",
-        "sitemap.xml"
       ]
     },
     "2026-10-27": {

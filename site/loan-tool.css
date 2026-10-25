@@ -1,0 +1,35 @@
+/* 借入可能額・返済負担率シミュレーター（/tools/kariire-kanougaku/）。色は site.css の変数 */
+.lt { background: var(--soft); border: 1px solid var(--border); border-radius: 14px; padding: 16px 14px 20px; margin: 18px 0 28px; }
+@media (min-width: 720px) { .lt { padding: 22px 24px 26px; } }
+.lt-box { border: 1px solid var(--border); background: var(--base); border-radius: 12px; padding: 10px 14px 12px; margin: 0 0 12px; min-width: 0; }
+.lt-box legend { font-weight: 700; color: var(--navy); padding: 0 6px; }
+.lt-row { display: grid; grid-template-columns: 1fr; gap: 6px; padding: 9px 0; border-bottom: 1px dashed var(--border); align-items: center; }
+.lt-row:last-child { border-bottom: 0; }
+@media (min-width: 720px) { .lt-row { grid-template-columns: 15em 1fr; gap: 14px; } }
+.lt-row__label { font-weight: 700; font-size: .93rem; }
+.lt-row__label small { display: block; font-weight: 400; color: var(--text-mute); font-size: .78rem; margin-top: 2px; }
+.lt-input { display: inline-flex; align-items: center; gap: 6px; max-width: 100%; }
+.lt input, .lt select { font: inherit; font-size: 16px; padding: 9px 10px; border: 1px solid var(--border); border-radius: 8px; background: #fff; color: var(--text); min-width: 0; max-width: 100%; }
+.lt input { width: 10em; text-align: right; }
+.lt input:focus, .lt select:focus { outline: 2px solid var(--cyan); outline-offset: 1px; }
+.lt-more { margin: 4px 0 12px; background: var(--base); border: 1px solid var(--border); border-radius: 12px; padding: 4px 14px; }
+.lt-more summary { cursor: pointer; font-weight: 700; color: var(--navy); padding: 8px 0; }
+.lt-btn { display: block; width: 100%; font: inherit; font-weight: 700; font-size: 1.05rem; border: 0; border-radius: 10px; padding: 15px; background: var(--navy); color: #fff; cursor: pointer; }
+.lt-result { margin-top: 18px; scroll-margin-top: 90px; }
+.lt-card { background: #fff; border: 2px solid var(--navy); border-radius: 14px; padding: 16px; }
+.lt-card__k { margin: 0; font-weight: 700; color: var(--navy); }
+.lt-card__big { margin: 4px 0; font-weight: 700; font-size: 1.1rem; }
+.lt-card__big span { font-size: 2.4rem; color: var(--navy-deep); font-variant-numeric: tabular-nums; }
+.lt-card__sub { font-size: .86rem; color: var(--text-mute); margin: 0 0 8px; }
+.lt-detail { width: 100%; border-collapse: collapse; font-size: .88rem; margin: 6px 0 10px; }
+.lt-detail th { text-align: left; font-weight: 400; color: var(--text-mute); padding: 5px 0; }
+.lt-detail td { text-align: right; white-space: nowrap; padding-left: 10px; font-variant-numeric: tabular-nums; }
+.lt-impact, .lt-want { border-radius: 10px; padding: 10px 12px; margin-top: 10px; background: var(--cream); }
+.lt-want.is-ok { background: var(--cyan-pale); }
+.lt-impact__k { margin: 0 0 4px; font-weight: 700; }
+.lt-impact p:last-child, .lt-want p:last-child { margin-bottom: 0; }
+.lt-warn { color: #a33; font-weight: 700; }
+.lt-cta { margin-top: 14px; background: #fff; border: 1px solid var(--line-green); border-radius: 12px; padding: 14px; }
+.lt-cta[hidden] { display: none; }
+.lt-hayami th, .lt-hayami td { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.lt-hayami td { text-align: right; }

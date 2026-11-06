@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://restartlife.jp/</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://restartlife.jp/</loc><lastmod>2026-11-06</lastmod></url>
   <url><loc>https://restartlife.jp/service/kariire/</loc><lastmod>2026-09-28</lastmod></url>
   <url><loc>https://restartlife.jp/service/cardloan/</loc><lastmod>2026-09-28</lastmod></url>
   <url><loc>https://restartlife.jp/faq/</loc><lastmod>2026-09-28</lastmod></url>
   <url><loc>https://restartlife.jp/company/</loc><lastmod>2026-09-28</lastmod></url>
-  <url><loc>https://restartlife.jp/column/</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://restartlife.jp/column/</loc><lastmod>2026-11-06</lastmod></url>
   <url><loc>https://restartlife.jp/column/omatome-jutaku-loan/</loc><lastmod>2026-09-27</lastmod></url>
   <url><loc>https://restartlife.jp/column/kounyu-to-karikae/</loc><lastmod>2026-09-27</lastmod></url>
   <url><loc>https://restartlife.jp/column/cardloan-hensai/</loc><lastmod>2026-09-27</lastmod></url>
@@ -52,4 +52,5 @@
   <url><loc>https://restartlife.jp/column/kiroku-shurui-nokoru-kikan/</loc><lastmod>2026-11-03</lastmod></url>
   <url><loc>https://restartlife.jp/column/kiroku-kaiji-yomikata/</loc><lastmod>2026-11-04</lastmod></url>
   <url><loc>https://restartlife.jp/column/keitai-bunkatsu-zeikin-okure/</loc><lastmod>2026-11-05</lastmod></url>
+  <url><loc>https://restartlife.jp/column/kiroku-kieru-made-junbi/</loc><lastmod>2026-11-06</lastmod></url>
 </urlset>
